@@ -22,6 +22,7 @@ def prediction():
     # the information sent from the clients end is in JSON format
 
     # this information fetched has to encoded into the correct format
+    
 
 
     # the other information that has been sent should also be saved into variables
