@@ -21,11 +21,9 @@ def prediction():
     loan_req = request.get_json() # request.get_json() will have all the json information present within the body that was sent by the user
     # the information sent from the clients end is in JSON format
 
-    # this information fetched has to encoded into the correct format
-    
-
-
+    # the information fetched has to encoded into the correct format
     # the other information that has been sent should also be saved into variables
+    
 
     # to get the final result, the clf method has to be called with all the variables that have been extracted
     result = clf.predict()
