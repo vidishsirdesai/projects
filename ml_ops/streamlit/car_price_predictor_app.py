@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 import datetime
 import pickle
+from sklearn.preprocessing import StandardScaler
 
 # reading the dataset
 cars_df = pd.read_csv("./cars24.csv")
@@ -64,9 +65,16 @@ age = col2.slider("Age", 0, 40, step = 1)
 # defining a function to read the stored model and make predictions
 def model_pred(engine_power, age, diesel, electric, lpg, petrol, lesser_than_5, greater_than_5):
     # loading the model
+    with open("train.csv", "rb") as file:
+        train = pd.read_csv("train.csv")
+        scaler = StandardScaler()
+        train = scaler.fit_transform(train)
+
     with open("model.pkl", "rb") as file:
         model = pickle.load(file)
         model_inputs = [[2012.0, 120000, 19.7, engine_power, 46.3, age, 5.458819, 3.394000, 1, 0, 0, diesel, electric, lpg, petrol, lesser_than_5, greater_than_5]]
+        model_inputs = scaler.transform(model_inputs)
+
     return model.predict(model_inputs)
 
 # the code in this block is only run if the user clicks the Predict button
