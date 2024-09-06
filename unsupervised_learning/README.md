@@ -10,8 +10,5 @@ The task of an unsupervised learning algorithm is not to make a prediction, but 
 # The Basic ML Setup
 ```mermaid
   graph TD;
-      A-->B;
-      A-->C;
-      B-->D;
-      C-->D;
+      Features --> Model --> Target;
 ```
