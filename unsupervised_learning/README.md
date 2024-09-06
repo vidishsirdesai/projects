@@ -4,6 +4,14 @@ Unsupervised learning models are applied on data that only has features and no l
 | age | income | total_purchase_value | number of orders |
 | :-: | :----: | :------------------: | :--------------: |
 
+
 The task of an unsupervised learning algorithm is not to make a prediction, but to find a relationship or similarity between rows or a cluster of rows.
 
 # The Basic ML Setup
+```mermaid
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+```
