@@ -27,8 +27,17 @@ The is how supervised learning models work. But consider the case where target v
 Unsupervised ML models are used to find these target variables.
 
 # Toy Data
-Consider the following toy data,
+Consider the following toy data from an online market place,
 
 | serial_number |   id   | n_clicks | n_visits | amount_spent | amount_discount | days_since_registration |
 | :-----------: | :----: | :------: | :------: | :----------: | :-------------: | :---------------------: |
 | 0 | 1476 | 130 | 65 | 213.905831 | 31.600751 |  |
+| 1 | 1535 | 543 | 46 | 639.223004 | 5.689175 |  |
+| 2 | 1807 | 520 | 102 | 1157.402763 | 844.321606 |  |
+| 3 | 1727 | 702 | 83 | 1195.90363 | 850.041757 |  |
+| 4 | 1324 | 221 | 84 | 180.754616 | 64.283300 |  |
+
+### How can this data benefit the market place?
+The market place can use this to find different clusters of customers (i.e., customer segmentation). And this is what unsupervised ML models are used for. Meaning, unsupervised ML models are used to cluster the similar data points together and assign labels to them.
+
+# What is Clustering?
