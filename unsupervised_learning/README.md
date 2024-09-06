@@ -13,5 +13,5 @@ The task of an unsupervised learning algorithm is not to make a prediction, but 
 The features are fed as input to an algorithm, the algorithm learns the equation that maps the inputs to the output. Once the algorithm learns the mapping equation, the model is said to be trained.
 ```mermaid
   graph TD;
-      Features, Target --> Algorithm --> Model;
+      Features and Target --> Algorithm --> Model;
 ```
