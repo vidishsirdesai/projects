@@ -109,3 +109,21 @@ When is the cluster said to be good? The minimum value of intercluster should be
 2. Document labelling is another area where clusters can be applied.
     - Say there are 100s and 1000s of documents, and you want to find which document is about what (political, geography, legal, etc).
     - A vector of a document(s) can be made, and this can be fed to the clustering algorithm.
+
+# Data Size and Curse of Dimensionality in Clustering Algorithms
+
+### Data size and clustering
+- More data points: Generally, having more data points can lead to more robust and informative clustering results. With more data, With more data points, the clusters are likely to be more representatitve of the underlying structure in the data.
+- Feature regulation: However, the number of features (dimensions) also plays a crucial role. Too many features can lead to "curse of dimensionality", making distances between data points less meaningful and clustering algorithms less effective. It is important to choose a relevant subset of features that best capture the inherent groupings in your data.
+
+### Curse of dimensionality
+- Distance based algorithms: Distance-based clustering algorithms like K-means can struggle in high-dimensional data. In high dimensions, the distances between all data points tend to become very similar, making it difficult to distinguish between clusters effectively. Imagine data points scattered across a vast, feature-rich landscape; distances become less informative about their true relationships.
+- Impact on clustering: The curse of dimensionality can lead to several issues,
+    - Meaningless Distances: Distances between points become less informative about their similarity in high dimensions.
+    - "Spread-Out" Data: Data points tend to be far apart from each other in high dimensions, making it harder to identify cohesive clusters.
+    - Increased Computational Cost: Distance calculations become more expensive as the dimensionality increases.
+
+### Alternative approaches for high dimensions
+- Dimensionality Reduction Techniques: Techniques like Principal Component Analysis (PCA) can help reduce the number of features while retaining the most important information for clustering. This can alleviate the curse of dimensionality and improve the performance of distance-based algorithms.
+- Density-Based Clustering: Algorithms like DBSCAN (Density-Based Spatial Clustering of Applications with Noise) are less susceptible to the curse of dimensionality. They focus on identifying areas with high data density, which can be more effective for clustering in high-dimensional data.
+
