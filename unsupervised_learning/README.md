@@ -126,4 +126,3 @@ When is the cluster said to be good? The minimum value of intercluster should be
 ### Alternative approaches for high dimensions
 - Dimensionality Reduction Techniques: Techniques like Principal Component Analysis (PCA) can help reduce the number of features while retaining the most important information for clustering. This can alleviate the curse of dimensionality and improve the performance of distance-based algorithms.
 - Density-Based Clustering: Algorithms like DBSCAN (Density-Based Spatial Clustering of Applications with Noise) are less susceptible to the curse of dimensionality. They focus on identifying areas with high data density, which can be more effective for clustering in high-dimensional data.
-
