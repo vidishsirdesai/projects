@@ -30,6 +30,7 @@ def process_file(file_name_new):
 
 process_file(file_name)
 
+
 def replace_text(file_name):
     
     with open(f"{file_name}_updated.txt", "r") as file:
