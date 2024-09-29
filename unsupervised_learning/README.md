@@ -1,5 +1,5 @@
 # Introduction
-Unsupervised learning models are applied on data that only has features and no label/ target variable. For example,
+Unsupervised learning models are applied on datasets that only has features and no label/ target variable. For example,
 
 | age | income | total_purchase_value | number of orders |
 | :-: | :----: | :------------------: | :--------------: |
