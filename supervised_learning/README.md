@@ -27,7 +27,7 @@ The target variable is if a customer will default on the loan or not.
     - Multiple classes: The classification is called multi class classification.
 
 
-# The Basic ML Setup
+# ML Pipeline
 
 ### Model Training
 The features are fed as input to an algorithm, the algorithm learns the equation that maps the inputs to the output. Once the algorithm learns the mapping equation, the model is said to be trained.
