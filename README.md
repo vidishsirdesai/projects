@@ -23,9 +23,7 @@ https://agmarknet.gov.in
 # Approach
 
 
-# Findings
-
-## Bangalore (Market) - Local (Variety) - Minimum Price
+# Bangalore (Market) - Local (Variety) - Minimum Price
 
 ### Time Series
 ![alt text](artifacts/bangalore_local_time_series.png)
