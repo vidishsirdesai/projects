@@ -54,12 +54,12 @@ This suggests that the seasonality = 11. Meaning, the seasonality repeats after 
 
 This confirms the seasonality value found using ACF.
 
-### Model Training
+### Model - Triple Exponential Smoothing
 
 #### Hyperparameters
-- smoothing_level = (1/ 22)
-- smoothing_trend = 0.07
-- smoothing_seasonal = 0.90
+- `smoothing_level = (1/ 22)`
+- `smoothing_trend = 0.07`
+- `smoothing_seasonal = 0.90`
 
 #### Actual v. learnt trend
 ![alt text](artifacts/bangalore_local_model_training.png)
@@ -72,7 +72,8 @@ This confirms the seasonality value found using ACF.
 - RMSE (Root Mean Square Error): 331.316
 - MAPE (Mean Absolute Percentage Error): 0.145
 
-### Predictions
+
+# Predictions
 | date | predicted_purchase_price |
 | :-: | :-: |
 | 2024-08-01 | 2891.016702 |
