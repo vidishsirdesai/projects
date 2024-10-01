@@ -67,8 +67,7 @@ This confirms the seasonality value found using ACF.
 - RMSE (Root Mean Square Error): 331.316
 - MAPE (Mean Absolute Percentage Error): 0.145
 
-
-# Predictions
+### Predictions
 | date | predicted_purchase_price |
 | :-: | :-: |
 | 2024-08-01 | 2891.016702 |
