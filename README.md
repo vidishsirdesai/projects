@@ -1,5 +1,5 @@
 # Requirement
-Given the potential markets where the Onion produce will be sold to the vendors in, forceast the minimum and maximum purchase price.
+Given Bangalore as the potential markets where the Onion produce will be sold to the vendors in, forceast the minimum and maximum purchase price. Consider historical data of atleast 10 years to forecast for the next 1 year.
 
 
 # Data Source and Data Dictionary
@@ -20,14 +20,13 @@ https://agmarknet.gov.in
 - Reported Date: Date on which the remaining data points were reported on.
 
 
-# Potential Markets and Unique Onion Varieties
-- Bangalore
-- Hubli
-- Hyderabad
-- Solapur
+# Approach
 
 
-# Bangalore (Market) - Local (Variety)
+# Findings
+
+## Bangalore (Market) - Local (Variety) - Minimum Price
+
 ### Time Series
 ![alt text](artifacts/bangalore_local_time_series.png)
 
