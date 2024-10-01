@@ -22,17 +22,12 @@ https://agmarknet.gov.in
 
 # Potential Markets and Unique Onion Varieties
 - Bangalore
-    1. Bangalore Small
-    2. Bellary Red
-    3. Local
-    4. Onion
-    5. Puna
 - Hubli
 - Hyderabad
 - Solapur
 
 
-# Bangalore - Local
+# Bangalore (Market) - Local (Variety)
 ### Time Series
 ![alt text](artifacts/bangalore_local_time_series.png)
 
