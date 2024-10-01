@@ -1,5 +1,5 @@
 # Requirement
-Given Bangalore as the potential markets where the Onion produce will be sold to the vendors in, forceast the minimum and maximum purchase price. Consider historical data of atleast 10 years to forecast for the next 1 year.
+Given Bangalore as the potential market where the Onion produce will be sold to the vendors in, forceast the minimum and maximum purchase price. Consider historical data of atleast 10 years to forecast for the next 1 year.
 
 
 # Data Source and Data Dictionary
