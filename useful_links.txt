@@ -1,7 +1,0 @@
-1. FAQs: https://docs.google.com/document/d/12loGBkX4jYks-90zWPf6EGLPybWGRqSOngl5MWPdljU/edit
-2. Insurance Cost Prediction: https://docs.google.com/document/d/1cupohesUExszZzf3rWA7S_CDQC-pXmL74-OEf9bW3PE/edit#heading=h.pshjzdti30i0
-3. Network Anomaly Detection: https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7MrfVBTWWmnZ4L9zgYsULVCdOo5g/edit#heading=h.4boa113gdgc8
-4. Product Sales Forecasting: https://docs.google.com/document/d/123YSZ4YpvbkSPtYQjvKxoSA1rfshdzgDOK9ovnfh_xQ/edit#heading=h.39axgz21xrbo
-5. Donor Choose: https://docs.google.com/document/d/1kWixFrwi284RHpssWfSRW5FD3yVbJUZPSpYG42fqVgM/edit#heading=h.y2cpi9185qwe
-6. Clustering Countries for Strategic Aid Allocation: https://docs.google.com/document/d/1k2MfgrpGvlAmiCN_w1_PteDxDTBj70K4k4dR-TYhRQc/edit#heading=h.yxte4mplo3a
-7. Standard Structure of EDA: https://docs.google.com/document/d/1Kqqvp_PbU0mJSCoLyZRdAjPJilXiika8/edit
