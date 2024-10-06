@@ -43,5 +43,3 @@
 - "dsthostsrvserrorrate": Represents the percentage connections that have activated the flag s0, s1, s2, or s3, among the connections aggregated in "dsthostsrvcount".
 - "dsthostrerrorrate": Represents the percentage connections that have activated the flag REJ, among the connections aggregated in "dsthostcount".
 - "dsthostsrvrerrorrate": Represents the percentage connections that have activated the flag REJ, among the connections aggregated in "dsthostsrvcount".
-- "attack": Represents the various types of attacks.
-- "lastflag": 
