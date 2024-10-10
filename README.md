@@ -13,6 +13,7 @@ The suggestion is to take a Machine Learning based approach towards addressing t
 
 https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7MrfVBTWWmnZ4L9zgYsULVCdOo5g/edit
 
+
 # Data Dictionary
 - `duration`: Represents the length of time a specific network connection was active for.
 - `protocoltype`: Represents the specific commumication protocol used in each connection.
