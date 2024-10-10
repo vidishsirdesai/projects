@@ -67,4 +67,3 @@ Link:
 
 ### Steps to reproduce the Tableau dashboard
 
-Link: [text](tableau/steps.txt)
