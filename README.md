@@ -64,6 +64,3 @@ https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7MrfVBTWWmnZ4L9zgYsULVCdOo5g/
 # Tableau Dashboard
 
 Link: 
-
-### Steps to reproduce the Tableau dashboard
-
