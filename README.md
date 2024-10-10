@@ -45,6 +45,10 @@
 - `dsthostsrvrerrorrate`: Represents the percentage connections that have activated the flag REJ, among the connections aggregated in `dsthostsrvcount`.
 
 
+# Initial Data Cleaning and EDA
+
+
+
 # Tableau Dashboard
 
 Link: 
