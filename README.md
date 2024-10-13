@@ -123,12 +123,12 @@ memory usage: 41.3+ MB
 There are no missing values in the dataset.
 
 ### Unique elements in each column
-The output of `df[<column_name>].nunique()` and `df[<column_name>].unique()` is stored in: [link](artifacts/unique_elements.txt)
+The output of `df[<column_name>].nunique()` and `df[<column_name>].unique()` is stored in: [link](artifacts/unique_elements.txt).
 
 ### Value counts of each unique element in each column
-The output of `df[<column_name>].value_counts()` is stored in: [link](artifacts/values_counts.txt)
+The output of `df[<column_name>].value_counts()` is stored in: [link](artifacts/values_counts.txt).
 
-The output of `df[<column_name>].value_counts(normalize = True)` is stored in: [link](artifacts/value_counts_normalized.txt)
+The output of `df[<column_name>].value_counts(normalize = True)` is stored in: [link](artifacts/value_counts_normalized.txt).
 
 # Tableau Dashboard
 
