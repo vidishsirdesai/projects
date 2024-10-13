@@ -139,7 +139,9 @@ The column `suattempted`, according to the data dictionary (https://github.com/v
 
 Assuming that the presence of 2 in in the column is a typo, all the values where there was 2 present can be changed to 1.
 
-The cleaned dataset is stored in: [Dataset - Cleaned](datasets/network_anomaly_dataset_cleaned.csv)
+The cleaned dataset is stored in: [Dataset - Cleaned](datasets/network_anomaly_dataset_cleaned.csv).
+
+The above cleaned dataset is used to build the Tableau Dashboard.
 
 # Tableau Dashboard
 
