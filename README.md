@@ -128,7 +128,7 @@ The output of `df[<column_name>].nunique()` and `df[<column_name>].unique()` is 
 ### Value counts of each unique element in each column
 The output of `df[<column_name>].value_counts()` is stored in: [text](artifacts/values_counts.txt)
 
-The percentage share of value counts of each elements in each column is stored in: [text](artifacts/value_counts_normalized.txt)
+The output of `df[<column_name>].value_counts(normalize = True)` is stored in: [text](artifacts/value_counts_normalized.txt)
 
 # Tableau Dashboard
 
