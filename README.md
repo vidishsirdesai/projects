@@ -11,9 +11,8 @@ These are the fundamental reasons why there is a need for a system that is both 
 ### Approach
 The suggestion is to take a Machine Learning based approach towards addressing the problem by building an ML model that can be fed with some features, and it classifies the connection as either normal or attack. This type of task in ML is called as classification task, more specifically, a binary classification task.
 
-### Dataset
-- [Google Docs Link](https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7MrfVBTWWmnZ4L9zgYsULVCdOo5g/edit)
-- [Dataset - Unaltered](datasets/network_anomaly_dataset.csv)
+### Additional project info and dataset
+Google Docs Link: [link](https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7MrfVBTWWmnZ4L9zgYsULVCdOo5g/edit)
 
 
 # Data Dictionary
@@ -62,7 +61,9 @@ The suggestion is to take a Machine Learning based approach towards addressing t
 
 # Initial EDA and Data Cleaning
 
-Jupyter notebook for used for EDA and data cleaning: [EDA and Data Cleaning](notebooks/data_cleaning.ipynb).
+Jupyter notebook for used for EDA and data cleaning: [link](notebooks/data_cleaning.ipynb).
+
+Dataset downloaded from Google Docs link: [LINK](datasets/network_anomaly_dataset.csv)
 
 ### Shape of the dataset
 ```
@@ -139,7 +140,7 @@ The column `suattempted`, according to the data dictionary (https://github.com/v
 
 Assuming that the presence of 2 in in the column is a typo, all the values where there was 2 present can be changed to 1.
 
-The cleaned dataset is stored in: [Dataset - Cleaned](datasets/network_anomaly_dataset_cleaned.csv).
+The cleaned dataset is stored in: [link](datasets/network_anomaly_dataset_cleaned.csv).
 
 The above cleaned dataset is used to build the Tableau Dashboard.
 
