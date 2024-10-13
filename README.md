@@ -58,7 +58,66 @@ https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7MrfVBTWWmnZ4L9zgYsULVCdOo5g/
 - `dsthostsrvrerrorrate`: Represents the percentage connections that have activated the flag REJ, among the connections aggregated in `dsthostsrvcount`.
 
 
-# Initial Data Cleaning and EDA
+# Initial EDA and Data Cleaning
+
+### Shape of the dataset
+
+(125973, 43)
+
+### Data types of columns
+
+```
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 125973 entries, 0 to 125972
+Data columns (total 43 columns):
+ #   Column                  Non-Null Count   Dtype  
+---  ------                  --------------   -----  
+ 0   duration                125973 non-null  int64  
+ 1   protocoltype            125973 non-null  object 
+ 2   service                 125973 non-null  object 
+ 3   flag                    125973 non-null  object 
+ 4   srcbytes                125973 non-null  int64  
+ 5   dstbytes                125973 non-null  int64  
+ 6   land                    125973 non-null  int64  
+ 7   wrongfragment           125973 non-null  int64  
+ 8   urgent                  125973 non-null  int64  
+ 9   hot                     125973 non-null  int64  
+ 10  numfailedlogins         125973 non-null  int64  
+ 11  loggedin                125973 non-null  int64  
+ 12  numcompromised          125973 non-null  int64  
+ 13  rootshell               125973 non-null  int64  
+ 14  suattempted             125973 non-null  int64  
+ 15  numroot                 125973 non-null  int64  
+ 16  numfilecreations        125973 non-null  int64  
+ 17  numshells               125973 non-null  int64  
+ 18  numaccessfiles          125973 non-null  int64  
+ 19  numoutboundcmds         125973 non-null  int64  
+ 20  ishostlogin             125973 non-null  int64  
+ 21  isguestlogin            125973 non-null  int64  
+ 22  count                   125973 non-null  int64  
+ 23  srvcount                125973 non-null  int64  
+ 24  serrorrate              125973 non-null  float64
+ 25  srvserrorrate           125973 non-null  float64
+ 26  rerrorrate              125973 non-null  float64
+ 27  srvrerrorrate           125973 non-null  float64
+ 28  samesrvrate             125973 non-null  float64
+ 29  diffsrvrate             125973 non-null  float64
+ 30  srvdiffhostrate         125973 non-null  float64
+ 31  dsthostcount            125973 non-null  int64  
+ 32  dsthostsrvcount         125973 non-null  int64  
+ 33  dsthostsamesrvrate      125973 non-null  float64
+ 34  dsthostdiffsrvrate      125973 non-null  float64
+ 35  dsthostsamesrcportrate  125973 non-null  float64
+ 36  dsthostsrvdiffhostrate  125973 non-null  float64
+ 37  dsthostserrorrate       125973 non-null  float64
+ 38  dsthostsrvserrorrate    125973 non-null  float64
+ 39  dsthostrerrorrate       125973 non-null  float64
+ 40  dsthostsrvrerrorrate    125973 non-null  float64
+ 41  attack                  125973 non-null  object 
+ 42  lastflag                125973 non-null  int64  
+dtypes: float64(15), int64(24), object(4)
+memory usage: 41.3+ MB
+```
 
 
 # Tableau Dashboard
