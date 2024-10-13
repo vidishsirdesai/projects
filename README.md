@@ -63,7 +63,7 @@ Google Docs Link: [link](https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7Mrf
 
 Jupyter notebook for used for EDA and data cleaning: [link](notebooks/data_cleaning.ipynb).
 
-Dataset downloaded from Google Docs link: [link](datasets/network_anomaly_dataset.csv).
+Dataset: [link](datasets/network_anomaly_dataset.csv).
 
 ### Shape of the dataset
 ```
