@@ -60,6 +60,8 @@ https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7MrfVBTWWmnZ4L9zgYsULVCdOo5g/
 
 # Initial EDA and Data Cleaning
 
+Jupyter notebook for used for EDA and data cleaning: [EDA and Data Cleaning](notebooks/data_cleaning.ipynb).
+
 ### Shape of the dataset
 ```
 (125973, 43)
