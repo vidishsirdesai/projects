@@ -61,11 +61,11 @@ https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7MrfVBTWWmnZ4L9zgYsULVCdOo5g/
 # Initial EDA and Data Cleaning
 
 ### Shape of the dataset
-
+```
 (125973, 43)
+```
 
 ### Data types of columns
-
 ```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 125973 entries, 0 to 125972
@@ -119,6 +119,16 @@ dtypes: float64(15), int64(24), object(4)
 memory usage: 41.3+ MB
 ```
 
+### Missing values
+There are no missing values in the dataset.
+
+### Unique elements in each column
+The output of `df[<column_name>].nunique()` and `df[<column_name>].unique()` is stored in: [text](artifacts/unique_elements.txt)
+
+### Value counts of each unique element in each column
+The output of `df[<column_name>].value_counts()` is stored in: [text](artifacts/values_counts.txt)
+
+The percentage share of value counts of each elements in each column is stored in: [text](artifacts/value_counts_normalized.txt)
 
 # Tableau Dashboard
 
