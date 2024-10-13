@@ -12,7 +12,7 @@ These are the fundamental reasons why there is a need for a system that is both 
 The suggestion is to take a Machine Learning based approach towards addressing the problem by building an ML model that can be fed with some features, and it classifies the connection as either normal or attack. This type of task in ML is called as classification task, more specifically, a binary classification task.
 
 ### Dataset
-- https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7MrfVBTWWmnZ4L9zgYsULVCdOo5g/edit
+- [Google Docs Link](https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7MrfVBTWWmnZ4L9zgYsULVCdOo5g/edit)
 - [Dataset - Unaltered](datasets/network_anomaly_dataset.csv)
 
 
