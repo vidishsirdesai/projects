@@ -11,7 +11,9 @@ These are the fundamental reasons why there is a need for a system that is both 
 ### Approach
 The suggestion is to take a Machine Learning based approach towards addressing the problem by building an ML model that can be fed with some features, and it classifies the connection as either normal or attack. This type of task in ML is called as classification task, more specifically, a binary classification task.
 
-https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7MrfVBTWWmnZ4L9zgYsULVCdOo5g/edit
+### Dataset
+- https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7MrfVBTWWmnZ4L9zgYsULVCdOo5g/edit
+- [Dataset - Unaltered](datasets/network_anomaly_dataset.csv)
 
 
 # Data Dictionary
@@ -131,6 +133,13 @@ The output of `df[<column_name>].nunique()` and `df[<column_name>].unique()` is 
 The output of `df[<column_name>].value_counts()` is stored in: [link](artifacts/values_counts.txt).
 
 The output of `df[<column_name>].value_counts(normalize = True)` is stored in: [link](artifacts/value_counts_normalized.txt).
+
+### Data cleaning
+The column `suattempted`, according to the data dictionary (https://github.com/vidishsirdesai/network_anomaly_detection?tab=readme-ov-file#data-dictionary), is supposed to have only 2 values, i.e., 0 and 1. But, as seen in the output of cell number `9`, it has 3 values, i.e., 0, 1, and 2.
+
+Assuming that the presence of 2 in in the column is a typo, all the values where there was 2 present can be changed to 1.
+
+The cleaned dataset is stored in: [Dataset - Cleaned](datasets/network_anomaly_dataset_cleaned.csv)
 
 # Tableau Dashboard
 
