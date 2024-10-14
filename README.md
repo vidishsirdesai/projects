@@ -65,6 +65,10 @@ Google Docs Link: [link](https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7Mrf
 - `dsthostrerrorrate`: Represents the percentage connections that have activated the flag REJ, among the connections aggregated in `dsthostcount`.
 - `dsthostsrvrerrorrate`: Represents the percentage connections that have activated the flag REJ, among the connections aggregated in `dsthostsrvcount`.
 
+### Others
+- `attack`: Represents the specfic attack types
+- `lastflag`:
+
 
 # Initial EDA and Data Cleaning
 
@@ -145,7 +149,7 @@ The output of `df[<column_name>].value_counts(normalize = True)` is stored in: [
 ### Data cleaning
 The column `suattempted`, according to the data dictionary (https://github.com/vidishsirdesai/network_anomaly_detection?tab=readme-ov-file#data-dictionary), is supposed to have only 2 values, i.e., 0 and 1. But, as seen in the output of cell number `10`, it has 3 values, i.e., 0, 1, and 2.
 
-Assuming that the presence of 2 in in the column is a typo, all the values where there was 2 present can be changed to 1.
+Assuming that the presence of 2 in the column is a typo, all the rows in the column `suattempted` where there was a 2 present is changed to 1.
 
 The cleaned dataset is stored in: [link](datasets/network_anomaly_dataset_cleaned.csv).
 
