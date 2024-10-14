@@ -1,5 +1,5 @@
 # Problem Statement and Approach
-Given data with information regarding different features associated with network, the task is to recognize whether a connection is normal connection, or an attack (threat) on the network.
+Given data with information regarding different features associated with network, the task is to recognize whether a connection is normal connection, or a type of attack (threat) on the network.
 
 ### Why is there a need to develop a robust adaptive approach to detect anomalies in the network?
 The traditional methods that are commonly deployed to detect anomalies in network rely on predefined set of rules based on known attack patterns. The problem with these is that they fail at recognizing threats that previously have not been encountered. 
@@ -9,7 +9,7 @@ Cyber threats are evolving continuously, as in attackers find new ways to find b
 These are the fundamental reasons why there is a need for a system that is both adaptive and robust in detecting such threats in the network. Adaptive, because it has to continuously evolve by learning from the new data, and recognize new threats. Robust, because it has to cater to the need of threat detection in a network that is growing continuously.
 
 ### Approach
-The suggestion is to take a Machine Learning based approach towards addressing the problem by building an ML model that can be fed with some features, and it classifies the connection as either normal or attack. This type of task in ML is called as classification task, more specifically, a binary classification task.
+The suggestion is to take a Machine Learning based approach towards addressing the problem by building an ML model that can be fed with relevant features, and it classifies the connection as either normal or attack. This type of task in ML is called as classification task, more specifically, a binary classification task.
 
 ### Additional project info and dataset
 Google Docs Link: [link](https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7MrfVBTWWmnZ4L9zgYsULVCdOo5g/edit).
