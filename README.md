@@ -46,12 +46,12 @@ Google Docs Link: [link](https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7Mrf
 - `count`: Represents the number of connections to the same destination host as the current connection in the past 2 seconds.
 - `srvcount`: Represents the number of connections to the same service as the current connection in the past 2 seconds.
 - `serrorrate`: Represents the percentage of connections that have activated the flag s0, s1, s2, or s3, among the connections aggregated in `count`.
-- `srvserrorrate`: Represents the percentage of connections that have activated the flag s0, s1, s2, or s3, among the connections aggregated in `srv_count`.
+- `srvserrorrate`: Represents the percentage of connections that have activated the flag s0, s1, s2, or s3, among the connections aggregated in `srvcount`.
 - `rerrorrate`: Represents the percentage of connections that have activated the flag REJ, among the connections aggregated in `count`.
-- `srvserrorrate`: Represents the percentage connections that have activated the flag REJ, among the connections aggregated in `srv_count`.
+- `srvserrorrate`: Represents the percentage connections that have activated the flag REJ, among the connections aggregated in `srvcount`.
 - `samesrvrate`: Represents the percentage of connections that were to the same service, among the connections aggregated in `count`.
 - `diffsrvrate`: Represents the percentage of connections that were to different services, among the connections aggregated in `count`.
-- `srvdiffhostrate`: Represents the percentage of connections that were to different destination machines, among the connections aggregated in `srv_count`.
+- `srvdiffhostrate`: Represents the percentage of connections that were to different destination machines, among the connections aggregated in `srvcount`.
 
 ### Host based traffic features
 - `dsthostcount`: Represents the number of connections having the same destination host IP address.
@@ -66,8 +66,8 @@ Google Docs Link: [link](https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7Mrf
 - `dsthostsrvrerrorrate`: Represents the percentage connections that have activated the flag REJ, among the connections aggregated in `dsthostsrvcount`.
 
 ### Others
-- `attack`: Represents the specfic attack types
-- `lastflag`:
+- `attack`: Represents the specfic attack types.
+- `lastflag`: Undefined.
 
 
 # Initial EDA and Data Cleaning
