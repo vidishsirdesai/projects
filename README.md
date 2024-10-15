@@ -1,5 +1,5 @@
 # Problem Statement and Approach
-Given data with information regarding different features associated with network, the task is to recognize whether a connection is normal connection, or a type of attack (threat) on the network.
+Given data with information regarding different features associated with network, the task is to recognize whether a connection is normal connection, or a type of attack on the network.
 
 ### Why is there a need to develop a robust adaptive approach to detect anomalies in the network?
 The traditional methods that are commonly deployed to detect anomalies in network rely on predefined set of rules based on known attack patterns. The problem with these is that they fail at recognizing threats that previously have not been encountered. 
