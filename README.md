@@ -146,12 +146,34 @@ The output of `df[<column_name>].value_counts()` is stored in: [link](artifacts/
 
 The output of `df[<column_name>].value_counts(normalize = True)` is stored in: [link](artifacts/value_counts_normalized.txt).
 
-### Data cleaning
+### Cleaning `suattempted` column
 The column `suattempted`, according to the data dictionary (https://github.com/vidishsirdesai/network_anomaly_detection?tab=readme-ov-file#data-dictionary), is supposed to have only 2 values, i.e., 0 and 1. But, as seen in the output of cell number `10`, it has 3 values, i.e., 0, 1, and 2.
 
 Assuming that the presence of 2 in the column is a typo, all the rows in the column `suattempted` where there was a 2 present is changed to 1.
 
-The cleaned dataset is stored in: [link](datasets/network_anomaly_dataset_cleaned.csv).
+### Adding a new column with high level classification of attack types
+The column `attack` represents the type of attack at a much granular level. The unique elements in this column are,
+
+```
+['normal' 'neptune' 'warezclient' 'ipsweep' 'portsweep' 'teardrop' 'nmap'
+ 'satan' 'smurf' 'pod' 'back' 'guess_passwd' 'ftp_write' 'multihop'
+ 'rootkit' 'buffer_overflow' 'imap' 'warezmaster' 'phf' 'land'
+ 'loadmodule' 'spy' 'perl']
+```
+
+A high level classification of these attacks can be created, and the elements in this column can be assigned to one of the high level classes.
+
+The attacks are majorly classified as follows,
+1. Normal (normal): These attacks are considered benign and do not pose a threat.
+2. Denial of Service (DoS): These attacks aim to disrupt the normal operation of a network or system by overwhelming it with excessive traffic or malicious requests. Examples include "back", "land", "neptune", "pod", "smurf", and "teardrop".
+3. User to Root (U2R): These attacks exploit vulnerabilities in a system to gain unauthorized root-level access. Examples include "buffer_overflow", "loadmodule", "perl", and "rootkit".
+4. Remote to Local (R2L): These attacks attempt to gain unauthorized access to a system from a remote location. Examples include "ftp_write", "guess_passwd", "imap", "multihop", "phf", "spy", "warezclient", and "warezmaster".
+5. Probe: Probing attacks, which aim to gather information about a network or system. This category includes attacks like "ipsweep", "nmap", and "satan" that scan networks for vulnerabilities and gather information.
+
+Considering all of the above, a new column, namely `attack_hlc`, has been created which has the information of high level classification of the `attack` column.
+
+### New dataset
+The new dataset with all the above changes made is stored in: [link](datasets/network_anomaly_dataset_cleaned.csv).
 
 The above cleaned dataset is used to build the Tableau Dashboard.
 
