@@ -151,7 +151,7 @@ The column `suattempted`, according to the data dictionary (https://github.com/v
 
 Assuming that the presence of 2 in the column is a typo, all the rows in the column `suattempted` where there was a 2 present is changed to 1.
 
-### Adding a new column with high level classification of attack types
+### Adding a new column that represents a high level classification of attack types
 The column `attack` represents the type of attack at a much granular level. The unique elements in this column are,
 
 ```
@@ -161,7 +161,7 @@ The column `attack` represents the type of attack at a much granular level. The 
  'loadmodule' 'spy' 'perl']
 ```
 
-A high level classification of these attacks can be created, and the elements in this column can be assigned to one of the high level classes.
+A high level classification of these attacks can be created, and the elements in this column, `attack`, can be assigned to one of the high level classes.
 
 The attacks are majorly classified as follows,
 1. Normal (normal): These attacks are considered benign and do not pose a threat.
@@ -179,4 +179,3 @@ The new dataset with all the above changes made is stored in: [link](datasets/ne
 Tableau dashboard has been created using the new dataset.
 
 Link: 
-
