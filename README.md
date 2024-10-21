@@ -176,14 +176,6 @@ dtypes: float64(15), int64(24), object(5)
 memory usage: 42.3+ MB
 ```
 
-### Value counts of each unique element in each column
-Information regarding the value counts of each of the unique attributes can be found here: [link](artifacts/value_counts.txt).
-
-Additionally, the frequency of occurrence of each unique values in each column expressed as a proportion of the total count can found here: [link](artifacts/value_counts_normalized.txt).
-
-### Unique attributes and number of unique attributes in each column
-Information regarding the number of unique attributes and the unique attributes in each column can be found here: [link](artifacts/unique_attributes.txt).
-
 ### Statistical summary of continuous attributes
 ```
                            count          mean           std  min    25%     50%     75%           max
@@ -228,4 +220,10 @@ dsthostsrvrerrorrate    125973.0      0.120240  3.194594e-01  0.0   0.00    0.00
 lastflag                125973.0     19.504060  2.291503e+00  0.0  18.00   20.00   21.00  2.100000e+01
 ```
 
-### 
+### Value counts of each unique element in each column
+Information regarding the value counts of each of the unique attributes can be found here: [link](artifacts/value_counts.txt).
+
+Additionally, the frequency of occurrence of each unique values in each column expressed as a proportion of the total count can found here: [link](artifacts/value_counts_normalized.txt).
+
+### Unique attributes and number of unique attributes in each column
+Information regarding the number of unique attributes and the unique attributes in each column can be found here: [link](artifacts/unique_attributes.txt).
