@@ -175,7 +175,14 @@ Considering all of the above, a new column, namely `attack_hlc`, has been create
 ### New dataset
 The new dataset with all the above changes made is stored in: [link](datasets/network_anomaly_dataset_cleaned.csv).
 
+
 # Analysis of Factors Associated with Intrusions in a Network using Tableau
 Tableau Viz: 
 
 Dataset used: (goto the link, [link](datasets/network_anomaly_dataset_cleaned.csv)).
+
+
+# EDA
+Jupyter notebook: 
+
+Dataset used: [link](datasets/network_anomaly_dataset_cleaned.csv).
