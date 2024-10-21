@@ -175,8 +175,7 @@ Considering all of the above, a new column, namely `attack_hlc`, has been create
 ### New dataset
 The new dataset with all the above changes made is stored in: [link](datasets/network_anomaly_dataset_cleaned.csv).
 
-# Tableau Dashboard
-Tableau dashboard has been created using the new dataset.
+# Analysis of Factors Associated with Intrusions in a Network using Tableau
+Tableau Viz: 
 
-Link: 
-
+Dataset used: (goto the link, [link](datasets/network_anomaly_dataset_cleaned.csv)).
