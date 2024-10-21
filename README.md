@@ -70,11 +70,11 @@ Google Docs Link: [link](https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7Mrf
 - `lastflag`: Undefined.
 
 
-# Initial EDA and Data Cleaning
+# Unique Values, Value Counts and Data Cleaning
 
-Jupyter notebook for used for EDA and data cleaning: [link](notebooks/data_cleaning.ipynb).
+Jupyter notebook: [link](notebooks/data_cleaning.ipynb).
 
-Dataset: [link](datasets/network_anomaly_dataset.csv).
+Dataset used: [link](datasets/network_anomaly_dataset.csv).
 
 ### Shape of the dataset
 ```
@@ -138,16 +138,16 @@ memory usage: 41.3+ MB
 ### Missing values
 There are no missing values in the dataset.
 
-### Unique elements in each column
-The output of `df[<column_name>].nunique()` and `df[<column_name>].unique()` is stored in: [link](artifacts/unique_elements.txt).
+### Unique elements and number of unique elements in each column
+Information regarding the number of unique elements and the unique elements in each column can be found here: [link](artifacts/unique_elements.txt).
 
 ### Value counts of each unique element in each column
-The output of `df[<column_name>].value_counts()` is stored in: [link](artifacts/values_counts.txt).
+Information regarding the value counts of each of the unique elements can be found here: [link](artifacts/value_counts.txt).
 
-The output of `df[<column_name>].value_counts(normalize = True)` is stored in: [link](artifacts/value_counts_normalized.txt).
+Additionally, the frequency of occurrence of each unique values in each column expressed as a proportion of the total count can found here: [link](artifacts/value_counts_normalized.txt).
 
 ### Cleaning `suattempted` column
-The column `suattempted`, according to the data dictionary (https://github.com/vidishsirdesai/network_anomaly_detection?tab=readme-ov-file#data-dictionary), is supposed to have only 2 values, i.e., 0 and 1. But, as seen in the output of cell number `10`, it has 3 values, i.e., 0, 1, and 2.
+The column `suattempted`, according to the data dictionary (https://github.com/vidishsirdesai/network_anomaly_detection?tab=readme-ov-file#data-dictionary), is supposed to have only 2 values, i.e., 0 and 1. But, as seen in the output of cell number `14` in the jupyter notebook ([link](notebooks/data_cleaning.ipynb)), it has 3 values, i.e., 0, 1, and 2.
 
 Assuming that the presence of 2 in the column is a typo, all the rows in the column `suattempted` where there was a 2 present is changed to 1.
 
@@ -161,7 +161,7 @@ The column `attack` represents the type of attack at a much granular level. The 
  'loadmodule' 'spy' 'perl']
 ```
 
-A high level classification of these attacks can be created, and the elements in this column, `attack`, can be assigned to one of the high level classes.
+A high level classification of these attacks can be created, and the elements in the column, `attack`, can be assigned to one of the high level classes.
 
 The attacks are majorly classified as follows,
 1. Normal (normal): These attacks are considered benign and do not pose a threat.
@@ -170,7 +170,7 @@ The attacks are majorly classified as follows,
 4. Remote to Local (R2L): These attacks attempt to gain unauthorized access to a system from a remote location. Examples include "ftp_write", "guess_passwd", "imap", "multihop", "phf", "spy", "warezclient", and "warezmaster".
 5. Probe: Probing attacks, which aim to gather information about a network or system. This category includes attacks like "ipsweep", "nmap", and "satan" that scan networks for vulnerabilities and gather information.
 
-Considering all of the above, a new column, namely `attack_hlc`, has been created which has the information of high level classification of the `attack` column.
+Considering all of the above, a new column, namely `attack_hlc`, has been created. Wherein each of the element in the `attack` column has been assigned to its respective high level class.
 
 ### New dataset
 The new dataset with all the above changes made is stored in: [link](datasets/network_anomaly_dataset_cleaned.csv).
@@ -179,3 +179,4 @@ The new dataset with all the above changes made is stored in: [link](datasets/ne
 Tableau dashboard has been created using the new dataset.
 
 Link: 
+
