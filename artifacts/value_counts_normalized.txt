@@ -202,8 +202,7 @@ Name: proportion, dtype: float64
 Column Name: suattempted
 suattempted
 0    99.936494
-2     0.046835
-1     0.016670
+1     0.063506
 Name: proportion, dtype: float64
 --------------------
 
@@ -739,5 +738,16 @@ lastflag
 3      0.051598
 1      0.049217
 2      0.042866
+Name: proportion, dtype: float64
+--------------------
+
+--------------------
+Column Name: attackhlc
+attackhlc
+normal    53.458281
+dos       36.457812
+probe      9.252776
+r2l        0.789852
+u2r        0.041279
 Name: proportion, dtype: float64
 --------------------

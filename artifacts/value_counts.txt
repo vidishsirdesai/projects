@@ -202,8 +202,7 @@ Name: count, dtype: int64
 Column Name: suattempted
 suattempted
 0    125893
-2        59
-1        21
+1        80
 Name: count, dtype: int64
 --------------------
 
@@ -739,5 +738,16 @@ lastflag
 3        65
 1        62
 2        54
+Name: count, dtype: int64
+--------------------
+
+--------------------
+Column Name: attackhlc
+attackhlc
+normal    67343
+dos       45927
+probe     11656
+r2l         995
+u2r          52
 Name: count, dtype: int64
 --------------------
