@@ -183,7 +183,7 @@ Dataset used: [link](datasets/network_anomaly_dataset_cleaned.csv).
 
 
 # EDA
-Jupyter notebook: 
+Jupyter notebook: [link](notebooks/eda.ipynb).
 
 Dataset used: [link](datasets/network_anomaly_dataset_cleaned.csv).
 
