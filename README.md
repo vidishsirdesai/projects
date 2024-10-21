@@ -179,7 +179,7 @@ The new dataset with all the above changes made is stored in: [link](datasets/ne
 # Analysis of Factors Associated with Intrusions in a Network using Tableau
 Tableau Viz: 
 
-Dataset used: (goto the link, [link](datasets/network_anomaly_dataset_cleaned.csv)).
+Dataset used: [link](datasets/network_anomaly_dataset_cleaned.csv).
 
 
 # EDA
