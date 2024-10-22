@@ -1,0 +1,329 @@
+                        duration  srcbytes  dstbytes  wrongfragment    urgent  \
+duration                1.000000  0.070737  0.034878      -0.009866  0.003830   
+srcbytes                0.070737  1.000000  0.000204      -0.000693 -0.000059   
+dstbytes                0.034878  0.000204  1.000000      -0.000440  0.000248   
+wrongfragment          -0.009866 -0.000693 -0.000440       1.000000 -0.000692   
+urgent                  0.003830 -0.000059  0.000248      -0.000692  1.000000   
+hot                     0.000705  0.000295 -0.000344      -0.008508  0.000293   
+numfailedlogins         0.009528 -0.000208  0.000504      -0.002418  0.097507   
+numcompromised          0.042679 -0.000086  0.001233      -0.001044  0.033329   
+numroot                 0.045519 -0.000093  0.001229      -0.001108  0.032470   
+numfilecreations        0.099116 -0.000179  0.000089      -0.002343  0.024918   
+numshells              -0.001593 -0.000134 -0.000083      -0.001665 -0.000144   
+numaccessfiles          0.070420 -0.000309  0.000339      -0.003689  0.010803   
+count                  -0.079042 -0.005152 -0.003543      -0.020819 -0.005615   
+srvcount               -0.039470 -0.002792 -0.001754       0.024457 -0.002848   
+serrorrate             -0.069873 -0.003228 -0.003059      -0.043316 -0.004929   
+srvserrorrate          -0.069510 -0.003438 -0.003038      -0.056549 -0.004889   
+rerrorrate              0.200682  0.013782  0.011176      -0.033052 -0.002896   
+srvrerrorrate           0.199961  0.013975  0.011052      -0.033507 -0.002897   
+samesrvrate             0.074681  0.003899  0.003788       0.054759  0.005967   
+diffsrvrate            -0.013738 -0.000432 -0.001703      -0.026638 -0.002705   
+srvdiffhostrate        -0.040158 -0.002608 -0.001674      -0.026247 -0.002898   
+dsthostcount            0.050570 -0.005791  0.002528       0.041056 -0.006941   
+dsthostsrvcount        -0.109776 -0.006861 -0.004224      -0.045240 -0.007897   
+dsthostsamesrvrate     -0.116005 -0.006572 -0.004424      -0.048733 -0.004489   
+dsthostdiffsrvrate      0.254195  0.000900  0.011031       0.059797  0.006840   
+dsthostsamesrcportrate  0.228737  0.000431  0.011747       0.037177  0.002741   
+dsthostsrvdiffhostrate -0.026669 -0.001655 -0.001281      -0.016252  0.005176   
+dsthostserrorrate      -0.064948 -0.004503 -0.003024      -0.051917 -0.004749   
+dsthostsrvserrorrate   -0.064361 -0.003397 -0.002944      -0.055917 -0.004834   
+dsthostrerrorrate       0.173815 -0.001468  0.011729       0.028890 -0.002999   
+dsthostsrvrerrorrate    0.199024  0.012449  0.011223      -0.033682 -0.002912   
+
+                             hot  numfailedlogins  numcompromised   numroot  \
+duration                0.000705         0.009528        0.042679  0.045519   
+srcbytes                0.000295        -0.000208       -0.000086 -0.000093   
+dstbytes               -0.000344         0.000504        0.001233  0.001229   
+wrongfragment          -0.008508        -0.002418       -0.001044 -0.001108   
+urgent                  0.000293         0.097507        0.033329  0.032470   
+hot                     1.000000         0.003715        0.002014  0.001510   
+numfailedlogins         0.003715         1.000000        0.019085  0.018112   
+numcompromised          0.002014         0.019085        1.000000  0.998833   
+numroot                 0.001510         0.018112        0.998833  1.000000   
+numfilecreations        0.028716         0.021774        0.015976  0.016397   
+numshells               0.004723        -0.000503        0.001338  0.002028   
+numaccessfiles         -0.001987         0.000652        0.299631  0.327792   
+count                  -0.068697        -0.019544       -0.008434 -0.008970   
+srvcount               -0.034575        -0.009880       -0.004279 -0.004553   
+serrorrate             -0.059083        -0.015254       -0.005297 -0.005714   
+srvserrorrate          -0.058713        -0.015899       -0.005278 -0.005675   
+rerrorrate             -0.032382         0.022193       -0.003682 -0.003987   
+srvrerrorrate          -0.031436         0.021870       -0.003642 -0.004001   
+samesrvrate             0.069365         0.019477        0.008944  0.009471   
+diffsrvrate            -0.016212        -0.004438       -0.004035 -0.004074   
+srvdiffhostrate        -0.026781        -0.010122       -0.004227 -0.004502   
+dsthostcount           -0.012249        -0.025476       -0.010928 -0.011546   
+dsthostsrvcount        -0.051864        -0.023053       -0.010321 -0.011126   
+dsthostsamesrvrate     -0.036293        -0.001576       -0.004995 -0.005918   
+dsthostdiffsrvrate     -0.012293        -0.001945        0.002981  0.003342   
+dsthostsamesrcportrate -0.034536        -0.005526       -0.002045 -0.001646   
+dsthostsrvdiffhostrate -0.024715         0.003302        0.004252  0.004496   
+dsthostserrorrate      -0.058222        -0.011648       -0.004377 -0.004803   
+dsthostsrvserrorrate   -0.058214        -0.012299       -0.004898 -0.005282   
+dsthostrerrorrate      -0.030555         0.018660       -0.003647 -0.003827   
+dsthostsrvrerrorrate   -0.031670         0.017359       -0.003219 -0.003497   
+
+                        numfilecreations  numshells  numaccessfiles     count  \
+duration                        0.099116  -0.001593        0.070420 -0.079042   
+srcbytes                       -0.000179  -0.000134       -0.000309 -0.005152   
+dstbytes                        0.000089  -0.000083        0.000339 -0.003543   
+wrongfragment                  -0.002343  -0.001665       -0.003689 -0.020819   
+urgent                          0.024918  -0.000144        0.010803 -0.005615   
+hot                             0.028716   0.004723       -0.001987 -0.068697   
+numfailedlogins                 0.021774  -0.000503        0.000652 -0.019544   
+numcompromised                  0.015976   0.001338        0.299631 -0.008434   
+numroot                         0.016397   0.002028        0.327792 -0.008970   
+numfilecreations                1.000000   0.038708        0.103414 -0.018701   
+numshells                       0.038708   1.000000        0.017241 -0.012538   
+numaccessfiles                  0.103414   0.017241        1.000000 -0.029346   
+count                          -0.018701  -0.012538       -0.029346  1.000000   
+srvcount                       -0.009520  -0.005505       -0.014203  0.471079   
+serrorrate                     -0.012078  -0.011546       -0.024119  0.457556   
+srvserrorrate                  -0.012494  -0.011704       -0.024228  0.452092   
+rerrorrate                     -0.007036  -0.006967       -0.014467  0.161056   
+srvrerrorrate                  -0.007116  -0.006968       -0.012396  0.162992   
+samesrvrate                     0.019046   0.011276        0.030825 -0.628024   
+diffsrvrate                    -0.007869  -0.001903       -0.012080  0.222635   
+srvdiffhostrate                -0.007365  -0.006309        0.007536 -0.263060   
+dsthostcount                   -0.001344  -0.009945       -0.007395  0.468092   
+dsthostsrvcount                -0.019311  -0.011903        0.002383 -0.395971   
+dsthostsamesrvrate             -0.017325  -0.006134        0.006925 -0.473957   
+dsthostdiffsrvrate              0.006184  -0.003170        0.000489  0.167454   
+dsthostsamesrcportrate         -0.006837   0.013162       -0.011847 -0.138230   
+dsthostsrvdiffhostrate          0.000974  -0.001978        0.000048 -0.205593   
+dsthostserrorrate               0.003405  -0.010896       -0.017951  0.459047   
+dsthostsrvserrorrate           -0.000247  -0.009115       -0.019737  0.460809   
+dsthostrerrorrate              -0.005235  -0.004552       -0.013227  0.178325   
+dsthostsrvrerrorrate           -0.004176  -0.006780       -0.012854  0.167708   
+
+                        srvcount  serrorrate  srvserrorrate  rerrorrate  \
+duration               -0.039470   -0.069873      -0.069510    0.200682   
+srcbytes               -0.002792   -0.003228      -0.003438    0.013782   
+dstbytes               -0.001754   -0.003059      -0.003038    0.011176   
+wrongfragment           0.024457   -0.043316      -0.056549   -0.033052   
+urgent                 -0.002848   -0.004929      -0.004889   -0.002896   
+hot                    -0.034575   -0.059083      -0.058713   -0.032382   
+numfailedlogins        -0.009880   -0.015254      -0.015899    0.022193   
+numcompromised         -0.004279   -0.005297      -0.005278   -0.003682   
+numroot                -0.004553   -0.005714      -0.005675   -0.003987   
+numfilecreations       -0.009520   -0.012078      -0.012494   -0.007036   
+numshells              -0.005505   -0.011546      -0.011704   -0.006967   
+numaccessfiles         -0.014203   -0.024119      -0.024228   -0.014467   
+count                   0.471079    0.457556       0.452092    0.161056   
+srvcount                1.000000   -0.148260      -0.147406   -0.113393   
+serrorrate             -0.148260    1.000000       0.993289   -0.227536   
+srvserrorrate          -0.147406    0.993289       1.000000   -0.227814   
+rerrorrate             -0.113393   -0.227536      -0.227814    1.000000   
+srvrerrorrate          -0.113661   -0.227171      -0.234507    0.989008   
+samesrvrate             0.190574   -0.761888      -0.756784   -0.209826   
+diffsrvrate            -0.108495    0.051494       0.044987    0.267597   
+srvdiffhostrate        -0.077080   -0.224022      -0.225738   -0.076063   
+dsthostcount            0.150407    0.395583       0.393354    0.068456   
+dsthostsrvcount         0.202248   -0.557803      -0.555032   -0.251075   
+dsthostsamesrvrate      0.181116   -0.622797      -0.619130   -0.257613   
+dsthostdiffsrvrate     -0.106364   -0.018193      -0.028693    0.376003   
+dsthostsamesrcportrate  0.158539   -0.275975      -0.275071    0.032678   
+dsthostsrvdiffhostrate -0.059141   -0.172853      -0.171081    0.034087   
+dsthostserrorrate      -0.145825    0.979373       0.977596   -0.226257   
+dsthostsrvserrorrate   -0.145080    0.981139       0.986252   -0.224985   
+dsthostrerrorrate      -0.101149   -0.231810      -0.235065    0.926749   
+dsthostsrvrerrorrate   -0.112767   -0.226620      -0.233142    0.964449   
+
+                        srvrerrorrate  samesrvrate  diffsrvrate  \
+duration                     0.199961     0.074681    -0.013738   
+srcbytes                     0.013975     0.003899    -0.000432   
+dstbytes                     0.011052     0.003788    -0.001703   
+wrongfragment               -0.033507     0.054759    -0.026638   
+urgent                      -0.002897     0.005967    -0.002705   
+hot                         -0.031436     0.069365    -0.016212   
+numfailedlogins              0.021870     0.019477    -0.004438   
+numcompromised              -0.003642     0.008944    -0.004035   
+numroot                     -0.004001     0.009471    -0.004074   
+numfilecreations            -0.007116     0.019046    -0.007869   
+numshells                   -0.006968     0.011276    -0.001903   
+numaccessfiles              -0.012396     0.030825    -0.012080   
+count                        0.162992    -0.628024     0.222635   
+srvcount                    -0.113661     0.190574    -0.108495   
+serrorrate                  -0.227171    -0.761888     0.051494   
+srvserrorrate               -0.234507    -0.756784     0.044987   
+rerrorrate                   0.989008    -0.209826     0.267597   
+srvrerrorrate                1.000000    -0.209805     0.275323   
+samesrvrate                 -0.209805     1.000000    -0.376838   
+diffsrvrate                  0.275323    -0.376838     1.000000   
+srvdiffhostrate             -0.073295     0.277155    -0.101178   
+dsthostcount                 0.071019    -0.509781     0.190842   
+dsthostsrvcount             -0.249500     0.705410    -0.300443   
+dsthostsamesrvrate          -0.255565     0.788978    -0.330735   
+dsthostdiffsrvrate           0.380098    -0.166488     0.496590   
+dsthostsamesrcportrate       0.029802     0.279723    -0.010664   
+dsthostsrvdiffhostrate       0.030974     0.216263    -0.085588   
+dsthostserrorrate           -0.226470    -0.760648     0.050399   
+dsthostsrvserrorrate        -0.230751    -0.765322     0.047319   
+dsthostrerrorrate            0.917822    -0.214715     0.225388   
+dsthostsrvrerrorrate         0.970208    -0.214091     0.278103   
+
+                        srvdiffhostrate  dsthostcount  dsthostsrvcount  \
+duration                      -0.040158      0.050570        -0.109776   
+srcbytes                      -0.002608     -0.005791        -0.006861   
+dstbytes                      -0.001674      0.002528        -0.004224   
+wrongfragment                 -0.026247      0.041056        -0.045240   
+urgent                        -0.002898     -0.006941        -0.007897   
+hot                           -0.026781     -0.012249        -0.051864   
+numfailedlogins               -0.010122     -0.025476        -0.023053   
+numcompromised                -0.004227     -0.010928        -0.010321   
+numroot                       -0.004502     -0.011546        -0.011126   
+numfilecreations              -0.007365     -0.001344        -0.019311   
+numshells                     -0.006309     -0.009945        -0.011903   
+numaccessfiles                 0.007536     -0.007395         0.002383   
+count                         -0.263060      0.468092        -0.395971   
+srvcount                      -0.077080      0.150407         0.202248   
+serrorrate                    -0.224022      0.395583        -0.557803   
+srvserrorrate                 -0.225738      0.393354        -0.555032   
+rerrorrate                    -0.076063      0.068456        -0.251075   
+srvrerrorrate                 -0.073295      0.071019        -0.249500   
+samesrvrate                    0.277155     -0.509781         0.705410   
+diffsrvrate                   -0.101178      0.190842        -0.300443   
+srvdiffhostrate                1.000000     -0.360050         0.153048   
+dsthostcount                  -0.360050      1.000000        -0.303207   
+dsthostsrvcount                0.153048     -0.303207         1.000000   
+dsthostsamesrvrate             0.291418     -0.518145         0.896663   
+dsthostdiffsrvrate            -0.118726      0.144370        -0.390314   
+dsthostsamesrcportrate         0.248366     -0.313014        -0.068628   
+dsthostsrvdiffhostrate         0.379677     -0.455871        -0.004670   
+dsthostserrorrate             -0.226715      0.410922        -0.572596   
+dsthostsrvserrorrate          -0.227027      0.407532        -0.567594   
+dsthostrerrorrate             -0.076798      0.071924        -0.250307   
+dsthostsrvrerrorrate          -0.081425      0.067143        -0.252848   
+
+                        dsthostsamesrvrate  dsthostdiffsrvrate  \
+duration                         -0.116005            0.254195   
+srcbytes                         -0.006572            0.000900   
+dstbytes                         -0.004424            0.011031   
+wrongfragment                    -0.048733            0.059797   
+urgent                           -0.004489            0.006840   
+hot                              -0.036293           -0.012293   
+numfailedlogins                  -0.001576           -0.001945   
+numcompromised                   -0.004995            0.002981   
+numroot                          -0.005918            0.003342   
+numfilecreations                 -0.017325            0.006184   
+numshells                        -0.006134           -0.003170   
+numaccessfiles                    0.006925            0.000489   
+count                            -0.473957            0.167454   
+srvcount                          0.181116           -0.106364   
+serrorrate                       -0.622797           -0.018193   
+srvserrorrate                    -0.619130           -0.028693   
+rerrorrate                       -0.257613            0.376003   
+srvrerrorrate                    -0.255565            0.380098   
+samesrvrate                       0.788978           -0.166488   
+diffsrvrate                      -0.330735            0.496590   
+srvdiffhostrate                   0.291418           -0.118726   
+dsthostcount                     -0.518145            0.144370   
+dsthostsrvcount                   0.896663           -0.390314   
+dsthostsamesrvrate                1.000000           -0.419341   
+dsthostdiffsrvrate               -0.419341            1.000000   
+dsthostsamesrcportrate            0.135946            0.232567   
+dsthostsrvdiffhostrate            0.199187            0.016674   
+dsthostserrorrate                -0.639205           -0.017734   
+dsthostsrvserrorrate             -0.632048           -0.026101   
+dsthostrerrorrate                -0.257178            0.409123   
+dsthostsrvrerrorrate             -0.258147            0.385091   
+
+                        dsthostsamesrcportrate  dsthostsrvdiffhostrate  \
+duration                              0.228737               -0.026669   
+srcbytes                              0.000431               -0.001655   
+dstbytes                              0.011747               -0.001281   
+wrongfragment                         0.037177               -0.016252   
+urgent                                0.002741                0.005176   
+hot                                  -0.034536               -0.024715   
+numfailedlogins                      -0.005526                0.003302   
+numcompromised                       -0.002045                0.004252   
+numroot                              -0.001646                0.004496   
+numfilecreations                     -0.006837                0.000974   
+numshells                             0.013162               -0.001978   
+numaccessfiles                       -0.011847                0.000048   
+count                                -0.138230               -0.205593   
+srvcount                              0.158539               -0.059141   
+serrorrate                           -0.275975               -0.172853   
+srvserrorrate                        -0.275071               -0.171081   
+rerrorrate                            0.032678                0.034087   
+srvrerrorrate                         0.029802                0.030974   
+samesrvrate                           0.279723                0.216263   
+diffsrvrate                          -0.010664               -0.085588   
+srvdiffhostrate                       0.248366                0.379677   
+dsthostcount                         -0.313014               -0.455871   
+dsthostsrvcount                      -0.068628               -0.004670   
+dsthostsamesrvrate                    0.135946                0.199187   
+dsthostdiffsrvrate                    0.232567                0.016674   
+dsthostsamesrcportrate                1.000000                0.405217   
+dsthostsrvdiffhostrate                0.405217                1.000000   
+dsthostserrorrate                    -0.278910               -0.174762   
+dsthostsrvserrorrate                 -0.276497               -0.173301   
+dsthostrerrorrate                     0.038094                0.039792   
+dsthostsrvrerrorrate                  0.027768                0.040352   
+
+                        dsthostserrorrate  dsthostsrvserrorrate  \
+duration                        -0.064948             -0.064361   
+srcbytes                        -0.004503             -0.003397   
+dstbytes                        -0.003024             -0.002944   
+wrongfragment                   -0.051917             -0.055917   
+urgent                          -0.004749             -0.004834   
+hot                             -0.058222             -0.058214   
+numfailedlogins                 -0.011648             -0.012299   
+numcompromised                  -0.004377             -0.004898   
+numroot                         -0.004803             -0.005282   
+numfilecreations                 0.003405             -0.000247   
+numshells                       -0.010896             -0.009115   
+numaccessfiles                  -0.017951             -0.019737   
+count                            0.459047              0.460809   
+srvcount                        -0.145825             -0.145080   
+serrorrate                       0.979373              0.981139   
+srvserrorrate                    0.977596              0.986252   
+rerrorrate                      -0.226257             -0.224985   
+srvrerrorrate                   -0.226470             -0.230751   
+samesrvrate                     -0.760648             -0.765322   
+diffsrvrate                      0.050399              0.047319   
+srvdiffhostrate                 -0.226715             -0.227027   
+dsthostcount                     0.410922              0.407532   
+dsthostsrvcount                 -0.572596             -0.567594   
+dsthostsamesrvrate              -0.639205             -0.632048   
+dsthostdiffsrvrate              -0.017734             -0.026101   
+dsthostsamesrcportrate          -0.278910             -0.276497   
+dsthostsrvdiffhostrate          -0.174762             -0.173301   
+dsthostserrorrate                1.000000              0.985052   
+dsthostsrvserrorrate             0.985052              1.000000   
+dsthostrerrorrate               -0.235535             -0.234508   
+dsthostsrvrerrorrate            -0.227914             -0.232917   
+
+                        dsthostrerrorrate  dsthostsrvrerrorrate  
+duration                         0.173815              0.199024  
+srcbytes                        -0.001468              0.012449  
+dstbytes                         0.011729              0.011223  
+wrongfragment                    0.028890             -0.033682  
+urgent                          -0.002999             -0.002912  
+hot                             -0.030555             -0.031670  
+numfailedlogins                  0.018660              0.017359  
+numcompromised                  -0.003647             -0.003219  
+numroot                         -0.003827             -0.003497  
+numfilecreations                -0.005235             -0.004176  
+numshells                       -0.004552             -0.006780  
+numaccessfiles                  -0.013227             -0.012854  
+count                            0.178325              0.167708  
+srvcount                        -0.101149             -0.112767  
+serrorrate                      -0.231810             -0.226620  
+srvserrorrate                   -0.235065             -0.233142  
+rerrorrate                       0.926749              0.964449  
+srvrerrorrate                    0.917822              0.970208  
+samesrvrate                     -0.214715             -0.214091  
+diffsrvrate                      0.225388              0.278103  
+srvdiffhostrate                 -0.076798             -0.081425  
+dsthostcount                     0.071924              0.067143  
+dsthostsrvcount                 -0.250307             -0.252848  
+dsthostsamesrvrate              -0.257178             -0.258147  
+dsthostdiffsrvrate               0.409123              0.385091  
+dsthostsamesrcportrate           0.038094              0.027768  
+dsthostsrvdiffhostrate           0.039792              0.040352  
+dsthostserrorrate               -0.235535             -0.227914  
+dsthostsrvserrorrate            -0.234508             -0.232917  
+dsthostrerrorrate                1.000000              0.924688  
+dsthostsrvrerrorrate             0.924688              1.000000  
