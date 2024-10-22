@@ -251,7 +251,6 @@ Categorical attributes:
 
 ### Conversion of certain attributes to categorical
 The data type of the following numerical attributes (columns) is converted to categorical,
-
 ```
 to_categorical = ["land", "loggedin", "rootshell", "suattempted", "ishostlogin", "isguestlogin"]
 ```
