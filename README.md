@@ -247,8 +247,8 @@ Categorical attributes:
 ['protocoltype', 'service', 'flag', 'attack', 'attackhlc']
 ```
 
-### Box plots of numerical features
+### Distribution of numerical attributes
 ![alt text](artifacts/box_plots_of_numerical_attributes.png)
 
-### Count plot of all categorical columns
+### Frequencies of categorical attributes
 ![alt text](artifacts/count_plots_of_categorical_attributes.png)
