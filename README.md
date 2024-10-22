@@ -227,3 +227,24 @@ Additionally, the frequency of occurrence of each unique values in each column e
 
 ### Unique attributes and number of unique attributes in each column
 Information regarding the number of unique attributes and the unique attributes in each column can be found here: [link](artifacts/unique_attributes.txt).
+
+### Undefined attributes
+There is no description available for the feature `lastflag` in the data dictionary. Hence it has been dropped from the list of columns.
+
+The new shape of the dataset, after dropping the `lastflag` column is: 
+```
+(125973, 43)
+```
+
+### Numerical and categorical attributes
+Numerical attributes: 
+```
+['duration', 'srcbytes', 'dstbytes', 'land', 'wrongfragment', 'urgent', 'hot', 'numfailedlogins', 'loggedin', 'numcompromised', 'rootshell', 'suattempted', 'numroot', 'numfilecreations', 'numshells', 'numaccessfiles', 'numoutboundcmds', 'ishostlogin', 'isguestlogin', 'count', 'srvcount', 'serrorrate', 'srvserrorrate', 'rerrorrate', 'srvrerrorrate', 'samesrvrate', 'diffsrvrate', 'srvdiffhostrate', 'dsthostcount', 'dsthostsrvcount', 'dsthostsamesrvrate', 'dsthostdiffsrvrate', 'dsthostsamesrcportrate', 'dsthostsrvdiffhostrate', 'dsthostserrorrate', 'dsthostsrvserrorrate', 'dsthostrerrorrate', 'dsthostsrvrerrorrate']
+```
+
+Categorical attributes:
+```
+['protocoltype', 'service', 'flag', 'attack', 'attackhlc']
+```
+
+### Distribution of numerical features
