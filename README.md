@@ -264,3 +264,4 @@ The above numerical attributes have discrete values of 0 and 1, and hence it is 
 ![alt text](artifacts/count_plots_of_categorical_attributes.png)
 
 ### Heatmap of numerical attributes
+![alt text](artifacts/heatmap_of_numerical_attributes.png)
