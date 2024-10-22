@@ -248,3 +248,6 @@ Categorical attributes:
 ```
 
 ### Distribution of numerical features
+
+### Count plot of all categorical columns
+![alt text](artifacts/count_plot_of_categorical_attributes.png)
