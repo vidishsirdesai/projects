@@ -228,12 +228,14 @@ Additionally, the frequency of occurrence of each unique values in each column e
 ### Unique attributes and number of unique attributes in each column
 Information regarding the number of unique attributes and the unique attributes in each column can be found here: [link](artifacts/unique_attributes.txt).
 
-### Undefined attributes
-There is no description available for the feature `lastflag` in the data dictionary. Hence it has been dropped from the list of columns.
+### Undefined and redundant attributes
+There is no description available for the feature `lastflag` in the column profile. Hence it has been dropped from the list of columns.
+
+Also, the column `numoutboundcmds` has all zeros. This column can also be dropped from the list of columns.
 
 The new shape of the dataset, after dropping the `lastflag` column is: 
 ```
-(125973, 43)
+(125973, 42)
 ```
 
 ### Numerical and categorical attributes
@@ -247,8 +249,18 @@ Categorical attributes:
 ['protocoltype', 'service', 'flag', 'attack', 'attackhlc']
 ```
 
+### Conversion of certain attributes to categorical
+The data type of the following numerical attributes (columns) is converted to categorical,
+
+```
+to_categorical = ["land", "loggedin", "rootshell", "suattempted", "ishostlogin", "isguestlogin"]
+```
+The above numerical attributes have discrete values of 0 and 1, and hence it is appropriate to visualize the frequency of these values in the attributes
+
 ### Distribution of numerical attributes
 ![alt text](artifacts/box_plots_of_numerical_attributes.png)
 
 ### Frequencies of categorical attributes
 ![alt text](artifacts/count_plots_of_categorical_attributes.png)
+
+### Heatmap of numerical attributes
