@@ -259,7 +259,11 @@ The above numerical attributes have discrete values of 0 and 1, and hence it is 
 
 ### Distribution of numerical attributes
 ![alt text](artifacts/box_plots_of_numerical_attributes.png)
+
 ### Frequencies of categorical attributes
 ![alt text](artifacts/count_plots_of_categorical_attributes.png)
+
 ### Heatmap of numerical attributes
 ![alt text](artifacts/heatmap_of_numerical_attributes.png)
+
+### 
