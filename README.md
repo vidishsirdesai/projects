@@ -247,8 +247,6 @@ Categorical attributes:
 ['protocoltype', 'service', 'flag', 'attack', 'attackhlc']
 ```
 
-### Histograms of numerical features
-
 ### Box plots of numerical features
 ![alt text](artifacts/box_plots_of_numerical_attributes.png)
 
