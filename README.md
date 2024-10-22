@@ -255,6 +255,7 @@ The data type of the following numerical attributes (columns) is converted to ca
 ```
 to_categorical = ["land", "loggedin", "rootshell", "suattempted", "ishostlogin", "isguestlogin"]
 ```
+
 The above numerical attributes have discrete values of 0 and 1, and hence it is appropriate to visualize the frequency of these values in the attributes
 
 ### Distribution of numerical attributes
