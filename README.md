@@ -121,7 +121,7 @@ Dataset used: [link](datasets/network_anomaly_dataset_cleaned.csv).
 (125973, 44)
 ```
 
-### Structure of the dataframe
+### Structure of the data and data type of the attributes
 ```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 125973 entries, 0 to 125972
@@ -176,6 +176,9 @@ dtypes: float64(15), int64(24), object(5)
 memory usage: 42.3+ MB
 ```
 
+### Missing values and duplicates
+There are no missing values or duplicates in the data.
+
 ### Statistical summary of continuous attributes
 ```
                            count          mean           std  min    25%     50%     75%           max
@@ -220,7 +223,7 @@ dsthostsrvrerrorrate    125973.0      0.120240  3.194594e-01  0.0   0.00    0.00
 lastflag                125973.0     19.504060  2.291503e+00  0.0  18.00   20.00   21.00  2.100000e+01
 ```
 
-### Value counts of each unique element in each column
+### Value counts and frequency of occurrence of each unique element in each column
 Information regarding the value counts of each of the unique attributes can be found here: [link](artifacts/value_counts.txt).
 
 Additionally, the frequency of occurrence of each unique values in each column expressed as a proportion of the total count can found here: [link](artifacts/value_counts_normalized.txt).
@@ -233,7 +236,7 @@ There is no description available for the feature `lastflag` in the column profi
 
 Also, the column `numoutboundcmds` has all zeros. This column can also be dropped from the list of columns.
 
-The new shape of the dataset, after dropping the `lastflag` column is: 
+The new shape of the dataset, after dropping the columns `lastflag` and `numoutboundcmds` column is: 
 ```
 (125973, 42)
 ```
@@ -249,18 +252,19 @@ Categorical attributes:
 ['protocoltype', 'service', 'flag', 'attack', 'attackhlc']
 ```
 
-### Conversion of certain attributes to categorical
+### Conversion of data type of certain numerical attributes to categorical attributes
 The data type of the following numerical attributes (columns) is converted to categorical,
+
 ```
 to_categorical = ["land", "loggedin", "rootshell", "suattempted", "ishostlogin", "isguestlogin"]
 ```
 
-The above numerical attributes have discrete values of 0 and 1, and hence it is appropriate to visualize the frequency of these values in the attributes
+The above numerical attributes have discrete values of 0 and 1, hence it is appropriate to visualize the frequency of the values in these attributes after converting them to categorical data type.
 
-### Distribution of numerical attributes
+### Distribution of numerical attributes (using box plots)
 ![alt text](artifacts/box_plots_of_numerical_attributes.png)
 
-### Frequencies of categorical attributes
+### Frequencies of categorical attributes (using count plots)
 ![alt text](artifacts/count_plots_of_categorical_attributes.png)
 
 ### Heatmap of numerical attributes
