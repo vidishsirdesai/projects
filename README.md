@@ -71,7 +71,7 @@ Google Docs Link: [link](https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7Mrf
 
 
 # Data Cleaning
-Jupyter notebook: [link](notebooks/data_cleaning.ipynb).
+Notebook used: [link](notebooks/data_cleaning.ipynb).
 
 Dataset used: [link](datasets/network_anomaly_dataset.csv).
 
@@ -101,8 +101,8 @@ The attacks are majorly classified as follows,
 
 Considering all of the above, a new column, namely `attack_hlc`, has been created. Wherein each of the element in the `attack` column has been assigned to its respective high level class.
 
-### New dataset
-The new dataset with all the above changes made is stored in: [link](datasets/network_anomaly_dataset_cleaned.csv).
+### State of the dataset after cleaning
+The new dataset with all the above changes made during data cleaning is stored in: [link](datasets/network_anomaly_dataset_cleaned.csv).
 
 
 # Analysis of Factors Associated with Intrusions in a Network using Tableau
@@ -112,7 +112,7 @@ Dataset used: [link](datasets/network_anomaly_dataset_cleaned.csv).
 
 
 # EDA
-Jupyter notebook: [link](notebooks/eda.ipynb).
+Notebook used: [link](notebooks/eda.ipynb).
 
 Dataset used: [link](datasets/network_anomaly_dataset_cleaned.csv).
 
@@ -308,5 +308,12 @@ Based on the above observations, the attributes that can be removed are,
 Number of data points = 125973
 Number of outliers = 31469
 
+### State of the dataset after EDS
+The new dataset with all the above changes made during EDA is stored in: [link](datasets/network_anomaly_dataset_eda.csv).
+
 
 # Hypothesis Testing
+Notebook used:
+
+Dataset used: [link](datasets/network_anomaly_dataset_eda.csv).
+
