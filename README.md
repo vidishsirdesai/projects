@@ -266,4 +266,27 @@ The above numerical attributes have discrete values of 0 and 1, and hence it is 
 ### Heatmap of numerical attributes
 ![alt text](artifacts/heatmap_of_numerical_attributes.png)
 
+Attributes that are highly correlated to each other:
+- `numcompromised` and `numroot`.
+- `serrorrate` and `srvserrorrate`.
+- `serrorrate` and `dsthostserrorrate`.
+- `serrorrate` and `dsthostsrvserrorrate`.
+- `srvsrrorrate` and `dsthostserrorrate`.
+- `srvserrorrate` and `dsthostserrorrate`.
+- `rerrorrate` and `srvserrorrate`.
+- `rerrorrate` and `dsthostrerrorrate`.
+- `rerrorrate` and `dsthostsrvrerrorrate`.
+- `dsthostsrvcount` and `dsthostsamesrvrate`.
+- `dsthostserrorrate` and `serrorrate`.
+- `dsthostserrorrate` and `srvserrorrate`.
+- `dsthostsrvserrorrate` and `serrorrate`.
+- `dsthostsrvserrorrate` and `srvserrorrate`.
+- `dsthostserrorrate` and `dsthostsrvserrorrate`.
+- `dsthostsrvserrorrate` and `dsthostserrorrate`.
+- `dsthostrerrorrate` and `rerrorrate`.
+- `dsthostrerrorrate` and `srverrorrate`.
+- `dsthostsrvrerrorrate` and `rerrorrate`.
+- `dsthostsrvrerrorrate` and `srverrorrate`.
+- `dsthostrerrorrate` and `dsthostsrvrerrorrate`.
+
 ### 
