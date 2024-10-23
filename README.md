@@ -313,7 +313,7 @@ The new dataset with all the above changes made during EDA is stored in: [link](
 
 
 # Hypothesis Testing
-Notebook used:
+Notebook used: [link](notebooks/hypothesis_testing.ipynb)
 
 Dataset used: [link](datasets/network_anomaly_dataset_eda.csv).
 
