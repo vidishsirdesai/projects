@@ -305,8 +305,8 @@ Based on the above observations, the attributes that can be removed are,
 - `dsthostsamesrvrate`.
 
 ### Outliers
-Number of data points = 125973
-Number of outliers = 31469
+- Number of data points = 125973
+- Number of outliers = 31469
 
 ### State of the dataset after EDA
 The new dataset with all the above changes made during EDA is stored in: [link](datasets/network_anomaly_dataset_eda.csv).
