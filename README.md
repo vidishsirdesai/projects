@@ -268,4 +268,31 @@ The above numerical attributes have discrete values of 0 and 1, and hence it is 
 
 Attributes that are highly correlated to each other:
 - `numcompromised` and `numroot`.
-- `numroot` and `numcompromised`. 
+- `numroot` and `numcompromised`.
+- `serrorrate` and `srvserrorrate`.
+- `serrorrate` and `dsthostserrorrate`.
+- `serrorrate` and `dsthostsrvserrorrate`.
+- `srvserrorrate` and `serrorrate`.
+- `srvserrorrate` and `dsthostserrorrate`.
+- `srvserrorrate` and `dsthostsrvserrorrate`.
+- `rerrorrate` and `srvrerrorrate`.
+- `rerrorrate` and `dsthostrerrorrate`.
+- `rerrorrate` and `dsthostsrvrerrorrate`.
+- `srvrerrorrate` and `rerrorrate`.
+- `srvrerrorrate` and `dsthostrerrorrate`.
+- `srvrerrorrate` and `dsthostsrvrerrorrate`.
+- `dsthostsrvcount` and `dsthostsamesrvrate`.
+- `dsthostsamesrvrate` and `dsthostsrvcount`.
+- `dsthostserrorrate` and `serrorrate`.
+- `dsthostserrorrate` and `srvserrorrate`.
+- `dsthostserrorrate` and `dsthostsrvserrorrate`.
+- `dsthostsrvserrorrate` and `serrorrate`.
+- `dsthostsrvserrorrate` and `srvserrorrate`.
+- `dsthostsrvserrorrate` and `dsthostserrorrate`.
+
+Based on the above observations, the attributes that can be removed are,
+- `numroot`.
+- ``
+
+
+# Hypothesis Testing
