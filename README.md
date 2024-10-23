@@ -292,7 +292,13 @@ Attributes that are highly correlated to each other:
 
 Based on the above observations, the attributes that can be removed are,
 - `numroot`.
-- ``
+- `srvserrorrate`.
+- `dsthostserrorrate`.
+- `dsthostsrvserrorrate`.
+- `srvrerrorrate`.
+- `dsthostrerrorrate`.
+- `dsthostsrvrerrorrate`.
+- `dsthostsamesrvrate`.
 
 
 # Hypothesis Testing
