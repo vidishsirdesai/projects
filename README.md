@@ -300,5 +300,9 @@ Based on the above observations, the attributes that can be removed are,
 - `dsthostsrvrerrorrate`.
 - `dsthostsamesrvrate`.
 
+### Outliers
+Number of data points = 125973
+Number of outliers = 31469
+
 
 # Hypothesis Testing
