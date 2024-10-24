@@ -324,28 +324,40 @@ This hypothesis can further be simplified into 2 scenarios,
 ####  Network connections with unusually high or low traffic volumes from source to destination are more likely to be anomalous.
 - Null hypothesis (H0): There is no significant difference in the network traffic volume from source to destination of normal connection and attack connection.
 - Alternate hypothesis (H1): There is a significant difference in the network traffic volume from source to destination of normal connection and attack connection.
+- Test used: Independent Samples T-Test
 - Significance level ($\alpha$) = 0.05
-- Test used: Independent samples t-test
 - Test result:
 ```
 Ttest_indResult(statistic=-2.101656020563486, pvalue=0.03558539933331456)
 ```
-- The p-value is lesser than $\alpha$. There is a significant difference in the network traffic volume from source to destination of normal connection and attack connection.
+- Observation: The p-value is lesser than $\alpha$. There is a significant difference in the network traffic volume from source to destination of normal connection and attack connection. 
+- Conclusion: Alternate hypothesis (H1) is true.
 
 ####  Network connections with unusually high or low traffic volumes from destination to source are more likely to be anomalous.
 - Null hypothesis (H0): There is no significant difference in the network traffic volume from destination to source of normal connection and attack connection.
 - Alternate hypothesis (H1): There is a significant difference in the network traffic volume from destination to source of normal connection and attack connection.
+- Test used: Independent Samples T-Test
 - Significance level ($\alpha$) = 0.05
-- Test used: Independent samples t-test
 - Test result:
 ```
 Ttest_indResult(statistic=-1.4614241258205836, pvalue=0.14390157812640425)
 ```
-- The p-value is greater than $\alpha$. This suggests that there is no significant difference in the likelihood of network anomalies among network connections with different traffic volumes from destination to source.
+- Observation: The p-value is greater than $\alpha$. This suggests that there is no significant difference in the likelihood of network anomalies among network connections with different traffic volumes from destination to source.
+- Conclusion: Null hypothesis (H0) is true.
 
 ### Hypothesis 2: Certain protocols are more frequently associated with network anomalies.
 - Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies among different protocol types.
 - Alternate hypothesis (H1): There is a significant difference in the likelihood of network anomalies among different protocol types.
+- Test used: Chi-Square Test for Independence
+- Significance level ($\alpha$) = 0.05
+- Test result:
+```
+Chi2ContingencyResult(statistic=10029.24862778463, pvalue=0.0, dof=2, expected_freq=array([[ 4432.22605638,  3858.77394362],
+       [54895.77391187, 47793.22608813],
+       [ 8015.00003175,  6977.99996825]]))
+```
+- Observation: The p-value is less than $\alpha$. There is a significant difference in the likelihood of network anomalies among different protocol types.
+- Conclusion: Alternate hypothesis (H1) is true.
 
 ### Hypothesis 3: Specific services are targets of network anomalies more often than others.
 - Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies among different services.
