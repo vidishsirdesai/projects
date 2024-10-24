@@ -101,7 +101,17 @@ The attacks are majorly classified as follows,
 
 Considering all of the above, a new column, namely `attack_hlc`, has been created. Wherein each of the element in the `attack` column has been assigned to its respective high level class.
 
-### State of the dataset after cleaning
+### Undefined and redundant attributes
+There is no description available for the feature `lastflag` in the column profile. Hence it has been dropped from the list of columns.
+
+Also, the column `numoutboundcmds` has all zeros. This column can also be dropped from the list of columns.
+
+The new shape of the dataset, after dropping the columns `lastflag` and `numoutboundcmds` column is: 
+```
+(125973, 42)
+```
+
+### State of the dataset after data cleaning
 The new dataset with all the above changes made during data cleaning is stored in: [link](datasets/network_anomaly_dataset_cleaned.csv).
 
 
@@ -230,16 +240,6 @@ Additionally, the frequency of occurrence of each unique values in each column e
 
 ### Unique attributes and number of unique attributes in each column
 Information regarding the number of unique attributes and the unique attributes in each column can be found here: [link](artifacts/unique_attributes.txt).
-
-### Undefined and redundant attributes
-There is no description available for the feature `lastflag` in the column profile. Hence it has been dropped from the list of columns.
-
-Also, the column `numoutboundcmds` has all zeros. This column can also be dropped from the list of columns.
-
-The new shape of the dataset, after dropping the columns `lastflag` and `numoutboundcmds` column is: 
-```
-(125973, 42)
-```
 
 ### Numerical and categorical attributes
 Numerical attributes: 
