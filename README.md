@@ -319,26 +319,29 @@ The `attack_hlc` column created during the data cleaning step (https://github.co
 ### Hypothesis 1: Network connections with unusually high or low traffic volumns (bytes transferred) are more likely to be anomalous.
 This hypothesis can further be simplified into 2 scenarios,
 1.  Network connections with unusually high or low traffic volumes from source to destination are more likely to be anomalous.
-    - Null hypothesis (H0): There is no significant difference in the network traffic volume from source to destination of normal connection and attack connection.
-    - Alternate hypothesis (H1): There is a significant difference in the network traffic volume from source to destination of normal connection and attack connection.
-    - Significance level ($\alpha$) = 0.05
-    - Test used: Independent samples t-test
-    - Test result:
-    ```
-    Ttest_indResult(statistic=-2.101656020563486, pvalue=0.03558539933331456)
-    ```
-    - The p-value is lesser than $\alpha$. There is a significant difference in the network traffic volume from source to destination of normal connection and attack connection.
-
 2.  Network connections with unusually high or low traffic volumes from destination to source are more likely to be anomalous.
-    - Null hypothesis (H0): There is no significant difference in the network traffic volume from destination to source of normal connection and attack connection.
-    - Alternate hypothesis (H1): There is a significant difference in the network traffic volume from destination to source of normal connection and attack connection.
-    - Significance level ($\alpha$) = 0.05
-    - Test used: Independent samples t-test
-    - Test result:
-    ```
-    Ttest_indResult(statistic=-1.4614241258205836, pvalue=0.14390157812640425)
-    ```
-    - The p-value is greater than $\alpha$. This suggests that there is no significant difference in the likelihood of network anomalies among network connections with different traffic volumes from destination to source.
+
+####  Network connections with unusually high or low traffic volumes from source to destination are more likely to be anomalous.
+- Null hypothesis (H0): There is no significant difference in the network traffic volume from source to destination of normal connection and attack connection.
+- Alternate hypothesis (H1): There is a significant difference in the network traffic volume from source to destination of normal connection and attack connection.
+- Significance level ($\alpha$) = 0.05
+- Test used: Independent samples t-test
+- Test result:
+```
+Ttest_indResult(statistic=-2.101656020563486, pvalue=0.03558539933331456)
+```
+- The p-value is lesser than $\alpha$. There is a significant difference in the network traffic volume from source to destination of normal connection and attack connection.
+
+####  Network connections with unusually high or low traffic volumes from destination to source are more likely to be anomalous.
+- Null hypothesis (H0): There is no significant difference in the network traffic volume from destination to source of normal connection and attack connection.
+- Alternate hypothesis (H1): There is a significant difference in the network traffic volume from destination to source of normal connection and attack connection.
+- Significance level ($\alpha$) = 0.05
+- Test used: Independent samples t-test
+- Test result:
+```
+Ttest_indResult(statistic=-1.4614241258205836, pvalue=0.14390157812640425)
+```
+- The p-value is greater than $\alpha$. This suggests that there is no significant difference in the likelihood of network anomalies among network connections with different traffic volumes from destination to source.
 
 ### Hypothesis 2: Certain protocols are more frequently associated with network anomalies.
 - Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies among different protocol types.
