@@ -80,7 +80,7 @@ The column `suattempted`, according to the data dictionary (https://github.com/v
 
 Assuming that the presence of 2 in the column is a typo, all the rows in the column `suattempted` where there was a 2 present is changed to 1.
 
-### Adding a new column that represents a high level classification of attack types
+### Adding a new feature that represents a high level classification of attack types
 The column `attack` represents the type of attack at a much granular level. The unique attributes in this column are,
 
 ```
@@ -102,7 +102,7 @@ The attacks are majorly classified as follows,
 Considering all of the above, a new column, namely `attack_hlc`, has been created. Wherein each of the element in the `attack` column has been assigned to its respective high level class.
 
 ### Undefined and redundant attributes
-There is no description available for the feature `lastflag` in the column profile. Hence it has been dropped from the list of columns.
+There is no description available for the feature `lastflag` in the data dictionary. Hence it has been dropped from the list of columns.
 
 Also, the column `numoutboundcmds` has all zeros. This column can also be dropped from the list of columns.
 
@@ -309,7 +309,29 @@ The new dataset with all the above changes made during EDA is stored in: [link](
 
 
 # Hypothesis Testing
-Notebook used: [link](notebooks/hypothesis_testing.ipynb)
+Notebook used: [link](notebooks/hypothesis_testing.ipynb).
 
 Dataset used: [link](datasets/network_anomaly_dataset_eda.csv).
 
+### Adding a new feature that represents if a connection is normal or an attack
+The `attack_hlc` column created during the data cleaning step (https://github.com/vidishsirdesai/network_anomaly_detection?tab=readme-ov-file#data-cleaning), is used to create another column `normal_or_attack` that has the values 0 or 1. 0 representing a normal connection, and 1 representing an attack.
+
+### Hypothesis 1: Network connections with unusually high or low traffic volumns (bytes transferred) are more likely to be anomalous.
+- Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies among network connections with different traffic volumes.
+- Alternate hypothesis (H1): There is a significant difference in the likelihood of network anomalies among network connections with different traffic volumes.
+
+### Hypothesis 2: Certain protocols are more frequently associated with network anomalies.
+- Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies among different protocol types.
+- Alternate hypothesis (H1): There is a significant difference in the likelihood of network anomalies among different protocol types.
+
+### Hypothesis 3: Specific services are targets of network anomalies more often than others.
+- Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies among different services.
+- Alternate hypothesis (H1): There is no significant difference in the likelihood of network anomalies among different services.
+
+### Hypothesis 4: Error flags in the Flag feature are significantly associated with anomalies.
+- Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies between connections with and without error flags.
+- Alternate hypothesis (H1): There is a significant difference in the likelihood of network anomalies between connections with and without error flags.
+
+### Hypothesis 5: Connections that include urgent packets are more likely to be anomolous.
+- Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies between connections with and without urgent packets.
+- Alternate hypothesis (H1): There is a significant difference in the likelihood of network anomalies between connections with and without urgent packets.
