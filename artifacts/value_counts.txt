@@ -290,13 +290,6 @@ Name: count, dtype: int64
 --------------------
 
 --------------------
-Column Name: numoutboundcmds
-numoutboundcmds
-0    125973
-Name: count, dtype: int64
---------------------
-
---------------------
 Column Name: ishostlogin
 ishostlogin
 0    125972
@@ -710,34 +703,6 @@ multihop               7
 phf                    4
 perl                   3
 spy                    2
-Name: count, dtype: int64
---------------------
-
---------------------
-Column Name: lastflag
-lastflag
-21    62557
-18    20667
-20    19339
-19    10284
-15     3990
-17     3074
-16     2393
-12      729
-14      674
-11      641
-13      451
-10      253
-9       194
-7       118
-8       106
-6        96
-5        81
-4        79
-0        66
-3        65
-1        62
-2        54
 Name: count, dtype: int64
 --------------------
 

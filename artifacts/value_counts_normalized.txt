@@ -290,13 +290,6 @@ Name: proportion, dtype: float64
 --------------------
 
 --------------------
-Column Name: numoutboundcmds
-numoutboundcmds
-0    100.0
-Name: proportion, dtype: float64
---------------------
-
---------------------
 Column Name: ishostlogin
 ishostlogin
 0    99.999206
@@ -710,34 +703,6 @@ multihop            0.005557
 phf                 0.003175
 perl                0.002381
 spy                 0.001588
-Name: proportion, dtype: float64
---------------------
-
---------------------
-Column Name: lastflag
-lastflag
-21    49.659054
-18    16.405897
-20    15.351702
-19     8.163654
-15     3.167345
-17     2.440205
-16     1.899613
-12     0.578695
-14     0.535035
-11     0.508839
-13     0.358013
-10     0.200837
-9      0.154001
-7      0.093671
-8      0.084145
-6      0.076207
-5      0.064299
-4      0.062712
-0      0.052392
-3      0.051598
-1      0.049217
-2      0.042866
 Name: proportion, dtype: float64
 --------------------
 

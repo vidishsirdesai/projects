@@ -132,13 +132,6 @@ Unique Elements:
 --------------------
 
 --------------------
-Column Name: numoutboundcmds
-Number of unique elements: 1
-Unique Elements: 
-0
---------------------
-
---------------------
 Column Name: ishostlogin
 Number of unique elements: 2
 Unique Elements: 
@@ -290,13 +283,6 @@ Column Name: attack
 Number of unique elements: 23
 Unique Elements: 
 normal, neptune, warezclient, ipsweep, portsweep, teardrop, nmap, satan, smurf, pod, back, guess_passwd, ftp_write, multihop, rootkit, buffer_overflow, imap, warezmaster, phf, land, loadmodule, spy, perl
---------------------
-
---------------------
-Column Name: lastflag
-Number of unique elements: 22
-Unique Elements: 
-20, 15, 19, 21, 18, 17, 16, 12, 14, 11, 2, 13, 10, 9, 8, 7, 3, 5, 1, 6, 0, 4
 --------------------
 
 --------------------
