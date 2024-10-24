@@ -128,14 +128,14 @@ Dataset used: [link](datasets/network_anomaly_dataset_cleaned.csv).
 
 ### Shape of the data
 ```
-(125973, 44)
+(125973, 42)
 ```
 
 ### Structure of the data and data type of the attributes
 ```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 125973 entries, 0 to 125972
-Data columns (total 44 columns):
+Data columns (total 42 columns):
  #   Column                  Non-Null Count   Dtype  
 ---  ------                  --------------   -----  
  0   duration                125973 non-null  int64  
@@ -157,33 +157,31 @@ Data columns (total 44 columns):
  16  numfilecreations        125973 non-null  int64  
  17  numshells               125973 non-null  int64  
  18  numaccessfiles          125973 non-null  int64  
- 19  numoutboundcmds         125973 non-null  int64  
- 20  ishostlogin             125973 non-null  int64  
- 21  isguestlogin            125973 non-null  int64  
- 22  count                   125973 non-null  int64  
- 23  srvcount                125973 non-null  int64  
- 24  serrorrate              125973 non-null  float64
- 25  srvserrorrate           125973 non-null  float64
- 26  rerrorrate              125973 non-null  float64
- 27  srvrerrorrate           125973 non-null  float64
- 28  samesrvrate             125973 non-null  float64
- 29  diffsrvrate             125973 non-null  float64
- 30  srvdiffhostrate         125973 non-null  float64
- 31  dsthostcount            125973 non-null  int64  
- 32  dsthostsrvcount         125973 non-null  int64  
- 33  dsthostsamesrvrate      125973 non-null  float64
- 34  dsthostdiffsrvrate      125973 non-null  float64
- 35  dsthostsamesrcportrate  125973 non-null  float64
- 36  dsthostsrvdiffhostrate  125973 non-null  float64
- 37  dsthostserrorrate       125973 non-null  float64
- 38  dsthostsrvserrorrate    125973 non-null  float64
- 39  dsthostrerrorrate       125973 non-null  float64
- 40  dsthostsrvrerrorrate    125973 non-null  float64
- 41  attack                  125973 non-null  object 
- 42  lastflag                125973 non-null  int64  
- 43  attackhlc               125973 non-null  object 
-dtypes: float64(15), int64(24), object(5)
-memory usage: 42.3+ MB
+ 19  ishostlogin             125973 non-null  int64  
+ 20  isguestlogin            125973 non-null  int64  
+ 21  count                   125973 non-null  int64  
+ 22  srvcount                125973 non-null  int64  
+ 23  serrorrate              125973 non-null  float64
+ 24  srvserrorrate           125973 non-null  float64
+ 25  rerrorrate              125973 non-null  float64
+ 26  srvrerrorrate           125973 non-null  float64
+ 27  samesrvrate             125973 non-null  float64
+ 28  diffsrvrate             125973 non-null  float64
+ 29  srvdiffhostrate         125973 non-null  float64
+ 30  dsthostcount            125973 non-null  int64  
+ 31  dsthostsrvcount         125973 non-null  int64  
+ 32  dsthostsamesrvrate      125973 non-null  float64
+ 33  dsthostdiffsrvrate      125973 non-null  float64
+ 34  dsthostsamesrcportrate  125973 non-null  float64
+ 35  dsthostsrvdiffhostrate  125973 non-null  float64
+ 36  dsthostserrorrate       125973 non-null  float64
+ 37  dsthostsrvserrorrate    125973 non-null  float64
+ 38  dsthostrerrorrate       125973 non-null  float64
+ 39  dsthostsrvrerrorrate    125973 non-null  float64
+ 40  attack                  125973 non-null  object 
+ 41  attackhlc               125973 non-null  object 
+dtypes: float64(15), int64(22), object(5)
+memory usage: 40.4+ MB
 ```
 
 ### Missing values and duplicates
@@ -208,7 +206,6 @@ numroot                 125973.0      0.302192  2.439962e+01  0.0   0.00    0.00
 numfilecreations        125973.0      0.012669  4.839351e-01  0.0   0.00    0.00    0.00  4.300000e+01
 numshells               125973.0      0.000413  2.218113e-02  0.0   0.00    0.00    0.00  2.000000e+00
 numaccessfiles          125973.0      0.004096  9.936956e-02  0.0   0.00    0.00    0.00  9.000000e+00
-numoutboundcmds         125973.0      0.000000  0.000000e+00  0.0   0.00    0.00    0.00  0.000000e+00
 ishostlogin             125973.0      0.000008  2.817483e-03  0.0   0.00    0.00    0.00  1.000000e+00
 isguestlogin            125973.0      0.009423  9.661233e-02  0.0   0.00    0.00    0.00  1.000000e+00
 count                   125973.0     84.107555  1.145086e+02  0.0   2.00   14.00  143.00  5.110000e+02
@@ -230,7 +227,6 @@ dsthostserrorrate       125973.0      0.284452  4.447841e-01  0.0   0.00    0.00
 dsthostsrvserrorrate    125973.0      0.278485  4.456691e-01  0.0   0.00    0.00    1.00  1.000000e+00
 dsthostrerrorrate       125973.0      0.118832  3.065575e-01  0.0   0.00    0.00    0.00  1.000000e+00
 dsthostsrvrerrorrate    125973.0      0.120240  3.194594e-01  0.0   0.00    0.00    0.00  1.000000e+00
-lastflag                125973.0     19.504060  2.291503e+00  0.0  18.00   20.00   21.00  2.100000e+01
 ```
 
 ### Value counts and frequency of occurrence of each unique element in each column
@@ -241,17 +237,6 @@ Additionally, the frequency of occurrence of each unique values in each column e
 ### Unique attributes and number of unique attributes in each column
 Information regarding the number of unique attributes and the unique attributes in each column can be found here: [link](artifacts/unique_attributes.txt).
 
-### Numerical and categorical attributes
-Numerical attributes: 
-```
-['duration', 'srcbytes', 'dstbytes', 'land', 'wrongfragment', 'urgent', 'hot', 'numfailedlogins', 'loggedin', 'numcompromised', 'rootshell', 'suattempted', 'numroot', 'numfilecreations', 'numshells', 'numaccessfiles', 'numoutboundcmds', 'ishostlogin', 'isguestlogin', 'count', 'srvcount', 'serrorrate', 'srvserrorrate', 'rerrorrate', 'srvrerrorrate', 'samesrvrate', 'diffsrvrate', 'srvdiffhostrate', 'dsthostcount', 'dsthostsrvcount', 'dsthostsamesrvrate', 'dsthostdiffsrvrate', 'dsthostsamesrcportrate', 'dsthostsrvdiffhostrate', 'dsthostserrorrate', 'dsthostsrvserrorrate', 'dsthostrerrorrate', 'dsthostsrvrerrorrate']
-```
-
-Categorical attributes:
-```
-['protocoltype', 'service', 'flag', 'attack', 'attackhlc']
-```
-
 ### Conversion of data type of certain numerical attributes to categorical attributes
 The data type of the following numerical attributes (columns) is converted to categorical,
 
@@ -260,6 +245,17 @@ to_categorical = ["land", "loggedin", "rootshell", "suattempted", "ishostlogin",
 ```
 
 The above numerical attributes have discrete values of 0 and 1, hence it is appropriate to visualize the frequency of the values in these attributes after converting them to categorical data type.
+
+### Numerical and categorical attributes
+Numerical attributes: 
+```
+['duration', 'srcbytes', 'dstbytes', 'wrongfragment', 'urgent', 'hot', 'numfailedlogins', 'numcompromised', 'numroot', 'numfilecreations', 'numshells', 'numaccessfiles', 'count', 'srvcount', 'serrorrate', 'srvserrorrate', 'rerrorrate', 'srvrerrorrate', 'samesrvrate', 'diffsrvrate', 'srvdiffhostrate', 'dsthostcount', 'dsthostsrvcount', 'dsthostsamesrvrate', 'dsthostdiffsrvrate', 'dsthostsamesrcportrate', 'dsthostsrvdiffhostrate', 'dsthostserrorrate', 'dsthostsrvserrorrate', 'dsthostrerrorrate', 'dsthostsrvrerrorrate']
+```
+
+Categorical attributes:
+```
+['protocoltype', 'service', 'flag', 'land', 'loggedin', 'rootshell', 'suattempted', 'ishostlogin', 'isguestlogin', 'attack', 'attackhlc']
+```
 
 ### Distribution of numerical attributes (using box plots)
 ![alt text](artifacts/box_plots_of_numerical_attributes.png)
