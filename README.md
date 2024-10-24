@@ -317,8 +317,21 @@ Dataset used: [link](datasets/network_anomaly_dataset_eda.csv).
 The `attack_hlc` column created during the data cleaning step (https://github.com/vidishsirdesai/network_anomaly_detection?tab=readme-ov-file#data-cleaning), is used to create another column `normal_or_attack` that has the values 0 or 1. 0 representing a normal connection, and 1 representing an attack.
 
 ### Hypothesis 1: Network connections with unusually high or low traffic volumns (bytes transferred) are more likely to be anomalous.
-- Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies among network connections with different traffic volumes.
-- Alternate hypothesis (H1): There is a significant difference in the likelihood of network anomalies among network connections with different traffic volumes.
+This hypothesis can further be simplified into 2 scenarios,
+1.  Network connections with unusually high or low traffic volumes from source to destination are more likely to be anomalous.
+    - Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies among network connections with different traffic volumes from source to destination.
+    - Alternate hypothesis (H1): There is a significant difference in the likelihood of network anomalies among network connections with different traffic volumes from source to destination.
+    - Significance level ($\alpha$) = 0.05
+    - Test used: Independent samples t-test
+    - Test result:
+    ```
+    Ttest_indResult(statistic=-2.101656020563486, pvalue=0.03558539933331456)
+    ```
+    - The p-value is lesser than $\alpha$. This suggests that there is a significant difference in the likelihood of network anomalies among network connections with different traffic volumes from source to destination.
+
+2.  Network connections with unusually high or low traffic volumes from destination to source are more likely to be anomalous.
+    - Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies among network connections with different traffic volumes from destination to source.
+    - Alternate hypothesis (H1): There is a significant difference in the likelihood of network anomalies among network connections with different traffic volumes from destination to source.
 
 ### Hypothesis 2: Certain protocols are more frequently associated with network anomalies.
 - Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies among different protocol types.
