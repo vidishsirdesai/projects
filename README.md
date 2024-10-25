@@ -444,8 +444,16 @@ Chi2ContingencyResult(statistic=93240.03213516614, pvalue=0.0, dof=69, expected_
 - Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies between connections with and without error flags.
 - Alternate hypothesis (H1): There is a significant difference in the likelihood of network anomalies between connections with and without error flags.
 - Test used: Logistic Regression model using `statsmodels.api.Logit`.
-- 
+- Significance level ($\alpha$) = 0.05
+- Test result: 
+- Observation:
+- Conclusion:
 
 ### Hypothesis 5: Connections that include urgent packets are more likely to be anomolous.
 - Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies between connections with and without urgent packets.
 - Alternate hypothesis (H1): There is a significant difference in the likelihood of network anomalies between connections with and without urgent packets.
+- Test used: Logistic Regression model using `statsmodels.api.Logit`.
+- Significance level ($\alpha$) = 0.05
+- Test result: 
+- Observation:
+- Conclusion:
