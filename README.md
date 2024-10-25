@@ -443,6 +443,8 @@ Chi2ContingencyResult(statistic=93240.03213516614, pvalue=0.0, dof=69, expected_
 ### Hypothesis 4: Error flags in the Flag feature are significantly associated with anomalies.
 - Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies between connections with and without error flags.
 - Alternate hypothesis (H1): There is a significant difference in the likelihood of network anomalies between connections with and without error flags.
+- Test used: Logistic Regression model using `statsmodels.api.Logit`.
+- 
 
 ### Hypothesis 5: Connections that include urgent packets are more likely to be anomolous.
 - Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies between connections with and without urgent packets.
