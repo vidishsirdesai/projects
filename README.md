@@ -345,7 +345,7 @@ Ttest_indResult(statistic=-1.4614241258205836, pvalue=0.14390157812640425)
 - Observation: The p-value is greater than $\alpha$. This suggests that there is no significant difference in the likelihood of network anomalies among network connections with different traffic volumes from destination to source.
 - Conclusion: Null hypothesis (H0) is true.
 
-### Hypothesis 2: Certain protocols are more frequently associated with network anomalies.
+### Hypothesis 2: Certain protocols are more frequently associated with network anomalies. Are certain protocols more frequently associated with anomalies in the network?
 - Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies among different protocol types.
 - Alternate hypothesis (H1): There is a significant difference in the likelihood of network anomalies among different protocol types.
 - Test used: Chi-Square Test for Independence
