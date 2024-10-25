@@ -112,7 +112,7 @@ The new shape of the dataset, after dropping the columns `lastflag` and `numoutb
 ```
 
 ### State of the dataset after data cleaning
-The new dataset with all the above changes made during data cleaning is stored in: [link](datasets/network_anomaly_dataset_cleaned.csv).
+The new dataset with all the changes made during data cleaning is stored in: [link](datasets/network_anomaly_dataset_cleaned.csv).
 
 
 # Analysis of Factors Associated with Intrusions in a Network using Tableau
@@ -305,7 +305,7 @@ Based on the above observations, the attributes that can be removed are,
 - Number of outliers = 31469
 
 ### State of the dataset after EDA
-The new dataset with all the above changes made during EDA is stored in: [link](datasets/network_anomaly_dataset_eda.csv).
+The new dataset with all the changes made during EDA is stored in: [link](datasets/network_anomaly_dataset_eda.csv).
 
 
 # Hypothesis Testing
@@ -345,7 +345,7 @@ Ttest_indResult(statistic=-1.4614241258205836, pvalue=0.14390157812640425)
 - Observation: The p-value is greater than $\alpha$. This suggests that there is no significant difference in the likelihood of network anomalies among network connections with different traffic volumes from destination to source.
 - Conclusion: Null hypothesis (H0) is true.
 
-### Hypothesis 2: Certain protocols are more frequently associated with network anomalies. Are certain protocols more frequently associated with anomalies in the network?
+### Hypothesis 2: Certain protocols are more frequently associated with network anomalies.
 - Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies among different protocol types.
 - Alternate hypothesis (H1): There is a significant difference in the likelihood of network anomalies among different protocol types.
 - Test used: Chi-Square Test for Independence
@@ -551,3 +551,6 @@ x29           -0.4605      0.024    -18.890      0.000      -0.508      -0.413
        - Although the coefficient of this attribute is positive, is is not statistically significant (p-value > 0.05).
        - This suggests that while there might be a slight positive association between urgent packets and anomalies, the evidence is not strong enough to conclude a significant relationship.
 - Conclusion: Null hypothesis (H0) is true.
+
+### State of the dataset after hypothesis testing
+The new dataset with all the changes made during hypothesis testing is stored in: [link](datasets/network_anomaly_dataset_hypothesis_testing.csv)
