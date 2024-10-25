@@ -445,15 +445,109 @@ Chi2ContingencyResult(statistic=93240.03213516614, pvalue=0.0, dof=69, expected_
 - Alternate hypothesis (H1): There is a significant difference in the likelihood of network anomalies between connections with and without error flags.
 - Test used: Logistic Regression model using `statsmodels.api.Logit`.
 - Significance level ($\alpha$) = 0.05
-- Test result: 
+- Test result:
+```
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:       normal_or_attack   No. Observations:                88181
+Model:                          Logit   Df Residuals:                    88152
+Method:                           MLE   Df Model:                           28
+Date:                Fri, 25 Oct 2024   Pseudo R-squ.:                  0.7843
+Time:                        18:11:32   Log-Likelihood:                -13136.
+converged:                       True   LL-Null:                       -60904.
+Covariance Type:            nonrobust   LLR p-value:                     0.000
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+x1            -0.2024      0.015    -13.848      0.000      -0.231      -0.174
+x2            -0.6845      0.015    -46.897      0.000      -0.713      -0.656
+x3             0.7548      0.149      5.079      0.000       0.464       1.046
+x4             0.4784      0.491      0.974      0.330      -0.484       1.441
+x5            -0.0121      0.010     -1.251      0.211      -0.031       0.007
+x6            42.4380   6.35e+06   6.69e-06      1.000   -1.24e+07    1.24e+07
+x7             0.0084      0.009      0.936      0.349      -0.009       0.026
+x8             0.3573      0.011     32.145      0.000       0.336       0.379
+x9             0.0149      0.010      1.534      0.125      -0.004       0.034
+x10           -0.9678      0.022    -44.610      0.000      -1.010      -0.925
+x11           -0.0051      0.038     -0.136      0.892      -0.079       0.068
+x12            0.0923      0.013      7.326      0.000       0.068       0.117
+x13           -0.0979      0.033     -2.998      0.003      -0.162      -0.034
+x14           -0.0822      0.032     -2.580      0.010      -0.145      -0.020
+x15            0.0094      0.010      0.910      0.363      -0.011       0.030
+x16           -0.0760      0.041     -1.841      0.066      -0.157       0.005
+x17        -1599.1823   1.66e+08  -9.63e-06      1.000   -3.25e+08    3.25e+08
+x18            6.5118      0.142     45.729      0.000       6.233       6.791
+x19           -3.8015      0.091    -41.785      0.000      -3.980      -3.623
+x20           -0.0672      0.021     -3.234      0.001      -0.108      -0.026
+x21           -0.0635      0.014     -4.566      0.000      -0.091      -0.036
+x22            0.2533      0.015     16.778      0.000       0.224       0.283
+x23            0.5208      0.022     23.403      0.000       0.477       0.564
+x24           -1.1924      0.028    -43.018      0.000      -1.247      -1.138
+x25            0.0540      0.016      3.301      0.001       0.022       0.086
+x26            0.5627      0.015     36.890      0.000       0.533       0.593
+x27            0.3271      0.015     22.189      0.000       0.298       0.356
+x28            3.9858      0.168     23.680      0.000       3.656       4.316
+x29           -0.4605      0.024    -18.890      0.000      -0.508      -0.413
+==============================================================================
+```
 - Observation:
-- Conclusion:
+       - The "flag" attribute is represented by "x28" in the above table.
+       - The coefficient of this attribute is positive, and is also statistically significant (p-value < 0.05).
+       - This indicates that the "flag" attribute is positively is associated with the anomalies.
+- Conclusion: Alternate hypothesis (H1) is true.
 
 ### Hypothesis 5: Connections that include urgent packets are more likely to be anomolous.
 - Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies between connections with and without urgent packets.
 - Alternate hypothesis (H1): There is a significant difference in the likelihood of network anomalies between connections with and without urgent packets.
 - Test used: Logistic Regression model using `statsmodels.api.Logit`.
 - Significance level ($\alpha$) = 0.05
-- Test result: 
+- Test result:
+```
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:       normal_or_attack   No. Observations:                88181
+Model:                          Logit   Df Residuals:                    88152
+Method:                           MLE   Df Model:                           28
+Date:                Fri, 25 Oct 2024   Pseudo R-squ.:                  0.7843
+Time:                        18:11:32   Log-Likelihood:                -13136.
+converged:                       True   LL-Null:                       -60904.
+Covariance Type:            nonrobust   LLR p-value:                     0.000
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+x1            -0.2024      0.015    -13.848      0.000      -0.231      -0.174
+x2            -0.6845      0.015    -46.897      0.000      -0.713      -0.656
+x3             0.7548      0.149      5.079      0.000       0.464       1.046
+x4             0.4784      0.491      0.974      0.330      -0.484       1.441
+x5            -0.0121      0.010     -1.251      0.211      -0.031       0.007
+x6            42.4380   6.35e+06   6.69e-06      1.000   -1.24e+07    1.24e+07
+x7             0.0084      0.009      0.936      0.349      -0.009       0.026
+x8             0.3573      0.011     32.145      0.000       0.336       0.379
+x9             0.0149      0.010      1.534      0.125      -0.004       0.034
+x10           -0.9678      0.022    -44.610      0.000      -1.010      -0.925
+x11           -0.0051      0.038     -0.136      0.892      -0.079       0.068
+x12            0.0923      0.013      7.326      0.000       0.068       0.117
+x13           -0.0979      0.033     -2.998      0.003      -0.162      -0.034
+x14           -0.0822      0.032     -2.580      0.010      -0.145      -0.020
+x15            0.0094      0.010      0.910      0.363      -0.011       0.030
+x16           -0.0760      0.041     -1.841      0.066      -0.157       0.005
+x17        -1599.1823   1.66e+08  -9.63e-06      1.000   -3.25e+08    3.25e+08
+x18            6.5118      0.142     45.729      0.000       6.233       6.791
+x19           -3.8015      0.091    -41.785      0.000      -3.980      -3.623
+x20           -0.0672      0.021     -3.234      0.001      -0.108      -0.026
+x21           -0.0635      0.014     -4.566      0.000      -0.091      -0.036
+x22            0.2533      0.015     16.778      0.000       0.224       0.283
+x23            0.5208      0.022     23.403      0.000       0.477       0.564
+x24           -1.1924      0.028    -43.018      0.000      -1.247      -1.138
+x25            0.0540      0.016      3.301      0.001       0.022       0.086
+x26            0.5627      0.015     36.890      0.000       0.533       0.593
+x27            0.3271      0.015     22.189      0.000       0.298       0.356
+x28            3.9858      0.168     23.680      0.000       3.656       4.316
+x29           -0.4605      0.024    -18.890      0.000      -0.508      -0.413
+==============================================================================
+```
 - Observation:
-- Conclusion:
+       - The "urgent" attribute is represented by "x7" in the above table.
+       - Although the coefficient of this attribute is positive, is is not statistically significant (p-value > 0.05).
+       - This suggests that while there might be a slight positive association between urgent packets and anomalies, the evidence is not strong enough to conclude a significant relationship.
+- Conclusion: Null hypothesis (H0) is true.
