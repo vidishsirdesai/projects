@@ -112,7 +112,7 @@ The new shape of the dataset, after dropping the columns `lastflag` and `numoutb
 ```
 
 ### State of the dataset after data cleaning
-The new dataset with all the changes made during data cleaning is stored in: [link](datasets/network_anomaly_dataset_cleaned.csv).
+The dataset with all the changes made during data cleaning is stored in: [link](datasets/network_anomaly_dataset_cleaned.csv).
 
 
 # Analysis of Factors Associated with Intrusions in a Network using Tableau
@@ -305,7 +305,7 @@ Based on the above observations, the attributes that can be removed are,
 - Number of outliers = 31469
 
 ### State of the dataset after EDA
-The new dataset with all the changes made during EDA is stored in: [link](datasets/network_anomaly_dataset_eda.csv).
+The dataset with all the changes made during EDA is stored in: [link](datasets/network_anomaly_dataset_eda.csv).
 
 
 # Hypothesis Testing
@@ -553,7 +553,7 @@ x29           -0.4605      0.024    -18.890      0.000      -0.508      -0.413
 - Conclusion: Null hypothesis (H0) is true.
 
 ### State of the dataset after hypothesis testing
-The new dataset with all the changes made during hypothesis testing is stored in: [link](datasets/network_anomaly_dataset_hypothesis_testing.csv)
+The dataset with all the changes made during hypothesis testing is stored in: [link](datasets/network_anomaly_dataset_hypothesis_testing.csv)
 
 
 # Model Building: Data Pre-Processing
