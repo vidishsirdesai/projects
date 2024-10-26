@@ -554,3 +554,22 @@ x29           -0.4605      0.024    -18.890      0.000      -0.508      -0.413
 
 ### State of the dataset after hypothesis testing
 The new dataset with all the changes made during hypothesis testing is stored in: [link](datasets/network_anomaly_dataset_hypothesis_testing.csv)
+
+
+# Model Building: Data Pre-Processing
+Notebook Used: [link](notebooks/data_preprocessing.ipynb).
+
+Dataset Used: [link](datasets/network_anomaly_dataset.csv).
+
+### 
+
+
+# Model Building: Performance Comparison of Different Models
+
+### Logistic Regression OvR
+
+### kNN
+
+### Decision Trees
+
+### Random Forest
