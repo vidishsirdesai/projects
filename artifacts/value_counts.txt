@@ -202,7 +202,8 @@ Name: count, dtype: int64
 Column Name: suattempted
 suattempted
 0    125893
-1        80
+2        59
+1        21
 Name: count, dtype: int64
 --------------------
 

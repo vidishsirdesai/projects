@@ -202,7 +202,8 @@ Name: proportion, dtype: float64
 Column Name: suattempted
 suattempted
 0    99.936494
-1     0.063506
+2     0.046835
+1     0.016670
 Name: proportion, dtype: float64
 --------------------
 
