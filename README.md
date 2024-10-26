@@ -557,7 +557,7 @@ The dataset with all the changes made during hypothesis testing is stored in: [l
 
 
 # Model Building: Data Pre-Processing
-Notebook Used: [link](notebooks/model_building_data_preprocessing.ipynb).
+Notebook Used: [link](notebooks/data_preprocessing.ipynb).
 
 Dataset Used: [link](datasets/network_anomaly_dataset.csv).
 
