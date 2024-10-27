@@ -75,11 +75,6 @@ Notebook used: [link](notebooks/data_cleaning.ipynb).
 
 Dataset used: [link](datasets/network_anomaly_dataset.csv).
 
-### Cleaning `suattempted` column
-The column `suattempted`, according to the data dictionary (https://github.com/vidishsirdesai/network_anomaly_detection?tab=readme-ov-file#data-dictionary), is supposed to have only 2 values, i.e., 0 and 1. But, as seen in the output of cell number `7` in the jupyter notebook ([link](notebooks/data_cleaning.ipynb)), it has 3 values, i.e., 0, 1, and 2.
-
-Assuming that the presence of 2 in the column is a typo, all the rows in the column `suattempted` where there was a 2 present is changed to 1.
-
 ### Adding a new feature that represents a high level classification of attack types
 The column `attack` represents the type of attack at a much granular level. The unique attributes in this column are,
 
@@ -101,6 +96,11 @@ The attacks are majorly classified as follows,
 
 Considering all of the above, a new column, namely `attack_hlc`, has been created. Wherein each of the element in the `attack` column has been assigned to its respective high level class.
 
+### Cleaning `suattempted` column
+The column `suattempted`, according to the data dictionary (https://github.com/vidishsirdesai/network_anomaly_detection?tab=readme-ov-file#data-dictionary), is supposed to have only 2 values, i.e., 0 and 1. But, as seen in the output of cell number `7` in the jupyter notebook ([link](notebooks/data_cleaning.ipynb)), it has 3 values, i.e., 0, 1, and 2.
+
+Assuming that the presence of 2 in the column is a typo, all the rows in the column `suattempted` where there was a 2 present is changed to 1.
+
 ### Undefined and redundant attributes
 There is no description available for the feature `lastflag` in the data dictionary. Hence it has been dropped from the list of columns.
 
@@ -114,6 +114,8 @@ The new shape of the dataset, after dropping the columns `lastflag` and `numoutb
 ### State of the dataset after data cleaning
 The dataset with all the changes made during data cleaning is stored in: [link](datasets/network_anomaly_dataset_cleaned.csv).
 
+The above cleaned dataset is used to create the Tableau dashboard.
+
 
 # Analysis of Factors Associated with Intrusions in a Network using Tableau
 Tableau Viz: 
@@ -124,18 +126,20 @@ Dataset used: [link](datasets/network_anomaly_dataset_cleaned.csv).
 # EDA
 Notebook used: [link](notebooks/eda.ipynb).
 
-Dataset used: [link](datasets/network_anomaly_dataset_cleaned.csv).
+Dataset used: [link](datasets/network_anomaly_dataset.csv).
+
+IMPORTANT: The dataset used for EDA is the initial uncleaned dataset.
 
 ### Shape of the data
 ```
-(125973, 42)
+(125973, 43)
 ```
 
 ### Structure of the data and data type of the attributes
 ```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 125973 entries, 0 to 125972
-Data columns (total 42 columns):
+Data columns (total 43 columns):
  #   Column                  Non-Null Count   Dtype  
 ---  ------                  --------------   -----  
  0   duration                125973 non-null  int64  
@@ -157,35 +161,43 @@ Data columns (total 42 columns):
  16  numfilecreations        125973 non-null  int64  
  17  numshells               125973 non-null  int64  
  18  numaccessfiles          125973 non-null  int64  
- 19  ishostlogin             125973 non-null  int64  
- 20  isguestlogin            125973 non-null  int64  
- 21  count                   125973 non-null  int64  
- 22  srvcount                125973 non-null  int64  
- 23  serrorrate              125973 non-null  float64
- 24  srvserrorrate           125973 non-null  float64
- 25  rerrorrate              125973 non-null  float64
- 26  srvrerrorrate           125973 non-null  float64
- 27  samesrvrate             125973 non-null  float64
- 28  diffsrvrate             125973 non-null  float64
- 29  srvdiffhostrate         125973 non-null  float64
- 30  dsthostcount            125973 non-null  int64  
- 31  dsthostsrvcount         125973 non-null  int64  
- 32  dsthostsamesrvrate      125973 non-null  float64
- 33  dsthostdiffsrvrate      125973 non-null  float64
- 34  dsthostsamesrcportrate  125973 non-null  float64
- 35  dsthostsrvdiffhostrate  125973 non-null  float64
- 36  dsthostserrorrate       125973 non-null  float64
- 37  dsthostsrvserrorrate    125973 non-null  float64
- 38  dsthostrerrorrate       125973 non-null  float64
- 39  dsthostsrvrerrorrate    125973 non-null  float64
- 40  attack                  125973 non-null  object 
- 41  attackhlc               125973 non-null  object 
-dtypes: float64(15), int64(22), object(5)
-memory usage: 40.4+ MB
+ 19  numoutboundcmds         125973 non-null  int64  
+ 20  ishostlogin             125973 non-null  int64  
+ 21  isguestlogin            125973 non-null  int64  
+ 22  count                   125973 non-null  int64  
+ 23  srvcount                125973 non-null  int64  
+ 24  serrorrate              125973 non-null  float64
+ 25  srvserrorrate           125973 non-null  float64
+ 26  rerrorrate              125973 non-null  float64
+ 27  srvrerrorrate           125973 non-null  float64
+ 28  samesrvrate             125973 non-null  float64
+ 29  diffsrvrate             125973 non-null  float64
+ 30  srvdiffhostrate         125973 non-null  float64
+ 31  dsthostcount            125973 non-null  int64  
+ 32  dsthostsrvcount         125973 non-null  int64  
+ 33  dsthostsamesrvrate      125973 non-null  float64
+ 34  dsthostdiffsrvrate      125973 non-null  float64
+ 35  dsthostsamesrcportrate  125973 non-null  float64
+ 36  dsthostsrvdiffhostrate  125973 non-null  float64
+ 37  dsthostserrorrate       125973 non-null  float64
+ 38  dsthostsrvserrorrate    125973 non-null  float64
+ 39  dsthostrerrorrate       125973 non-null  float64
+ 40  dsthostsrvrerrorrate    125973 non-null  float64
+ 41  attack                  125973 non-null  object 
+ 42  lastflag                125973 non-null  int64  
+dtypes: float64(15), int64(24), object(4)
+memory usage: 41.3+ MB
 ```
 
-### Missing values and duplicates
-There are no missing values or duplicates in the data.
+### Adding a new feature that represents a high level classification of attack types
+Repeating the same step from data cleaning, where a new column "attackhlc" is created from "attack" which represents a high level classification of the attack types.
+
+### Undefined and redundant attributes
+This is also a repitition of the same step from data cleaning, where undefined and redundant columns were removed.
+
+There is no description available for the feature `lastflag` in the data dictionary. Hence it has been dropped from the list of columns.
+
+Also, the column `numoutboundcmds` has all zeros. This column can also be dropped from the list of columns.
 
 ### Statistical summary of continuous attributes
 ```
@@ -201,7 +213,7 @@ numfailedlogins         125973.0      0.001222  4.523914e-02  0.0   0.00    0.00
 loggedin                125973.0      0.395736  4.890101e-01  0.0   0.00    0.00    1.00  1.000000e+00
 numcompromised          125973.0      0.279250  2.394204e+01  0.0   0.00    0.00    0.00  7.479000e+03
 rootshell               125973.0      0.001342  3.660284e-02  0.0   0.00    0.00    0.00  1.000000e+00
-suattempted             125973.0      0.000635  2.519243e-02  0.0   0.00    0.00    0.00  1.000000e+00
+suattempted             125973.0      0.001103  4.515438e-02  0.0   0.00    0.00    0.00  2.000000e+00
 numroot                 125973.0      0.302192  2.439962e+01  0.0   0.00    0.00    0.00  7.468000e+03
 numfilecreations        125973.0      0.012669  4.839351e-01  0.0   0.00    0.00    0.00  4.300000e+01
 numshells               125973.0      0.000413  2.218113e-02  0.0   0.00    0.00    0.00  2.000000e+00
@@ -229,13 +241,21 @@ dsthostrerrorrate       125973.0      0.118832  3.065575e-01  0.0   0.00    0.00
 dsthostsrvrerrorrate    125973.0      0.120240  3.194594e-01  0.0   0.00    0.00    0.00  1.000000e+00
 ```
 
+### Unique attributes and number of unique attributes in each column
+Information regarding the number of unique attributes and the unique attributes in each column can be found here: [link](artifacts/unique_attributes.txt).
+
 ### Value counts and frequency of occurrence of each unique element in each column
 Information regarding the value counts of each of the unique attributes can be found here: [link](artifacts/value_counts.txt).
 
 Additionally, the frequency of occurrence of each unique values in each column expressed as a proportion of the total count can found here: [link](artifacts/value_counts_normalized.txt).
 
-### Unique attributes and number of unique attributes in each column
-Information regarding the number of unique attributes and the unique attributes in each column can be found here: [link](artifacts/unique_attributes.txt).
+### Cleaning `suattempted` column
+The column `suattempted`, according to the data dictionary (https://github.com/vidishsirdesai/network_anomaly_detection?tab=readme-ov-file#data-dictionary), is supposed to have only 2 values, i.e., 0 and 1. But, as seen in the output of cell number `19` in the jupyter notebook ([link](notebooks/eda.ipynb)), it has 3 values, i.e., 0, 1, and 2.
+
+Assuming that the presence of 2 in the column is a typo, all the rows in the column `suattempted` where there was a 2 present is changed to 1.
+
+### Missing values and duplicates
+There are no missing values or duplicates in the data.
 
 ### Conversion of data type of certain numerical attributes to categorical attributes
 The data type of the following numerical attributes (columns) is converted to categorical,
@@ -249,12 +269,17 @@ The above numerical attributes have discrete values of 0 and 1, hence it is appr
 ### Numerical and categorical attributes
 Numerical attributes: 
 ```
+Numerical columns:
 ['duration', 'srcbytes', 'dstbytes', 'wrongfragment', 'urgent', 'hot', 'numfailedlogins', 'numcompromised', 'numroot', 'numfilecreations', 'numshells', 'numaccessfiles', 'count', 'srvcount', 'serrorrate', 'srvserrorrate', 'rerrorrate', 'srvrerrorrate', 'samesrvrate', 'diffsrvrate', 'srvdiffhostrate', 'dsthostcount', 'dsthostsrvcount', 'dsthostsamesrvrate', 'dsthostdiffsrvrate', 'dsthostsamesrcportrate', 'dsthostsrvdiffhostrate', 'dsthostserrorrate', 'dsthostsrvserrorrate', 'dsthostrerrorrate', 'dsthostsrvrerrorrate']
+Number of numerical columns = 31
 ```
 
 Categorical attributes:
 ```
+Categorical columns:
 ['protocoltype', 'service', 'flag', 'land', 'loggedin', 'rootshell', 'suattempted', 'ishostlogin', 'isguestlogin', 'attack', 'attackhlc']
+Number of numerical columns = 11
+
 ```
 
 ### Distribution of numerical attributes (using box plots)
@@ -303,9 +328,6 @@ Based on the above observations, the attributes that can be removed are,
 ### Outliers
 - Number of data points = 125973
 - Number of outliers = 31469
-
-### State of the dataset after EDA
-The dataset with all the changes made during EDA is stored in: [link](datasets/network_anomaly_dataset_eda.csv).
 
 
 # Hypothesis Testing
@@ -450,48 +472,45 @@ Chi2ContingencyResult(statistic=93240.03213516614, pvalue=0.0, dof=69, expected_
                            Logit Regression Results                           
 ==============================================================================
 Dep. Variable:       normal_or_attack   No. Observations:                88181
-Model:                          Logit   Df Residuals:                    88152
-Method:                           MLE   Df Model:                           28
-Date:                Fri, 25 Oct 2024   Pseudo R-squ.:                  0.7843
-Time:                        18:11:32   Log-Likelihood:                -13136.
+Model:                          Logit   Df Residuals:                    88155
+Method:                           MLE   Df Model:                           25
+Date:                Sat, 26 Oct 2024   Pseudo R-squ.:                  0.7459
+Time:                        21:55:05   Log-Likelihood:                -15478.
 converged:                       True   LL-Null:                       -60904.
 Covariance Type:            nonrobust   LLR p-value:                     0.000
 ==============================================================================
                  coef    std err          z      P>|z|      [0.025      0.975]
 ------------------------------------------------------------------------------
-x1            -0.2024      0.015    -13.848      0.000      -0.231      -0.174
-x2            -0.6845      0.015    -46.897      0.000      -0.713      -0.656
-x3             0.7548      0.149      5.079      0.000       0.464       1.046
-x4             0.4784      0.491      0.974      0.330      -0.484       1.441
-x5            -0.0121      0.010     -1.251      0.211      -0.031       0.007
-x6            42.4380   6.35e+06   6.69e-06      1.000   -1.24e+07    1.24e+07
-x7             0.0084      0.009      0.936      0.349      -0.009       0.026
-x8             0.3573      0.011     32.145      0.000       0.336       0.379
-x9             0.0149      0.010      1.534      0.125      -0.004       0.034
-x10           -0.9678      0.022    -44.610      0.000      -1.010      -0.925
-x11           -0.0051      0.038     -0.136      0.892      -0.079       0.068
-x12            0.0923      0.013      7.326      0.000       0.068       0.117
-x13           -0.0979      0.033     -2.998      0.003      -0.162      -0.034
-x14           -0.0822      0.032     -2.580      0.010      -0.145      -0.020
-x15            0.0094      0.010      0.910      0.363      -0.011       0.030
-x16           -0.0760      0.041     -1.841      0.066      -0.157       0.005
-x17        -1599.1823   1.66e+08  -9.63e-06      1.000   -3.25e+08    3.25e+08
-x18            6.5118      0.142     45.729      0.000       6.233       6.791
-x19           -3.8015      0.091    -41.785      0.000      -3.980      -3.623
-x20           -0.0672      0.021     -3.234      0.001      -0.108      -0.026
-x21           -0.0635      0.014     -4.566      0.000      -0.091      -0.036
-x22            0.2533      0.015     16.778      0.000       0.224       0.283
-x23            0.5208      0.022     23.403      0.000       0.477       0.564
-x24           -1.1924      0.028    -43.018      0.000      -1.247      -1.138
-x25            0.0540      0.016      3.301      0.001       0.022       0.086
-x26            0.5627      0.015     36.890      0.000       0.533       0.593
-x27            0.3271      0.015     22.189      0.000       0.298       0.356
-x28            3.9858      0.168     23.680      0.000       3.656       4.316
-x29           -0.4605      0.024    -18.890      0.000      -0.508      -0.413
+x1            -0.2132      0.014    -15.665      0.000      -0.240      -0.187
+x2             0.5772      0.269      2.149      0.032       0.051       1.104
+x3             1.0158      0.509      1.997      0.046       0.019       2.013
+x4            -0.0150      0.013     -1.192      0.233      -0.040       0.010
+x5             2.7225      2.866      0.950      0.342      -2.894       8.339
+x6             0.0076      0.009      0.805      0.421      -0.011       0.026
+x7             0.3983      0.011     36.480      0.000       0.377       0.420
+x8             0.0388      0.009      4.135      0.000       0.020       0.057
+x9            -0.0976      0.072     -1.364      0.173      -0.238       0.043
+x10            0.0743      0.013      5.537      0.000       0.048       0.101
+x11           -0.1199      0.037     -3.226      0.001      -0.193      -0.047
+x12           -0.1366      0.041     -3.335      0.001      -0.217      -0.056
+x13           -0.0058      0.010     -0.602      0.547      -0.025       0.013
+x14           -0.1367      0.040     -3.393      0.001      -0.216      -0.058
+x15         -693.5490     77.317     -8.970      0.000    -845.087    -542.011
+x16            7.6434      0.135     56.446      0.000       7.378       7.909
+x17           -4.3413      0.086    -50.263      0.000      -4.511      -4.172
+x18            0.0511      0.012      4.161      0.000       0.027       0.075
+x19            0.3185      0.013     24.053      0.000       0.293       0.344
+x20            0.7644      0.020     37.865      0.000       0.725       0.804
+x21           -1.5790      0.024    -66.967      0.000      -1.625      -1.533
+x22           -0.2248      0.016    -14.410      0.000      -0.255      -0.194
+x23            0.8640      0.014     60.496      0.000       0.836       0.892
+x24            0.7041      0.017     42.544      0.000       0.672       0.737
+x25           -0.7929      0.024    -33.503      0.000      -0.839      -0.746
+x26            4.3007      0.144     29.876      0.000       4.019       4.583
 ==============================================================================
 ```
 - Observation:
-       - The "flag" attribute is represented by "x28" in the above table.
+       - The "flag" attribute is represented by "x26" in the above table.
        - The coefficient of this attribute is positive, and is also statistically significant (p-value < 0.05).
        - This indicates that the "flag" attribute is positively is associated with the anomalies.
 - Conclusion: Alternate hypothesis (H1) is true.
@@ -506,54 +525,48 @@ x29           -0.4605      0.024    -18.890      0.000      -0.508      -0.413
                            Logit Regression Results                           
 ==============================================================================
 Dep. Variable:       normal_or_attack   No. Observations:                88181
-Model:                          Logit   Df Residuals:                    88152
-Method:                           MLE   Df Model:                           28
-Date:                Fri, 25 Oct 2024   Pseudo R-squ.:                  0.7843
-Time:                        18:11:32   Log-Likelihood:                -13136.
+Model:                          Logit   Df Residuals:                    88155
+Method:                           MLE   Df Model:                           25
+Date:                Sat, 26 Oct 2024   Pseudo R-squ.:                  0.7459
+Time:                        21:55:05   Log-Likelihood:                -15478.
 converged:                       True   LL-Null:                       -60904.
 Covariance Type:            nonrobust   LLR p-value:                     0.000
 ==============================================================================
                  coef    std err          z      P>|z|      [0.025      0.975]
 ------------------------------------------------------------------------------
-x1            -0.2024      0.015    -13.848      0.000      -0.231      -0.174
-x2            -0.6845      0.015    -46.897      0.000      -0.713      -0.656
-x3             0.7548      0.149      5.079      0.000       0.464       1.046
-x4             0.4784      0.491      0.974      0.330      -0.484       1.441
-x5            -0.0121      0.010     -1.251      0.211      -0.031       0.007
-x6            42.4380   6.35e+06   6.69e-06      1.000   -1.24e+07    1.24e+07
-x7             0.0084      0.009      0.936      0.349      -0.009       0.026
-x8             0.3573      0.011     32.145      0.000       0.336       0.379
-x9             0.0149      0.010      1.534      0.125      -0.004       0.034
-x10           -0.9678      0.022    -44.610      0.000      -1.010      -0.925
-x11           -0.0051      0.038     -0.136      0.892      -0.079       0.068
-x12            0.0923      0.013      7.326      0.000       0.068       0.117
-x13           -0.0979      0.033     -2.998      0.003      -0.162      -0.034
-x14           -0.0822      0.032     -2.580      0.010      -0.145      -0.020
-x15            0.0094      0.010      0.910      0.363      -0.011       0.030
-x16           -0.0760      0.041     -1.841      0.066      -0.157       0.005
-x17        -1599.1823   1.66e+08  -9.63e-06      1.000   -3.25e+08    3.25e+08
-x18            6.5118      0.142     45.729      0.000       6.233       6.791
-x19           -3.8015      0.091    -41.785      0.000      -3.980      -3.623
-x20           -0.0672      0.021     -3.234      0.001      -0.108      -0.026
-x21           -0.0635      0.014     -4.566      0.000      -0.091      -0.036
-x22            0.2533      0.015     16.778      0.000       0.224       0.283
-x23            0.5208      0.022     23.403      0.000       0.477       0.564
-x24           -1.1924      0.028    -43.018      0.000      -1.247      -1.138
-x25            0.0540      0.016      3.301      0.001       0.022       0.086
-x26            0.5627      0.015     36.890      0.000       0.533       0.593
-x27            0.3271      0.015     22.189      0.000       0.298       0.356
-x28            3.9858      0.168     23.680      0.000       3.656       4.316
-x29           -0.4605      0.024    -18.890      0.000      -0.508      -0.413
+x1            -0.2132      0.014    -15.665      0.000      -0.240      -0.187
+x2             0.5772      0.269      2.149      0.032       0.051       1.104
+x3             1.0158      0.509      1.997      0.046       0.019       2.013
+x4            -0.0150      0.013     -1.192      0.233      -0.040       0.010
+x5             2.7225      2.866      0.950      0.342      -2.894       8.339
+x6             0.0076      0.009      0.805      0.421      -0.011       0.026
+x7             0.3983      0.011     36.480      0.000       0.377       0.420
+x8             0.0388      0.009      4.135      0.000       0.020       0.057
+x9            -0.0976      0.072     -1.364      0.173      -0.238       0.043
+x10            0.0743      0.013      5.537      0.000       0.048       0.101
+x11           -0.1199      0.037     -3.226      0.001      -0.193      -0.047
+x12           -0.1366      0.041     -3.335      0.001      -0.217      -0.056
+x13           -0.0058      0.010     -0.602      0.547      -0.025       0.013
+x14           -0.1367      0.040     -3.393      0.001      -0.216      -0.058
+x15         -693.5490     77.317     -8.970      0.000    -845.087    -542.011
+x16            7.6434      0.135     56.446      0.000       7.378       7.909
+x17           -4.3413      0.086    -50.263      0.000      -4.511      -4.172
+x18            0.0511      0.012      4.161      0.000       0.027       0.075
+x19            0.3185      0.013     24.053      0.000       0.293       0.344
+x20            0.7644      0.020     37.865      0.000       0.725       0.804
+x21           -1.5790      0.024    -66.967      0.000      -1.625      -1.533
+x22           -0.2248      0.016    -14.410      0.000      -0.255      -0.194
+x23            0.8640      0.014     60.496      0.000       0.836       0.892
+x24            0.7041      0.017     42.544      0.000       0.672       0.737
+x25           -0.7929      0.024    -33.503      0.000      -0.839      -0.746
+x26            4.3007      0.144     29.876      0.000       4.019       4.583
 ==============================================================================
 ```
 - Observation:
-       - The "urgent" attribute is represented by "x7" in the above table.
+       - The "urgent" attribute is represented by "x6" in the above table.
        - Although the coefficient of this attribute is positive, is is not statistically significant (p-value > 0.05).
-       - This suggests that while there might be a slight positive association between urgent packets and anomalies, the evidence is not strong enough to conclude a significant relationship.
+       - This suggests that while there might be a slight positive association between urgent packets and anomalies, but the evidence is not strong enough to conclude a significant relationship.
 - Conclusion: Null hypothesis (H0) is true.
-
-### State of the dataset after hypothesis testing
-The dataset with all the changes made during hypothesis testing is stored in: [link](datasets/network_anomaly_dataset_hypothesis_testing.csv)
 
 
 # Model Building: Data Pre-Processing
