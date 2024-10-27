@@ -363,3 +363,249 @@ Based on the above observations, the attributes that can be removed are,
 
 
 # Hypothesis Testing
+- Dataset used: [network_anomaly_dataset.ipynb](datasets/network_anomaly_dataset.csv).
+- Notebook used: [hypothesis_testing](notebooks/hypothesis_testing.ipynb).
+
+### Creating a new column `normal_or_attack`
+For the specific case of hypothesis testing, the `attack` column is used to create a new column called `normal_or_attack` which contains the values 0 or 1.
+
+For testing the hypotheses it would be appropriate if the target column had 2 values. 0 representing normal connections, and 1 representing an attack.
+
+This newly created column `normal_or_attack` will be the target column or variable for the specific case of testing the different hypotheses.
+
+### Cleaning the data
+The steps to clean the data in the data cleaning step (above) are applied again,
+1. Creating a new column `attack_hlc`.
+2. Cleaning the `suattempted` column.
+3. Removing the undefined and redundant columns, `lastflag` and `numoutboundcmds`.
+
+### Hypothesis 1: Network connections with unusually high or low traffic volumns (bytes transferred) are more likely to be anomalous.
+This hypothesis can further be simplified into 2 scenarios,
+1.  Network connections with unusually high or low traffic volumes from source to destination are more likely to be anomalous.
+2.  Network connections with unusually high or low traffic volumes from destination to source are more likely to be anomalous.
+
+####  Network connections with unusually high or low traffic volumes from source to destination are more likely to be anomalous.
+- Null hypothesis (H0): There is no significant difference in the network traffic volume from source to destination of normal connection and attack connection.
+- Alternate hypothesis (H1): There is a significant difference in the network traffic volume from source to destination of normal connection and attack connection.
+- Test used: Independent Samples T-Test
+- Significance level ($\alpha$) = 0.05
+- Test result:
+```
+Ttest_indResult(statistic=-2.101656020563486, pvalue=0.03558539933331456)
+```
+- Observation: The p-value is lesser than $\alpha$. There is a significant difference in the network traffic volume from source to destination of normal connection and attack connection. 
+- Conclusion: Alternate hypothesis (H1) is true.
+
+####  Network connections with unusually high or low traffic volumes from destination to source are more likely to be anomalous.
+- Null hypothesis (H0): There is no significant difference in the network traffic volume from destination to source of normal connection and attack connection.
+- Alternate hypothesis (H1): There is a significant difference in the network traffic volume from destination to source of normal connection and attack connection.
+- Test used: Independent Samples T-Test
+- Significance level ($\alpha$) = 0.05
+- Test result:
+```
+Ttest_indResult(statistic=-1.4614241258205836, pvalue=0.14390157812640425)
+```
+- Observation: The p-value is greater than $\alpha$. This suggests that there is no significant difference in the likelihood of network anomalies among network connections with different traffic volumes from destination to source.
+- Conclusion: Null hypothesis (H0) is true.
+
+### Hypothesis 2: Certain protocols are more frequently associated with network anomalies.
+- Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies among different protocol types.
+- Alternate hypothesis (H1): There is a significant difference in the likelihood of network anomalies among different protocol types.
+- Test used: Chi-Square Test for Independence
+- Significance level ($\alpha$) = 0.05
+- Test result:
+```
+Chi2ContingencyResult(statistic=10029.24862778463, pvalue=0.0, dof=2, expected_freq=array([[ 4432.22605638,  3858.77394362],
+       [54895.77391187, 47793.22608813],
+       [ 8015.00003175,  6977.99996825]]))
+```
+- Observation: The p-value is less than $\alpha$. There is a significant difference in the likelihood of network anomalies among different protocol types.
+- Conclusion: Alternate hypothesis (H1) is true.
+
+### Hypothesis 3: Specific services are targets of network anomalies more often than others.
+- Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies among different services.
+- Alternate hypothesis (H1): There is no significant difference in the likelihood of network anomalies among different services.
+- Test used: Chi-Square Test for Independence
+- Significance level ($\alpha$) = 0.05
+- Test result:
+```
+Chi2ContingencyResult(statistic=93240.03213516614, pvalue=0.0, dof=69, expected_freq=array([[9.99669850e+01, 8.70330150e+01],
+       [3.90245449e+01, 3.39754551e+01],
+       [4.60810380e+02, 4.01189620e+02],
+       [1.06916561e+00, 9.30834385e-01],
+       [5.10526581e+02, 4.44473419e+02],
+       [3.79553793e+02, 3.30446207e+02],
+       [3.92383781e+02, 3.41616219e+02],
+       [2.91347630e+02, 2.53652370e+02],
+       [3.00970121e+02, 2.62029879e+02],
+       [2.78517643e+02, 2.42482357e+02],
+       [2.87605550e+02, 2.50394450e+02],
+       [3.04177617e+02, 2.64822383e+02],
+       [4.83423233e+03, 4.20876767e+03],
+       [2.32008938e+02, 2.01991062e+02],
+       [2.45159675e+03, 2.13440325e+03],
+       [1.64491130e+03, 1.43208870e+03],
+       [2.59272662e+02, 2.25727338e+02],
+       [2.53392251e+02, 2.20607749e+02],
+       [9.44607821e+02, 8.22392179e+02],
+       [9.37658244e+02, 8.16341756e+02],
+       [3.66723806e+03, 3.19276194e+03],
+       [2.76913894e+02, 2.41086106e+02],
+       [1.06916561e+00, 9.30834385e-01],
+       [2.45908091e+02, 2.14091909e+02],
+       [2.15640013e+04, 1.87739987e+04],
+       [5.34582807e-01, 4.65417193e-01],
+       [2.83328888e+02, 2.46671112e+02],
+       [1.06916561e+00, 9.30834385e-01],
+       [3.45875076e+02, 3.01124924e+02],
+       [3.67258389e+02, 3.19741611e+02],
+       [2.31474356e+02, 2.01525644e+02],
+       [1.59840259e+02, 1.39159741e+02],
+       [2.19178951e+02, 1.90821049e+02],
+       [2.53926834e+02, 2.21073166e+02],
+       [2.29336024e+02, 1.99663976e+02],
+       [2.34681852e+02, 2.04318148e+02],
+       [2.41096846e+02, 2.09903154e+02],
+       [2.16506037e+02, 1.88493963e+02],
+       [1.85500234e+02, 1.61499766e+02],
+       [1.93518976e+02, 1.68481024e+02],
+       [1.92449811e+02, 1.67550189e+02],
+       [3.36787169e+02, 2.93212831e+02],
+       [1.58236511e+02, 1.37763489e+02],
+       [8.98099116e+01, 7.81900884e+01],
+       [2.33024646e+03, 2.02875354e+03],
+       [2.67291404e+00, 2.32708596e+00],
+       [4.16974590e+01, 3.63025410e+01],
+       [1.41129861e+02, 1.22870139e+02],
+       [3.68862137e+01, 3.21137863e+01],
+       [1.16822381e+04, 1.01707619e+04],
+       [4.27666246e+00, 3.72333754e+00],
+       [4.16974590e+01, 3.63025410e+01],
+       [4.59741214e+01, 4.00258786e+01],
+       [3.47478825e+01, 3.02521175e+01],
+       [3.90940407e+03, 3.40359593e+03],
+       [1.30972788e+02, 1.14027212e+02],
+       [1.66255253e+02, 1.44744747e+02],
+       [2.03676050e+02, 1.77323950e+02],
+       [2.90813047e+02, 2.53186953e+02],
+       [2.54995999e+02, 2.22004001e+02],
+       [1.25787335e+03, 1.09512665e+03],
+       [1.60374842e+00, 1.39625158e+00],
+       [4.27666246e+00, 3.72333754e+00],
+       [3.49617156e+02, 3.04382844e+02],
+       [5.34582807e+00, 4.65417193e+00],
+       [3.21818850e+02, 2.80181150e+02],
+       [4.16974590e+02, 3.63025410e+02],
+       [3.68327554e+02, 3.20672446e+02],
+       [3.29837592e+02, 2.87162408e+02],
+       [3.70465886e+02, 3.22534114e+02]]))
+```
+- Observation: The p-value is less than $\alpha$. There is a significant difference in the likelihood of network anomalies among different protocol types.
+- Conclusion: Alternate hypothesis (H1) is true.
+
+### Hypothesis 4: Error flags in the Flag feature are significantly associated with anomalies.
+- Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies between connections with and without error flags.
+- Alternate hypothesis (H1): There is a significant difference in the likelihood of network anomalies between connections with and without error flags.
+- Test used: Logistic Regression model using `statsmodels.api.Logit`.
+- Significance level ($\alpha$) = 0.05
+- Test result:
+```
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:       normal_or_attack   No. Observations:                88181
+Model:                          Logit   Df Residuals:                    88155
+Method:                           MLE   Df Model:                           25
+Date:                Sun, 27 Oct 2024   Pseudo R-squ.:                  0.7459
+Time:                        16:59:42   Log-Likelihood:                -15478.
+converged:                       True   LL-Null:                       -60904.
+Covariance Type:            nonrobust   LLR p-value:                     0.000
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+x1            -0.2132      0.014    -15.665      0.000      -0.240      -0.187
+x2             0.5772      0.269      2.149      0.032       0.051       1.104
+x3             1.0158      0.509      1.997      0.046       0.019       2.013
+x4            -0.0150      0.013     -1.192      0.233      -0.040       0.010
+x5             2.7225      2.866      0.950      0.342      -2.894       8.339
+x6             0.0076      0.009      0.805      0.421      -0.011       0.026
+x7             0.3983      0.011     36.480      0.000       0.377       0.420
+x8             0.0388      0.009      4.135      0.000       0.020       0.057
+x9            -0.0976      0.072     -1.364      0.173      -0.238       0.043
+x10            0.0743      0.013      5.537      0.000       0.048       0.101
+x11           -0.1199      0.037     -3.226      0.001      -0.193      -0.047
+x12           -0.1366      0.041     -3.335      0.001      -0.217      -0.056
+x13           -0.0058      0.010     -0.602      0.547      -0.025       0.013
+x14           -0.1367      0.040     -3.393      0.001      -0.216      -0.058
+x15         -693.5490     77.317     -8.970      0.000    -845.087    -542.011
+x16            7.6434      0.135     56.446      0.000       7.378       7.909
+x17           -4.3413      0.086    -50.263      0.000      -4.511      -4.172
+x18            0.0511      0.012      4.161      0.000       0.027       0.075
+x19            0.3185      0.013     24.053      0.000       0.293       0.344
+x20            0.7644      0.020     37.865      0.000       0.725       0.804
+x21           -1.5790      0.024    -66.967      0.000      -1.625      -1.533
+x22           -0.2248      0.016    -14.410      0.000      -0.255      -0.194
+x23            0.8640      0.014     60.496      0.000       0.836       0.892
+x24            0.7041      0.017     42.544      0.000       0.672       0.737
+x25           -0.7929      0.024    -33.503      0.000      -0.839      -0.746
+x26            4.3007      0.144     29.876      0.000       4.019       4.583
+==============================================================================
+```
+- Observation:
+       - The "flag" attribute is represented by "x26" in the above table.
+       - The coefficient of this attribute is positive, and is also statistically significant (p-value < 0.05).
+       - This indicates that the "flag" attribute is positively is associated with the anomalies.
+- Conclusion: Alternate hypothesis (H1) is true.
+
+
+# Hypothesis 5: Connections that include urgent packets are more likely to be anomolous.
+- Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies between connections with and without urgent packets.
+- Alternate hypothesis (H1): There is a significant difference in the likelihood of network anomalies between connections with and without urgent packets.
+- Test used: Logistic Regression model using `statsmodels.api.Logit`.
+- Significance level ($\alpha$) = 0.05
+- Test result:
+```
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:       normal_or_attack   No. Observations:                88181
+Model:                          Logit   Df Residuals:                    88155
+Method:                           MLE   Df Model:                           25
+Date:                Sun, 27 Oct 2024   Pseudo R-squ.:                  0.7459
+Time:                        16:59:42   Log-Likelihood:                -15478.
+converged:                       True   LL-Null:                       -60904.
+Covariance Type:            nonrobust   LLR p-value:                     0.000
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+x1            -0.2132      0.014    -15.665      0.000      -0.240      -0.187
+x2             0.5772      0.269      2.149      0.032       0.051       1.104
+x3             1.0158      0.509      1.997      0.046       0.019       2.013
+x4            -0.0150      0.013     -1.192      0.233      -0.040       0.010
+x5             2.7225      2.866      0.950      0.342      -2.894       8.339
+x6             0.0076      0.009      0.805      0.421      -0.011       0.026
+x7             0.3983      0.011     36.480      0.000       0.377       0.420
+x8             0.0388      0.009      4.135      0.000       0.020       0.057
+x9            -0.0976      0.072     -1.364      0.173      -0.238       0.043
+x10            0.0743      0.013      5.537      0.000       0.048       0.101
+x11           -0.1199      0.037     -3.226      0.001      -0.193      -0.047
+x12           -0.1366      0.041     -3.335      0.001      -0.217      -0.056
+x13           -0.0058      0.010     -0.602      0.547      -0.025       0.013
+x14           -0.1367      0.040     -3.393      0.001      -0.216      -0.058
+x15         -693.5490     77.317     -8.970      0.000    -845.087    -542.011
+x16            7.6434      0.135     56.446      0.000       7.378       7.909
+x17           -4.3413      0.086    -50.263      0.000      -4.511      -4.172
+x18            0.0511      0.012      4.161      0.000       0.027       0.075
+x19            0.3185      0.013     24.053      0.000       0.293       0.344
+x20            0.7644      0.020     37.865      0.000       0.725       0.804
+x21           -1.5790      0.024    -66.967      0.000      -1.625      -1.533
+x22           -0.2248      0.016    -14.410      0.000      -0.255      -0.194
+x23            0.8640      0.014     60.496      0.000       0.836       0.892
+x24            0.7041      0.017     42.544      0.000       0.672       0.737
+x25           -0.7929      0.024    -33.503      0.000      -0.839      -0.746
+x26            4.3007      0.144     29.876      0.000       4.019       4.583
+==============================================================================
+```
+- Observation:
+       - The "urgent" attribute is represented by "x6" in the above table.
+       - Although the coefficient of this attribute is positive, is is not statistically significant (p-value > 0.05).
+       - This suggests that while there might be a slight positive association between urgent packets and anomalies, but the evidence is not strong enough to conclude a significant relationship.
+- Conclusion: Null hypothesis (H0) is true.
