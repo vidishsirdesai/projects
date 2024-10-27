@@ -140,7 +140,7 @@ Also, the column `numoutboundcmds` has all zeros. This column can also be droppe
 ```
 
 ### Dataset post data cleaning
-The dataset with all the changes made during data cleaning is stored in: [link](datasets/network_anomaly_dataset_cleaned.csv).
+The dataset with all the changes made during data cleaning is stored in: [network_anomaly_dataset_cleaned.csv](datasets/network_anomaly_dataset_cleaned.csv).
 
 The above cleaned dataset is used to create the Tableau dashboard.
 
