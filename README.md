@@ -363,8 +363,8 @@ Based on the above observations, the attributes that can be removed are,
 
 
 # Hypothesis Testing
-- Dataset used: [network_anomaly_dataset.ipynb](datasets/network_anomaly_dataset.csv).
-- Notebook used: [hypothesis_testing](notebooks/hypothesis_testing.ipynb).
+- Dataset used: [network_anomaly_dataset.csv](datasets/network_anomaly_dataset.csv).
+- Notebook used: [hypothesis_testing.ipynb](notebooks/hypothesis_testing.ipynb).
 
 ### Creating a new column `normal_or_attack`
 For the specific case of hypothesis testing, the `attack` column is used to create a new column called `normal_or_attack` which contains the values 0 or 1.
