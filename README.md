@@ -557,7 +557,7 @@ x26            4.3007      0.144     29.876      0.000       4.019       4.583
 - Conclusion: Alternate hypothesis (H1) is true.
 
 
-# Hypothesis 5: Connections that include urgent packets are more likely to be anomolous.
+### Hypothesis 5: Connections that include urgent packets are more likely to be anomolous.
 - Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies between connections with and without urgent packets.
 - Alternate hypothesis (H1): There is a significant difference in the likelihood of network anomalies between connections with and without urgent packets.
 - Test used: Logistic Regression model using `statsmodels.api.Logit`.
