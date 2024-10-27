@@ -71,7 +71,7 @@ Google Docs Link: [link](https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7Mrf
 
 
 # Data Cleaning
-- Dataset used: [network_anomaly_dataset](datasets/network_anomaly_dataset.csv)
+- Dataset used: [network_anomaly_dataset.csv](datasets/network_anomaly_dataset.csv)
 - Notebook used: [data_cleaning.ipynb](notebooks/data_cleaning.ipynb)
 
 ### Creating a new column `attack_hlc`
@@ -146,7 +146,7 @@ The above cleaned dataset is used to create the Tableau dashboard.
 
 
 # Analysis of Factors Associated with Intrusions in a Network using Tableau
-- Dataset used: [link](datasets/network_anomaly_dataset_cleaned.csv).
+- Dataset used: [network_anomaly_dataset_cleaned.csv](datasets/network_anomaly_dataset_cleaned.csv).
 - Tableau Viz: 
 
 
