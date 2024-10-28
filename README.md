@@ -700,6 +700,10 @@ Shape of testing (x_test and y_test) set,
 ((37790, 31), (37790,))
 ```
 
+The data containing the independent variables and dependent variables is stored in the following .csv files,
+- `x`: [x.csv](datasets/x.csv)
+- `y`: [y.csv](datasets/y.csv)
+
 The split data is stored in the following .csv files,
 - `x_train`: [x_train.csv](datasets/x_train.csv)
 - `x_val`: [x_val.csv](datasets/x_val.csv)
@@ -709,6 +713,16 @@ The split data is stored in the following .csv files,
 - `y_test`: [y_test.csv](datasets/y_test.csv)
 
 
-# Model Building
+# Model Building (Without Hyperparameter Tuning)
+- Dataset used:
+    - `x_train`: [x_train.csv](datasets/x_train.csv)
+    - `x_val`: [x_val.csv](datasets/x_val.csv)
+    - `x_test`: [x_test.csv](datasets/x_test.csv) 
+    - `y_train`: [y_train.csv](datasets/y_train.csv)
+    - `y_val`: [y_val.csv](datasets/y_val.csv)
+    - `y_test`: [y_test.csv](datasets/y_test.csv)
+
+### Scaling the data
+The `x_train` and `x_test` data have been scaled using `StandardScaler()`. 
 
 ### Logistic Regression OvR
