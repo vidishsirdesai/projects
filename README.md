@@ -723,6 +723,8 @@ The split data is stored in the following .csv files,
     - `y_test`: [y_test.csv](datasets/y_test.csv)
 
 ### Scaling the data
-The `x_train` and `x_test` data have been scaled using `StandardScaler()`. 
+The `x_train` and `x_test` data have been scaled using `StandardScaler()`,
+- `fit_transform()` method is used to scale `x_train`. The result is stored in `x_train_scaled`.
+- `transform()` method is used to scale `x_test`. The result is stored in `x_test_scaled`.
 
 ### Logistic Regression OvR
