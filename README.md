@@ -716,12 +716,12 @@ The split data is stored in the following .csv files,
 # Model Building (Without Hyperparameter Tuning)
 - Dataset used:
     - `x_train`: [x_train.csv](datasets/x_train.csv)
-    - `x_val`: [x_val.csv](datasets/x_val.csv)
     - `x_test`: [x_test.csv](datasets/x_test.csv) 
     - `y_train`: [y_train.csv](datasets/y_train.csv)
-    - `y_val`: [y_val.csv](datasets/y_val.csv)
     - `y_test`: [y_test.csv](datasets/y_test.csv)
 - Notebook used: [ml_model_building_wihout_hyperparameter_tuning.ipynb](notebooks/ml_model_building_wihout_hyperparameter_tuning.ipynb).
+- Problem type: Multi-class classification.
+- Models: 
 
 ### Scaling the data
 The `x_train` and `x_test` data have been scaled using `StandardScaler()`,
