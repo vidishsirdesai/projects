@@ -709,4 +709,6 @@ The split data is stored in the following .csv files,
 - `y_test`: [y_test.csv](datasets/y_test.csv)
 
 
-# 
+# Model Building
+
+### Logistic Regression OvR
