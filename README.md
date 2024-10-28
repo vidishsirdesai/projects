@@ -320,10 +320,10 @@ Number of numerical columns = 11
 ### Frequencies of categorical attributes (using count plots)
 ![alt text](artifacts/count_plots_of_categorical_attributes.png)
 
-### Heatmap of numerical attributes
+### Heatmap of numerical columns
 ![alt text](artifacts/heatmap_of_numerical_attributes.png)
 
-Attributes that are highly correlated to each other:
+Columns that are highly correlated to each other:
 - `numcompromised` and `numroot`.
 - `numroot` and `numcompromised`.
 - `serrorrate` and `srvserrorrate`.
@@ -615,4 +615,96 @@ x26            4.3007      0.144     29.876      0.000       4.019       4.583
 - Dataset used: [network_anomaly_dataset.csv](datasets/network_anomaly_dataset.csv)
 - Notebook used: [ml_data_preprocessing.ipynb](notebooks/ml_data_preprocessing.ipynb)
 
-###
+### Cleaning the data
+The steps to clean the data in the data cleaning step (above) are applied again,
+1. Creating a new column `attack_hlc`.
+2. Cleaning the `suattempted` column.
+3. Removing the undefined and redundant columns, `lastflag` and `numoutboundcmds`.
+4. Missing and duplicate values are dealt with.
+
+### Encoding the categorical columns
+The following are the categorical columns and the type of encoding applied,
+- `attackhlc`: Label encoding.
+- `protocoltype`: Target encoding.
+- `service`: Target encoding.
+- `flag`: Target encoding.
+
+### Removing the highly correlated columns
+The following is the heatmap showing the correlation of columns after the encoding is done,
+![alt text](artifacts/heatmap_post_encoding.png)
+
+The following are the highly correlated columns,
+- `numcompromised` and `numroot`.
+- `numroot` and `numcompromised`.
+- `serrorrate` and `srvserrorrate`.
+- `serrorrate` and `dsthostserrorrate`.
+- `serrorrate` and `dsthostsrvserrorrate`.
+- `srvserrorrate` and `serrorrate`.
+- `srvserrorrate` and `dsthostserrorrate`.
+- `srvserrorrate` and `dsthostsrvserrorrate`.
+- `rerrorrate` and `srvrerrorrate`.
+- `rerrorrate` and `dsthostrerrorrate`.
+- `rerrorrate` and `dsthostsrvrerrorrate`.
+- `srvrerrorrate` and `rerrorrate`.
+- `srvrerrorrate` and `dsthostrerrorrate`.
+- `srvrerrorrate` and `dsthostsrvrerrorrate`.
+- `dsthostsrvcount` and `dsthostsamesrvrate`.
+- `dsthostsamesrvrate` and `dsthostsrvcount`.
+- `dsthostserrorrate` and `serrorrate`.
+- `dsthostserrorrate` and `srvserrorrate`.
+- `dsthostserrorrate` and `dsthostsrvserrorrate`.
+- `dsthostsrvserrorrate` and `serrorrate`.
+- `dsthostsrvserrorrate` and `srvserrorrate`.
+- `dsthostsrvserrorrate` and `dsthostserrorrate`.
+
+Based on the above observations, the columns that can be removed are,
+- `isguestlogin`.
+- `numroot`.
+- `srvserrorrate`.
+- `dsthostserrorrate`.
+- `dsthostsrvserrorrate`.
+- `srvrerrorrate`.
+- `dsthostrerrorrate`.
+- `dsthostsrvrerrorrate`.
+- `dsthostsamesrvrate`.
+
+The following is the heatmap after the highly correlated columns are removed,
+![alt text](artifacts/heatmap_correlated_columns_dropped.png)
+
+### Separate the independent and dependent variables (columns)
+The `attackhlc` (which is label encoded), is the target or the dependent variable for the ML model that are built.
+
+The independent variables are stored in a variable named, `x`, and the dependent variable is stored in a variable named, `y`. Refer cell number `34` in the jupyter notebook (link above).
+
+### Splitting the data into training set, validation set and testing set
+The `x` and `y` are split into,
+- `x_train`
+- `x_val`
+- `x_test`
+- `y_train`
+- `y_val`
+- `y_test`
+
+Shape of the training (x_train and y_train) set,
+```
+((75578, 31), (75578,))
+```
+
+Shape of the validation (x_val and y_val) set,
+```
+((50386, 31), (50386,))
+```
+
+Shape of testing (x_test and y_test) set,
+```
+((37790, 31), (37790,))
+```
+
+The split data is stored in the following .csv files,
+- `x_train`: [x_train.csv](datasets/x_train.csv)
+- `x_val`: [x_val.csv](datasets/x_val.csv)
+- `x_test`: [x_test.csv](datasets/x_test.csv) 
+- `y_train`: [y_train.csv](datasets/y_train.csv)
+- `y_val`: [y_val.csv](datasets/y_val.csv)
+- `y_test`: [y_test.csv](datasets/y_test.csv)
+
