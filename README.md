@@ -721,6 +721,7 @@ The split data is stored in the following .csv files,
     - `y_train`: [y_train.csv](datasets/y_train.csv)
     - `y_val`: [y_val.csv](datasets/y_val.csv)
     - `y_test`: [y_test.csv](datasets/y_test.csv)
+- Notebook used: [ml_model_building_wihout_hyperparameter_tuning.ipynb](notebooks/ml_model_building_wihout_hyperparameter_tuning.ipynb).
 
 ### Scaling the data
 The `x_train` and `x_test` data have been scaled using `StandardScaler()`,
