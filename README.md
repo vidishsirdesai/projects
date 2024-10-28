@@ -721,7 +721,7 @@ The split data is stored in the following .csv files,
     - `y_test`: [y_test.csv](datasets/y_test.csv)
 - Notebook used: [ml_model_building_wihout_hyperparameter_tuning.ipynb](notebooks/ml_model_building_wihout_hyperparameter_tuning.ipynb).
 - Problem type: Multi-class classification.
-- Models: 
+- Models: Logistic Regression OvR, kNN Classifier, 
 
 ### Scaling the data
 The `x_train` and `x_test` data have been scaled using `StandardScaler()`,
@@ -729,3 +729,5 @@ The `x_train` and `x_test` data have been scaled using `StandardScaler()`,
 - `transform()` method is used to scale `x_test`. The result is stored in `x_test_scaled`.
 
 ### Logistic Regression OvR
+
+### kNN Classifier
