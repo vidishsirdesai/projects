@@ -741,21 +741,27 @@ The `x_train` and `x_test` data have been scaled using `StandardScaler()`,
 
 #### Confusion matrices
 Logistic Regression OvR,
+
 ![alt text](artifacts/cm_pre_hyp_log_reg_ovr.png)
 
 kNN Classifier,
+
 ![alt text](artifacts/cm_pre_hyp_knn_classifier.png)
 
 Decision Tree Classifier,
+
 ![alt text](artifacts/cm_pre_hyp_dt_classifier.png)
 
 Random Forest Classifier,
+
 ![alt text](artifacts/cm_pre_hyp_rf_classifier.png)
 
 Gradient Boosting Decision Tree (GBDT) Classifier,
+
 ![alt text](artifacts/cm_pre_hyp_gbdt_classifier.png)
 
 Support Vector Classifier,
+
 ![alt text](artifacts/cm_pre_hyp_sv_classifier.png)
 
 #### Classification reports
