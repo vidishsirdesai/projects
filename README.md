@@ -869,7 +869,7 @@ weighted avg       0.98      0.98      0.98     37790
     - `y_train`: [y_train.csv](datasets/y_train.csv)
     - `y_val`: [y_val.csv](datasets/y_val.csv)
     - `y_test`: [y_test.csv](datasets/y_test.csv)
-- Notebook used: 
+- Notebook used: [hyperparameter_tuning.ipynb](notebooks/model_building/hyperparameter_tuning.ipynb)
 - Problem type: Multi-class classification.
 - Models: Logistic Regression OvR, kNN Classifier, Decision Tree Classifier, Random Forest Classifier, Gradient Boosting Decision Tree (GBDT) Classifier, Support Vector Classifier
 
@@ -879,4 +879,4 @@ The `x_train` and `x_test` data have been scaled using `StandardScaler()`,
 - `transform()` method is used to scale `x_val`. The result is stored in `x_val_scaled`.
 - `transform()` method is used to scale `x_test`. The result is stored in `x_test_scaled`.
 
-### Hyperparameters 
+### Hyperparameters tuned
