@@ -855,3 +855,4 @@ weighted avg       0.98      0.98      0.98     37790
 ### Comparison of training time of the various models
 ![alt text](artifacts/models_training_time.png)
 
+### Conclusion
