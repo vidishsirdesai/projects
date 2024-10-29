@@ -713,7 +713,7 @@ The split data is stored in the following .csv files,
 - `y_test`: [y_test.csv](datasets/y_test.csv)
 
 
-# Model Building (Without Hyperparameter Tuning)
+# Model Building - Without Hyperparameter Tuning
 - Dataset used:
     - `x_train`: [x_train.csv](datasets/x_train.csv)
     - `x_test`: [x_test.csv](datasets/x_test.csv) 
@@ -721,13 +721,79 @@ The split data is stored in the following .csv files,
     - `y_test`: [y_test.csv](datasets/y_test.csv)
 - Notebook used: [ml_model_building_wihout_hyperparameter_tuning.ipynb](notebooks/ml_model_building_wihout_hyperparameter_tuning.ipynb).
 - Problem type: Multi-class classification.
-- Models: Logistic Regression OvR, kNN Classifier, 
+- Models: Logistic Regression OvR, kNN Classifier, Decision Tree Classifier, Random Forest Classifier, Gradient Boosting Decision Tree (GBDT) Classifier, Support Vector Classifier
 
 ### Scaling the data
 The `x_train` and `x_test` data have been scaled using `StandardScaler()`,
 - `fit_transform()` method is used to scale `x_train`. The result is stored in `x_train_scaled`.
 - `transform()` method is used to scale `x_test`. The result is stored in `x_test_scaled`.
 
-### Logistic Regression OvR
+### Comparison of metrics of various model
+#### Accuracy scores of different models of predictions made using the training data
 
-### kNN Classifier
+#### Accuracy scores of different models of predictions made using the testing data
+
+#### Precision scores
+
+#### Recall score
+
+#### F1 scores
+
+#### Confusion matrices
+Logistic Regression OvR,
+![alt text](artifacts/cm_pre_hyp_log_reg_ovr.png)
+
+kNN Classifier,
+![alt text](artifacts/cm_pre_hyp_knn_classifier.png)
+
+Decision Tree Classifier,
+![alt text](artifacts/cm_pre_hyp_dt_classifier.png)
+
+Random Forest Classifier,
+![alt text](artifacts/cm_pre_hyp_rf_classifier.png)
+
+Gradient Boosting Decision Tree (GBDT) Classifier,
+![alt text](artifacts/cm_pre_hyp_gbdt_classifier.png)
+
+Support Vector Classifier,
+![alt text](artifacts/cm_pre_hyp_sv_classifier.png)
+
+#### Classification reports
+Logistic Regression OvR,
+
+
+kNN Classifier,
+
+
+Decision Tree Classifier,
+
+
+Random Forest Classifier,
+
+
+Gradient Boosting Decision Tree (GBDT) Classifier,
+
+
+Support Vector Classifier,
+
+
+
+# Model Building - Hyperparameter Tuning
+- Datasets used:
+    - `x_train`: [x_train.csv](datasets/x_train.csv)
+    - `x_val`: [x_val.csv](datasets/x_val.csv)
+    - `x_test`: [x_test.csv](datasets/x_test.csv) 
+    - `y_train`: [y_train.csv](datasets/y_train.csv)
+    - `y_val`: [y_val.csv](datasets/y_val.csv)
+    - `y_test`: [y_test.csv](datasets/y_test.csv)
+- Notebook used: 
+- Problem type: Multi-class classification.
+- Models: Logistic Regression OvR, kNN Classifier, Decision Tree Classifier, Random Forest Classifier, Gradient Boosting Decision Tree (GBDT) Classifier, Support Vector Classifier
+
+### Scaling the data
+The `x_train` and `x_test` data have been scaled using `StandardScaler()`,
+- `fit_transform()` method is used to scale `x_train`. The result is stored in `x_train_scaled`.
+- `transform()` method is used to scale `x_val`. The result is stored in `x_val_scaled`.
+- `transform()` method is used to scale `x_test`. The result is stored in `x_test_scaled`.
+
+### Hyperparameters tuned
