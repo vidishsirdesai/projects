@@ -730,14 +730,19 @@ The `x_train` and `x_test` data have been scaled using `StandardScaler()`,
 
 ### Comparison of metrics of various model
 #### Accuracy scores of different models of predictions made using the training data
+![alt text](artifacts/pre_hyp_train_accuracy_scores.png)
 
 #### Accuracy scores of different models of predictions made using the testing data
+![alt text](artifacts/pre_hyp_test_accuracy_scores.png)
 
 #### Precision scores
+![alt text](artifacts/pre_hyp_precision_scores.png)
 
 #### Recall score
+![alt text](artifacts/pre_hyp_recall_scores.png)
 
 #### F1 scores
+![alt text](artifacts/pre_hyp_f1_scores.png)
 
 #### Confusion matrices
 Logistic Regression OvR,
@@ -766,22 +771,94 @@ Support Vector Classifier,
 
 #### Classification reports
 Logistic Regression OvR,
+```
+              precision    recall  f1-score   support
 
+           0       0.95      0.97      0.96     20259
+           1       0.98      0.96      0.97     13724
+           2       0.56      0.30      0.39       302
+           3       0.89      0.86      0.87      3491
+           4       0.57      0.29      0.38        14
+
+    accuracy                           0.95     37790
+   macro avg       0.79      0.67      0.71     37790
+weighted avg       0.95      0.95      0.95     37790
+```
 
 kNN Classifier,
+```
+              precision    recall  f1-score   support
 
+           0       1.00      1.00      1.00     20259
+           1       1.00      1.00      1.00     13724
+           2       0.93      0.91      0.92       302
+           3       0.99      0.99      0.99      3491
+           4       0.60      0.21      0.32        14
+
+    accuracy                           1.00     37790
+   macro avg       0.90      0.82      0.84     37790
+weighted avg       1.00      1.00      1.00     37790
+```
 
 Decision Tree Classifier,
+```
+              precision    recall  f1-score   support
 
+           0       0.99      0.99      0.99     20259
+           1       0.99      0.99      0.99     13724
+           2       0.84      0.76      0.80       302
+           3       0.95      0.94      0.95      3491
+           4       0.00      0.00      0.00        14
+
+    accuracy                           0.99     37790
+   macro avg       0.75      0.74      0.75     37790
+weighted avg       0.99      0.99      0.99     37790
+```
 
 Random Forest Classifier,
+```
+              precision    recall  f1-score   support
 
+           0       0.97      1.00      0.98     20259
+           1       1.00      0.99      0.99     13724
+           2       0.00      0.00      0.00       302
+           3       1.00      0.95      0.97      3491
+           4       0.00      0.00      0.00        14
+
+    accuracy                           0.98     37790
+   macro avg       0.59      0.59      0.59     37790
+weighted avg       0.97      0.98      0.98     37790
+```
 
 Gradient Boosting Decision Tree (GBDT) Classifier,
+```
+              precision    recall  f1-score   support
 
+           0       1.00      1.00      1.00     20259
+           1       1.00      1.00      1.00     13724
+           2       0.97      0.94      0.96       302
+           3       1.00      0.99      1.00      3491
+           4       0.06      0.07      0.06        14
+
+    accuracy                           1.00     37790
+   macro avg       0.80      0.80      0.80     37790
+weighted avg       1.00      1.00      1.00     37790
+```
 
 Support Vector Classifier,
+```
+              precision    recall  f1-score   support
 
+           0       0.97      0.99      0.98     20259
+           1       1.00      0.98      0.99     13724
+           2       0.88      0.81      0.84       302
+           3       0.98      0.94      0.96      3491
+           4       0.43      0.21      0.29        14
+
+    accuracy                           0.98     37790
+   macro avg       0.85      0.79      0.81     37790
+weighted avg       0.98      0.98      0.98     37790
+```
 
 
 # Model Building - Hyperparameter Tuning
@@ -802,4 +879,4 @@ The `x_train` and `x_test` data have been scaled using `StandardScaler()`,
 - `transform()` method is used to scale `x_val`. The result is stored in `x_val_scaled`.
 - `transform()` method is used to scale `x_test`. The result is stored in `x_test_scaled`.
 
-### Hyperparameters tuned
+### Hyperparameters 
