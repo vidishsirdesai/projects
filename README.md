@@ -690,11 +690,6 @@ Shape of the training (x_train and y_train) set,
 ((75578, 31), (75578,))
 ```
 
-Shape of the validation (x_val and y_val) set,
-```
-((50386, 31), (50386,))
-```
-
 Shape of testing (x_test and y_test) set,
 ```
 ((37790, 31), (37790,))
@@ -706,14 +701,12 @@ The data containing the independent variables and dependent variables is stored 
 
 The split data is stored in the following .csv files,
 - `x_train`: [x_train.csv](datasets/x_train.csv)
-- `x_val`: [x_val.csv](datasets/x_val.csv)
 - `x_test`: [x_test.csv](datasets/x_test.csv) 
 - `y_train`: [y_train.csv](datasets/y_train.csv)
-- `y_val`: [y_val.csv](datasets/y_val.csv)
 - `y_test`: [y_test.csv](datasets/y_test.csv)
 
 
-# Model Building - Without Hyperparameter Tuning
+# Model Building
 - Dataset used:
     - `x_train`: [x_train.csv](datasets/x_train.csv)
     - `x_test`: [x_test.csv](datasets/x_test.csv) 
@@ -730,44 +723,44 @@ The `x_train` and `x_test` data have been scaled using `StandardScaler()`,
 
 ### Comparison of metrics of various model
 #### Accuracy scores of different models of predictions made using the training data
-![alt text](artifacts/pre_hyp_train_accuracy_scores.png)
+![alt text](artifacts/models_train_accuracy_scores.png)
 
 #### Accuracy scores of different models of predictions made using the testing data
-![alt text](artifacts/pre_hyp_test_accuracy_scores.png)
+![alt text](artifacts/models_test_accuracy_scores.png)
 
 #### Precision scores
-![alt text](artifacts/pre_hyp_precision_scores.png)
+![alt text](artifacts/models_precision_scores.png)
 
 #### Recall score
-![alt text](artifacts/pre_hyp_recall_scores.png)
+![alt text](artifacts/models_recall_scores.png)
 
 #### F1 scores
-![alt text](artifacts/pre_hyp_f1_scores.png)
+![alt text](artifacts/models_f1_scores.png)
 
 #### Confusion matrices
 Logistic Regression OvR,
 
-![alt text](artifacts/cm_pre_hyp_log_reg_ovr.png)
+![alt text](artifacts/cm_log_reg_ovr.png)
 
 kNN Classifier,
 
-![alt text](artifacts/cm_pre_hyp_knn_classifier.png)
+![alt text](artifacts/cm_knn_classifier.png)
 
 Decision Tree Classifier,
 
-![alt text](artifacts/cm_pre_hyp_dt_classifier.png)
+![alt text](artifacts/cm_dt_classifier.png)
 
 Random Forest Classifier,
 
-![alt text](artifacts/cm_pre_hyp_rf_classifier.png)
+![alt text](artifacts/cm_rf_classifier.png)
 
 Gradient Boosting Decision Tree (GBDT) Classifier,
 
-![alt text](artifacts/cm_pre_hyp_gbdt_classifier.png)
+![alt text](artifacts/cm_gbdt_classifier.png)
 
 Support Vector Classifier,
 
-![alt text](artifacts/cm_pre_hyp_sv_classifier.png)
+![alt text](artifacts/cm_sv_classifier.png)
 
 #### Classification reports
 Logistic Regression OvR,
@@ -776,7 +769,7 @@ Logistic Regression OvR,
 
            0       0.95      0.97      0.96     20259
            1       0.98      0.96      0.97     13724
-           2       0.56      0.30      0.39       302
+           2       0.55      0.29      0.38       302
            3       0.89      0.86      0.87      3491
            4       0.57      0.29      0.38        14
 
@@ -791,12 +784,12 @@ kNN Classifier,
 
            0       1.00      1.00      1.00     20259
            1       1.00      1.00      1.00     13724
-           2       0.93      0.91      0.92       302
+           2       0.92      0.91      0.92       302
            3       0.99      0.99      0.99      3491
-           4       0.60      0.21      0.32        14
+           4       0.67      0.29      0.40        14
 
     accuracy                           1.00     37790
-   macro avg       0.90      0.82      0.84     37790
+   macro avg       0.91      0.84      0.86     37790
 weighted avg       1.00      1.00      1.00     37790
 ```
 
@@ -812,7 +805,7 @@ Decision Tree Classifier,
 
     accuracy                           0.99     37790
    macro avg       0.75      0.74      0.75     37790
-weighted avg       0.99      0.99      0.99     37790
+weighted avg       0.98      0.99      0.99     37790
 ```
 
 Random Forest Classifier,
@@ -827,7 +820,7 @@ Random Forest Classifier,
 
     accuracy                           0.98     37790
    macro avg       0.59      0.59      0.59     37790
-weighted avg       0.97      0.98      0.98     37790
+weighted avg       0.98      0.98      0.98     37790
 ```
 
 Gradient Boosting Decision Tree (GBDT) Classifier,
@@ -836,12 +829,12 @@ Gradient Boosting Decision Tree (GBDT) Classifier,
 
            0       1.00      1.00      1.00     20259
            1       1.00      1.00      1.00     13724
-           2       0.97      0.94      0.96       302
-           3       1.00      0.99      1.00      3491
-           4       0.06      0.07      0.06        14
+           2       0.97      0.92      0.94       302
+           3       0.99      0.99      0.99      3491
+           4       0.24      0.50      0.33        14
 
     accuracy                           1.00     37790
-   macro avg       0.80      0.80      0.80     37790
+   macro avg       0.84      0.88      0.85     37790
 weighted avg       1.00      1.00      1.00     37790
 ```
 
@@ -849,9 +842,9 @@ Support Vector Classifier,
 ```
               precision    recall  f1-score   support
 
-           0       0.97      0.99      0.98     20259
-           1       1.00      0.98      0.99     13724
-           2       0.88      0.81      0.84       302
+           0       0.98      0.99      0.99     20259
+           1       1.00      0.99      0.99     13724
+           2       0.88      0.81      0.85       302
            3       0.98      0.94      0.96      3491
            4       0.43      0.21      0.29        14
 
@@ -859,24 +852,3 @@ Support Vector Classifier,
    macro avg       0.85      0.79      0.81     37790
 weighted avg       0.98      0.98      0.98     37790
 ```
-
-
-# Model Building - Hyperparameter Tuning
-- Datasets used:
-    - `x_train`: [x_train.csv](datasets/x_train.csv)
-    - `x_val`: [x_val.csv](datasets/x_val.csv)
-    - `x_test`: [x_test.csv](datasets/x_test.csv) 
-    - `y_train`: [y_train.csv](datasets/y_train.csv)
-    - `y_val`: [y_val.csv](datasets/y_val.csv)
-    - `y_test`: [y_test.csv](datasets/y_test.csv)
-- Notebook used: [hyperparameter_tuning.ipynb](notebooks/model_building/hyperparameter_tuning.ipynb)
-- Problem type: Multi-class classification.
-- Models: Logistic Regression OvR, kNN Classifier, Decision Tree Classifier, Random Forest Classifier, Gradient Boosting Decision Tree (GBDT) Classifier, Support Vector Classifier
-
-### Scaling the data
-The `x_train` and `x_test` data have been scaled using `StandardScaler()`,
-- `fit_transform()` method is used to scale `x_train`. The result is stored in `x_train_scaled`.
-- `transform()` method is used to scale `x_val`. The result is stored in `x_val_scaled`.
-- `transform()` method is used to scale `x_test`. The result is stored in `x_test_scaled`.
-
-### Hyperparameters tuned
