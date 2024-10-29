@@ -721,23 +721,22 @@ The `x_train` and `x_test` data have been scaled using `StandardScaler()`,
 - `fit_transform()` method is used to scale `x_train`. The result is stored in `x_train_scaled`.
 - `transform()` method is used to scale `x_test`. The result is stored in `x_test_scaled`.
 
-### Comparison of metrics of various model
-#### Accuracy scores of different models of predictions made using the training data
+### Comparison of accuracy scores of the various models of predictions made using the training data
 ![alt text](artifacts/models_train_accuracy_scores.png)
 
-#### Accuracy scores of different models of predictions made using the testing data
+### Comparison of accuracy scores of the various models of predictions made using the testing data
 ![alt text](artifacts/models_test_accuracy_scores.png)
 
-#### Precision scores
+### Comparison of precision scores of the various models
 ![alt text](artifacts/models_precision_scores.png)
 
-#### Recall score
+### Comparison of recall scores of the various models
 ![alt text](artifacts/models_recall_scores.png)
 
-#### F1 scores
+### Comparison of F1 scores of the various models
 ![alt text](artifacts/models_f1_scores.png)
 
-#### Confusion matrices
+### Comparison of confusion matrices of the various models
 Logistic Regression OvR,
 
 ![alt text](artifacts/cm_log_reg_ovr.png)
@@ -762,7 +761,7 @@ Support Vector Classifier,
 
 ![alt text](artifacts/cm_sv_classifier.png)
 
-#### Classification reports
+### Comparison of classification reports of the various models
 Logistic Regression OvR,
 ```
               precision    recall  f1-score   support
@@ -853,8 +852,6 @@ Support Vector Classifier,
 weighted avg       0.98      0.98      0.98     37790
 ```
 
-#### Training time
+### Comparison of training time of the various models
+![alt text](artifacts/models_training_time.png)
 
-#### Prediction time
-
-#### 
