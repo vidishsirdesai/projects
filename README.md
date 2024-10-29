@@ -712,7 +712,7 @@ The split data is stored in the following .csv files,
     - `x_test`: [x_test.csv](datasets/x_test.csv) 
     - `y_train`: [y_train.csv](datasets/y_train.csv)
     - `y_test`: [y_test.csv](datasets/y_test.csv)
-- Notebook used: [ml_model_building_wihout_hyperparameter_tuning.ipynb](notebooks/ml_model_building_wihout_hyperparameter_tuning.ipynb).
+- Notebook used: [ml_model_building.ipynb](notebooks/ml_model_building.ipynb)
 - Problem type: Multi-class classification.
 - Models: Logistic Regression OvR, kNN Classifier, Decision Tree Classifier, Random Forest Classifier, Gradient Boosting Decision Tree (GBDT) Classifier, Support Vector Classifier
 
