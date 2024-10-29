@@ -852,3 +852,9 @@ Support Vector Classifier,
    macro avg       0.85      0.79      0.81     37790
 weighted avg       0.98      0.98      0.98     37790
 ```
+
+#### Training time
+
+#### Prediction time
+
+#### 
