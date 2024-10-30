@@ -865,7 +865,7 @@ The model has the best precision score, recall score, and F1 score compared to a
 
 Although GBDT Classifier has the highest training time, the prediction time is quick.
 
-Considering all of the above, GBDT classifier is chosen for deployment.
+Therefore, considering all of the above, GBDT classifier is chosen for deployment.
 
 
 # 
