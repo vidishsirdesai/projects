@@ -855,4 +855,10 @@ weighted avg       0.98      0.98      0.98     37790
 ### Comparison of training time of the various models
 ![alt text](artifacts/models_training_time.png)
 
-### Conclusion
+### Comparison of prediction time on test dataset of the various models
+![alt text](artifacts/models_prediction_time.png)
+
+### Best model
+The best model considering all of the above metrics is Gradient Boosting Decision Tree (GBDT) Classifier.
+
+
