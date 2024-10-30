@@ -859,6 +859,13 @@ weighted avg       0.98      0.98      0.98     37790
 ![alt text](artifacts/models_prediction_time.png)
 
 ### Best model
-The best model considering all of the above metrics is Gradient Boosting Decision Tree (GBDT) Classifier.
+The confusion matrix obtained from GBDT classifier has most of the predictions falling on the disgonal of the matrix, indicating correct classification. This is the best of all other confusion matrices obtained from all other models.
+
+The model has the best precision score, recall score, and F1 score compared to all other models.
+
+Although GBDT Classifier has the highest training time, the prediction time is quick.
+
+Considering all of the above, GBDT classifier is chosen for deployment.
 
 
+# 
