@@ -15,5 +15,5 @@ def welcome_note():
 gbdt_classifier_pickle = open("../artifacts/gbdt_classifier.pkl", "rb")
 
 # loading the classifier model
-anomaly_classifier = pickle.load(gbdt_classifier_pickle)
+classifier = pickle.load(gbdt_classifier_pickle)
 
