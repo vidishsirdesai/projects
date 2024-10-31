@@ -939,34 +939,44 @@ http://127.0.0.1:5000/
 Content-Type: application/json
 
 The request body should be a JSON object containing the following features of a network connection,
-- duration (int):
-- srcbytes (int):
-- dstbytes (int):
-- land (int):
-- worngfragment (int):
-- urgent (int):
-- hot (int):
-- numfailedlogins (int):
-- loggedin (int):
-- numcompromised (int):
-- rootshell (int):
-- suattempted (int):
-- numfilecreations (int):
-- numshells (int):
-- numaccessfiles (int):
-- ishostlogin (int):
-- count (int):
-- srvcount (int):
-- serrorrate (float):
-- rerrorrate (float):
-- samesrvrate (float):
-- diffsrvrate (float):
-- srvdiffhostrate (float):
-- dsthostcount (int): 
-- dsthostsrvcount (int):
-- dsthostdiffsrvrate (float):
-- dsthostsamesrcportrate (float):
-- dsthostsrvdiffhostrate (float):
-- protocol_encoded (string):
-- service_encoded (string):
-- flag (string): 
+- ```duration``` (int): Length of time a specific network connection was active for.
+- ```srcbytes``` (int): Number of data bytes transferred from the source to the destination in a single connection.
+- ```dstbytes``` (int): Number of data bytes transferred from the destination to source in a single connection.
+- ```land``` (int): Indicates whether the source and destination IP addresses and port numbers are equal (1 if equal, 0 otherwise).
+- ```worngfragment``` (int): Total number of worng fragments received in a connection.
+- ```urgent``` (int): Number of urgent packets in this connection. Urgent packets are packets with the urgent bit activated.
+- ```hot``` (int): Number of "hot" indicators, meaning the number of factors that are indicative of an anomaly or an attack.
+- ```numfailedlogins``` (int): Count of failed login attempts.
+- ```loggedin``` (int): Indicates whether a successful login occurred in a connection (1 if successfully logged in, 0 otherwise).
+- ```numcompromised``` (int): Number of compromised conditions in a connection.
+- ```rootshell``` (int): Indicates whether root shell access was obtained in a connection (1 if yes, 0 otherwise).
+- ```suattempted``` (int): Indicates whether the ```su root``` command was attempted or used in a connection (1 if yes, 0 otherwise).
+- ```numfilecreations``` (int): Count of file creation operations in a connection.
+- ```numshells``` (int): Count of shell prompts in a connection.
+- ```numaccessfiles``` (int): Count of operations on access control files in a connection.
+- ```ishostlogin``` (int): Indicates whether a login belongs to the host list i.e., root or admin (1 if yes, 0 otherwise).
+- ```count``` (int): Number of connections to the same destination host as the current connection in the past 2 seconds.
+- ```srvcount``` (int): Number of connections to the same service as the current connection in the past 2 seconds.
+- ```serrorrate``` (float): Percentage of connections that have activated the flag s0, s1, s2, or s3, among the connections aggregated in ```count```.
+- ```rerrorrate``` (float): Percentage of connections that have activated the flag REJ, among the connections aggregated in ```count```.
+- ```samesrvrate``` (float): Percentage of connections that were to the same service, among the connections aggregated in ```count```.
+- ```diffsrvrate``` (float): Percentage of connections that were to different services, among the connections aggregated in ```count```.
+- ```srvdiffhostrate``` (float): Percentage of connections that were to different destination machines, among the connections aggregated in ```srvcount```.
+- ```dsthostcount``` (int): Number of connections having the same destination host IP address.
+- ```dsthostsrvcount``` (int): Number of connections having the same destination port number.
+- ```dsthostdiffsrvrate``` (float): Percentage of connections that were to different services, among the connections aggregated in ```dsthostcount```.
+- ```dsthostsamesrcportrate``` (float): Percentage connections that were to the same source port, among the connections aggregated in ```dsthostsrvcount```.
+- ```dsthostsrvdiffhostrate``` (float): Percentage connections that were to different destination machines, among the connections aggregated in ```dsthostsrvcount```.
+- ```protocol``` (string): Type of communication protocol used in each connection.
+- ```service``` (string): Type of DNS used in a connection.
+- ```flag``` (string): Status of a connection.
+
+### Response format for POST /classify_attack_type
+The response will be a JSON object with the following key,
+- Attack Type: A string indicating one of the predicted type of attack,
+    - "Normal".
+    - "DoS".
+    - "R2L".
+    - "Probe".
+    - "U2R".
+    - "Not recognized" (if the model cannot classify the attack type).
