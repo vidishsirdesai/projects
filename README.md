@@ -865,7 +865,7 @@ The model has the best precision score, recall score, and F1 score compared to a
 
 Although GBDT Classifier has the highest training time, the prediction time is quick.
 
-Therefore, considering all of the above, GBDT classifier is chosen for deployment.
+Therefore, considering all of the above, GBDT classifier is the best out of all the models.
 
 
 # Model Deployment using Flask
@@ -879,13 +879,21 @@ Therefore, considering all of the above, GBDT classifier is chosen for deploymen
     - MacOS and Linux, ```source .venv/bin/activate```.
     - Windows command prompt, ```.venv/Scripts/activate.bat```.
 6. Once the virtual environment is active, the environment name (in this case "```.venv```") will be visible in the parantheses before the prompt, like so "```(.venv)```".
-7. To deactivate the virtual environment, strictly run the following 2 commands in the same order,
+7. To confirm if the virtual environment has successfully been create, run ```pip list```. The following should be the output,
+```text
+(.venv) vidish@Vidishs-MacBook-Air network_anomaly_detection % pip list
+Package    Version
+---------- -------
+pip        xx.x.x
+setuptools xx.x.x
+``` 
+8. To deactivate the virtual environment, strictly run the following 2 commands in the same order,
     - ```deactivate```.
     - ```rm -r .venv```.
 
 ### Installing dependencies
 1. Once the virtual environment is created, create a ```.txt``` file named, ```requirement.txt```.
-2. Add the dependent (required) packages (libraries) that are required by the app to be functioning. The below are the packages that are required,
+2. Add the dependent (required) packages (libraries) that are required by the app to be functioning. The below is the list of packages that are required,
 ```text
 numpy
 pandas
@@ -896,10 +904,24 @@ statsmodels
 scikit-learn
 flask
 ```
-3. 
+3. Once the ```requirement.txt``` file is created with all the dependencies included as a part of the file, save the file and run ```pip install -r requirements.txt``` from the terminal.
+4. ```pip list``` can be run to check if the installation of all the packages has been successful.
 
-### POST request
-{"duration": 38044, "srcbytes": 1, "dstbytes": 0, "land": 0, "wrongfragment": 0, "urgent": 0, "hot": 0, "numfailedlogins": 0, "loggedin": 0, "numcompromised": 0, "rootshell": 0, "suattempted": 0, "numfilecreations": 0, "numshells": 0, "numaccessfiles": 0, "ishostlogin": 0, "count": 2, "srvcount": 2, "serrorrate": 0.0, "rerrorrate": 1.0, "samesrvrate": 1.0, "diffsrvrate": 0.0, "srvdiffhostrate": 0.0, "dsthostcount": 255, "dsthostsrvcount": 2, "dsthostdiffsrvrate": 0.5, "dsthostsamesrcportrate": 1.0, "dsthostsrvdiffhostrate": 0.0, "protocol_encoded": "tcp", "service_encoded": "Z39_50", "flag_encoded": "RSTR"}
+### Network anomaly classification model
+Gradient boosting decision tree was found to be the best model. Therefore, the same is chosen to build the classification app. The model is trained and the trained model is serialized using "```pickle```".
 
-### Response
-{"Attack Type": "Probe"}
+```pickle``` is a Python package that is a powerful tool for serializing and deserializing the Python objects.
+
+Refer the following notebook where all of the above has been done, 
+- Notebook: [gbdt_classifier.ipynb](notebooks/gbdt_classifier.ipynb).
+
+### Network anomaly classifier app
+1. Create a python file named, ```flask_app.py```.
+2. The contents of the file can be viewed here: [flask_app.py](src/flask_app.py).
+3. To run the application, use the command, ```FLASK_APP=flask_app.py flask run```.
+4. To view the welcome page, goto, http://127.0.0.1:5000.
+5. To classify the anomaly type or the attack type, send a POST request to, http://127.0.0.1:5000/predict.
+6. The POST request can be sent by running the following command in the terminal: ```curl -X POST -H 'Content-Type: application/json' -d '{"duration": 38044, "srcbytes": 1, "dstbytes": 0, "land": 0, "wrongfragment": 0, "urgent": 0, "hot": 0, "numfailedlogins": 0, "loggedin": 0, "numcompromised": 0, "rootshell": 0, "suattempted": 0, "numfilecreations": 0, "numshells": 0, "numaccessfiles": 0, "ishostlogin": 0, "count": 2, "srvcount": 2, "serrorrate": 0.0, "rerrorrate": 1.0, "samesrvrate": 1.0, "diffsrvrate": 0.0, "srvdiffhostrate": 0.0, "dsthostcount": 255, "dsthostsrvcount": 2, "dsthostdiffsrvrate": 0.5, "dsthostsamesrcportrate": 1.0, "dsthostsrvdiffhostrate": 0.0, "protocol_encoded": "tcp", "service_encoded": "Z39_50", "flag_encoded": "RSTR"}' http://127.0.0.1:5000/predict```.
+7. Response: ```{"Attack Type": "Probe"}```.
+
+### API Specs
