@@ -50,182 +50,185 @@ def predict():
     dsthostdiffsrvrate = predict_request["dsthostdiffsrvrate"]
     dsthostsamesrcportrate = predict_request["dsthostsamesrcportrate"]
     dsthostsrvdiffhostrate = predict_request["dsthostsrvdiffhostrate"]
-    protocol_encoded = predict_request["protocol_encoded"]
-    service_encoded = predict_request["service_encoded"]
-    flag_encoded = predict_request["flag_encoded"]
+    protocol = predict_request["protocol"]
+    service = predict_request["service"]
+    flag = predict_request["flag"]
+    protocol_encoded = None
+    service_encoded = None
+    flag_encoded = None
 
     # encoding protocol_encoded
-    if protocol_encoded == "tcp":
+    if protocol == "tcp":
         protocol_encoded = 80114.28824898
-    elif protocol_encoded == "udp":
+    elif protocol == "udp":
         protocol_encoded = 141.21503368
-    elif protocol_encoded == "icmp":
+    elif protocol == "icmp":
         protocol_encoded = 342.94156001
     
     # encoding service_encoded
-    if service_encoded == "ftp_data":
+    if service == "ftp_data":
         service_encoded = 143597.02653061223
-    elif service_encoded == "other":
+    elif service == "other":
         service_encoded = 312548.73411332874
-    elif service_encoded == "private":
+    elif service == "private":
         service_encoded = 90075.67057154624
-    elif service_encoded == "http":
+    elif service == "http":
         service_encoded = 6006.81136893252
-    elif service_encoded == "remote_job":
+    elif service == "remote_job":
         service_encoded = 0.01282051282051282
-    elif service_encoded == "name":
+    elif service == "name":
         service_encoded = 0.0022172949002217295
-    elif service_encoded == "netbios_ns":
+    elif service == "netbios_ns":
         service_encoded = 0.002881844380403458
-    elif service_encoded == "eco_i":
+    elif service == "eco_i":
         service_encoded = 11.793976429506765
-    elif service_encoded == "mtp":
+    elif service == "mtp":
         service_encoded = 0.002277904328018223
-    elif service_encoded == "telnet":
+    elif service == "telnet":
         service_encoded = 190410.34806629835
-    elif service_encoded == "finger":
+    elif service == "finger":
         service_encoded = 392462.37577815505
-    elif service_encoded == "domain_u":
+    elif service == "domain_u":
         service_encoded = 130.25666261196506
-    elif service_encoded == "supdup":
+    elif service == "supdup":
         service_encoded = 0.001838235294117647
-    elif service_encoded == "uucp_path":
+    elif service == "uucp_path":
         service_encoded = 0.001451378809869376
-    elif service_encoded == "Z39_50":
+    elif service == "Z39_50":
         service_encoded = 0.001160092807424594
-    elif service_encoded == "smtp":
+    elif service == "smtp":
         service_encoded = 32667.764255435526
-    elif service_encoded == "csnet_ns":
+    elif service == "csnet_ns":
         service_encoded = 0.001834862385321101
-    elif service_encoded == "uucp":
+    elif service == "uucp":
         service_encoded = 0.05384615384615385
-    elif service_encoded == "netbios_dgm":
+    elif service == "netbios_dgm":
         service_encoded = 0.0024691358024691358
-    elif service_encoded == "urp_i":
+    elif service == "urp_i":
         service_encoded = 134.14285714285714
-    elif service_encoded == "auth":
+    elif service == "auth":
         service_encoded = 11.256544502617801
-    elif service_encoded == "domain":
+    elif service == "domain":
         service_encoded = 55.479789103690685
-    elif service_encoded == "ftp":
+    elif service == "ftp":
         service_encoded = 789039.1043329532
-    elif service_encoded == "bgp":
+    elif service == "bgp":
         service_encoded = 0.0014084507042253522
-    elif service_encoded == "ldap":
+    elif service == "ldap":
         service_encoded = 0.0
-    elif service_encoded == "ecr_i":
+    elif service == "ecr_i":
         service_encoded = 878.9954427083334
-    elif service_encoded == "gopher":
+    elif service == "gopher":
         service_encoded = 0.7915057915057915
-    elif service_encoded == "vmnet":
+    elif service == "vmnet":
         service_encoded = 0.0016207455429497568
-    elif service_encoded == "systat":
+    elif service == "systat":
         service_encoded = 0.0020964360587002098
-    elif service_encoded == "http_443":
+    elif service == "http_443":
         service_encoded = 0.0
-    elif service_encoded == "efs":
+    elif service == "efs":
         service_encoded = 0.002061855670103093
-    elif service_encoded == "whois":
+    elif service == "whois":
         service_encoded = 0.001443001443001443
-    elif service_encoded == "imap4":
+    elif service == "imap4":
         service_encoded = 1045.9876352395672
-    elif service_encoded == "iso_tsap":
+    elif service == "iso_tsap":
         service_encoded = 0.001455604075691412
-    elif service_encoded == "echo":
+    elif service == "echo":
         service_encoded = 0.029953917050691243
-    elif service_encoded == "klogin":
+    elif service == "klogin":
         service_encoded = 0.0023094688221709007
-    elif service_encoded == "link":
+    elif service == "link":
         service_encoded = 0.002105263157894737
-    elif service_encoded == "sunrpc":
+    elif service == "sunrpc":
         service_encoded = 0.049868766404199474
-    elif service_encoded == "login":
+    elif service == "login":
         service_encoded = 98.89044289044288
-    elif service_encoded == "kshell":
+    elif service == "kshell":
         service_encoded = 0.0033444816053511705
-    elif service_encoded == "sql_net":
+    elif service == "sql_net":
         service_encoded = 0.004081632653061225
-    elif service_encoded == "time":
+    elif service == "time":
         service_encoded = 0.5030581039755352
-    elif service_encoded == "hostnames":
+    elif service == "hostnames":
         service_encoded = 0.002173913043478261
-    elif service_encoded == "exec":
+    elif service == "exec":
         service_encoded = 0.014767932489451477
-    elif service_encoded == "ntp_u":
+    elif service == "ntp_u":
         service_encoded = 96.0
-    elif service_encoded == "discard":
+    elif service == "discard":
         service_encoded = 1155332.1003717473
-    elif service_encoded == "nntp":
+    elif service == "nntp":
         service_encoded = 0.10472972972972973
-    elif service_encoded == "courier":
+    elif service == "courier":
         service_encoded = 0.0013623978201634877
-    elif service_encoded == "ctf":
+    elif service == "ctf":
         service_encoded = 0.0017761989342806395
-    elif service_encoded == "ssh":
+    elif service == "ssh":
         service_encoded = 165.6816720257235
-    elif service_encoded == "daytime":
+    elif service == "daytime":
         service_encoded = 0.06333973128598848
-    elif service_encoded == "shell":
+    elif service == "shell":
         service_encoded = 5525.307692307692
-    elif service_encoded == "netstat":
+    elif service == "netstat":
         service_encoded = 0.002777777777777778
-    elif service_encoded == "pop_3":
+    elif service == "pop_3":
         service_encoded = 2761.4583333333335
-    elif service_encoded == "nnsp":
+    elif service == "nnsp":
         service_encoded = 0.0
-    elif service_encoded == "IRC":
+    elif service == "IRC":
         service_encoded = 13334.684491978609
-    elif service_encoded == "pop_2":
+    elif service == "pop_2":
         service_encoded = 3.9358974358974357
-    elif service_encoded == "printer":
+    elif service == "printer":
         service_encoded = 2.0579710144927534
-    elif service_encoded == "tim_i":
+    elif service == "tim_i":
         service_encoded = 504.875
-    elif service_encoded == "pm_dump":
+    elif service == "pm_dump":
         service_encoded = 473.6
-    elif service_encoded == "red_i":
+    elif service == "red_i":
         service_encoded = 91.0
-    elif service_encoded == "netbios_ssn":
+    elif service == "netbios_ssn":
         service_encoded = 0.052486187845303865
-    elif service_encoded == "rje":
+    elif service == "rje":
         service_encoded = 0.011627906976744186
-    elif service_encoded == "X11":
+    elif service == "X11":
         service_encoded = 3824927.5616438356
-    elif service_encoded == "urh_i":
+    elif service == "urh_i":
         service_encoded = 40.7
-    elif service_encoded == "http_8001":
+    elif service == "http_8001":
         service_encoded = 0.0
-    elif service_encoded == "aol":
+    elif service == "aol":
         service_encoded = 0.0
-    elif service_encoded == "http_2784":
+    elif service == "http_2784":
         service_encoded = 0.0
-    elif service_encoded == "tftp_u":
+    elif service == "tftp_u":
         service_encoded = 1.0
-    elif service_encoded == "harvest":
+    elif service == "harvest":
         service_encoded = 0.0
 
     # encoding flag_encoded
-    if flag_encoded == "SF":
+    if flag == "SF":
         flag_encoded = 20938.455295185224
-    elif flag_encoded == "S0":
+    elif flag == "S0":
         flag_encoded = 0.02536512582135376
-    elif flag_encoded == "REJ":
+    elif flag == "REJ":
         flag_encoded = 0.0
-    elif flag_encoded == "RSTR":
+    elif flag == "RSTR":
         flag_encoded = 889347.3907476249
-    elif flag_encoded == "SH":
+    elif flag == "SH":
         flag_encoded = 0.0
-    elif flag_encoded == "RSTO":
+    elif flag == "RSTO":
         flag_encoded = 444704.5544174136
-    elif flag_encoded == "S1":
+    elif flag == "S1":
         flag_encoded = 77117.35342465753
-    elif flag_encoded == "RSTOS0":
+    elif flag == "RSTOS0":
         flag_encoded = 36582897.84466019
-    elif flag_encoded == "S3":
+    elif flag == "S3":
         flag_encoded = 252670.02040816325
-    elif flag_encoded == "S2":
+    elif flag == "S2":
         flag_encoded = 50189.88976377953
-    elif flag_encoded == "OTH":
+    elif flag == "OTH":
         flag_encoded = 1931.5
 
     # scaling the training data
