@@ -912,7 +912,7 @@ Gradient boosting decision tree was found to be the best model. Therefore, the s
 
 ```pickle``` is a Python package that is a powerful tool for serializing and deserializing the Python objects.
 
-Refer the following notebook where all of the above has been done, 
+Refer the following notebook where all of the above has been executed, 
 - Notebook: [gbdt_classifier.ipynb](notebooks/gbdt_classifier.ipynb).
 
 ### Network anomaly classifier app
