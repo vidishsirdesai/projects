@@ -923,7 +923,50 @@ Refer the following notebook where all of the above has been executed,
     - ```FLASK_APP=flask_app.py flask run```.
 4. To view the welcome page, goto, http://127.0.0.1:5000.
 5. To classify the anomaly type or the attack type, send a POST request to, http://127.0.0.1:5000/classify_attack_type.
-6. The POST request can be sent by running the following command in the terminal: ```curl -X POST -H 'Content-Type: application/json' -d '{"duration": 38044, "srcbytes": 1, "dstbytes": 0, "land": 0, "wrongfragment": 0, "urgent": 0, "hot": 0, "numfailedlogins": 0, "loggedin": 0, "numcompromised": 0, "rootshell": 0, "suattempted": 0, "numfilecreations": 0, "numshells": 0, "numaccessfiles": 0, "ishostlogin": 0, "count": 2, "srvcount": 2, "serrorrate": 0.0, "rerrorrate": 1.0, "samesrvrate": 1.0, "diffsrvrate": 0.0, "srvdiffhostrate": 0.0, "dsthostcount": 255, "dsthostsrvcount": 2, "dsthostdiffsrvrate": 0.5, "dsthostsamesrcportrate": 1.0, "dsthostsrvdiffhostrate": 0.0, "protocol_encoded": "tcp", "service_encoded": "Z39_50", "flag_encoded": "RSTR"}' http://127.0.0.1:5000/classify_attack_type```.
+6. The POST request can be sent by running the following command in the terminal: ```curl -X POST -H 'Content-Type: application/json' -d '{"duration": 38044, "srcbytes": 1, "dstbytes": 0, "land": 0, "wrongfragment": 0, "urgent": 0, "hot": 0, "numfailedlogins": 0, "loggedin": 0, "numcompromised": 0, "rootshell": 0, "suattempted": 0, "numfilecreations": 0, "numshells": 0, "numaccessfiles": 0, "ishostlogin": 0, "count": 2, "srvcount": 2, "serrorrate": 0.0, "rerrorrate": 1.0, "samesrvrate": 1.0, "diffsrvrate": 0.0, "srvdiffhostrate": 0.0, "dsthostcount": 255, "dsthostsrvcount": 2, "dsthostdiffsrvrate": 0.5, "dsthostsamesrcportrate": 1.0, "dsthostsrvdiffhostrate": 0.0, "protocol": "tcp", "service": "Z39_50", "flag": "RSTR"}' http://127.0.0.1:5000/classify_attack_type```.
 7. Response: ```{"Attack Type": "Probe"}```.
 
 # API Specs
+
+### Base URL
+http://127.0.0.1:5000/
+
+### Endpoints
+- GET /: Returns a welcome message indicating the applications's purpose.
+- POST /classify_attack_type: Classifies a network connection based on its features and predicts the type of attack (if any).
+
+### Request format for POST /classify_attack_type
+Content-Type: application/json
+
+The request body should be a JSON object containing the following features of a network connection,
+- duration (int):
+- srcbytes (int):
+- dstbytes (int):
+- land (int):
+- worngfragment (int):
+- urgent (int):
+- hot (int):
+- numfailedlogins (int):
+- loggedin (int):
+- numcompromised (int):
+- rootshell (int):
+- suattempted (int):
+- numfilecreations (int):
+- numshells (int):
+- numaccessfiles (int):
+- ishostlogin (int):
+- count (int):
+- srvcount (int):
+- serrorrate (float):
+- rerrorrate (float):
+- samesrvrate (float):
+- diffsrvrate (float):
+- srvdiffhostrate (float):
+- dsthostcount (int): 
+- dsthostsrvcount (int):
+- dsthostdiffsrvrate (float):
+- dsthostsamesrcportrate (float):
+- dsthostsrvdiffhostrate (float):
+- protocol_encoded (string):
+- service_encoded (string):
+- flag (string): 
