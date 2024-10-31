@@ -918,10 +918,12 @@ Refer the following notebook where all of the above has been done,
 ### Network anomaly classifier app
 1. Create a python file named, ```flask_app.py```.
 2. The contents of the file can be viewed here: [flask_app.py](src/flask_app.py).
-3. To run the application, use the command, ```FLASK_APP=flask_app.py flask run```.
+3. To run the application,
+    - ```cd src```.
+    - ```FLASK_APP=flask_app.py flask run```.
 4. To view the welcome page, goto, http://127.0.0.1:5000.
-5. To classify the anomaly type or the attack type, send a POST request to, http://127.0.0.1:5000/predict.
-6. The POST request can be sent by running the following command in the terminal: ```curl -X POST -H 'Content-Type: application/json' -d '{"duration": 38044, "srcbytes": 1, "dstbytes": 0, "land": 0, "wrongfragment": 0, "urgent": 0, "hot": 0, "numfailedlogins": 0, "loggedin": 0, "numcompromised": 0, "rootshell": 0, "suattempted": 0, "numfilecreations": 0, "numshells": 0, "numaccessfiles": 0, "ishostlogin": 0, "count": 2, "srvcount": 2, "serrorrate": 0.0, "rerrorrate": 1.0, "samesrvrate": 1.0, "diffsrvrate": 0.0, "srvdiffhostrate": 0.0, "dsthostcount": 255, "dsthostsrvcount": 2, "dsthostdiffsrvrate": 0.5, "dsthostsamesrcportrate": 1.0, "dsthostsrvdiffhostrate": 0.0, "protocol_encoded": "tcp", "service_encoded": "Z39_50", "flag_encoded": "RSTR"}' http://127.0.0.1:5000/predict```.
+5. To classify the anomaly type or the attack type, send a POST request to, http://127.0.0.1:5000/classify_attack_type.
+6. The POST request can be sent by running the following command in the terminal: ```curl -X POST -H 'Content-Type: application/json' -d '{"duration": 38044, "srcbytes": 1, "dstbytes": 0, "land": 0, "wrongfragment": 0, "urgent": 0, "hot": 0, "numfailedlogins": 0, "loggedin": 0, "numcompromised": 0, "rootshell": 0, "suattempted": 0, "numfilecreations": 0, "numshells": 0, "numaccessfiles": 0, "ishostlogin": 0, "count": 2, "srvcount": 2, "serrorrate": 0.0, "rerrorrate": 1.0, "samesrvrate": 1.0, "diffsrvrate": 0.0, "srvdiffhostrate": 0.0, "dsthostcount": 255, "dsthostsrvcount": 2, "dsthostdiffsrvrate": 0.5, "dsthostsamesrcportrate": 1.0, "dsthostsrvdiffhostrate": 0.0, "protocol_encoded": "tcp", "service_encoded": "Z39_50", "flag_encoded": "RSTR"}' http://127.0.0.1:5000/classify_attack_type```.
 7. Response: ```{"Attack Type": "Probe"}```.
 
 # API Specs
