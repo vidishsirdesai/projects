@@ -916,8 +916,8 @@ Refer the following notebook where all of the above has been executed,
 - Notebook: [gbdt_classifier.ipynb](notebooks/gbdt_classifier.ipynb).
 
 ### Network anomaly classifier app
-1. Create a python file named, ```flask_app.py```.
-2. The contents of the file can be viewed here: [flask_app.py](src/flask_app.py).
+1. Create a python file named, ```network_attack_classifier.py```.
+2. The contents of the file can be viewed here: [network_attack_classifier.py](src/network_attack_classifier.py).
 3. To run the application,
     - ```cd src```.
     - ```FLASK_APP=network_attack_classifier_app.py flask run```.
