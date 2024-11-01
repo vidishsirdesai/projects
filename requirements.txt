@@ -6,5 +6,3 @@ scipy
 statsmodels
 scikit-learn
 flask
-pytest
-predict
