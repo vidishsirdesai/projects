@@ -239,7 +239,7 @@ memory usage: 41.3+ MB
 The steps to clean the data in the data cleaning step (above) are applied again,
 1. Creating a new column `attackhlc`.
 2. Cleaning the `suattempted` column.
-3. Removing the undefined and redundant columns, `lastflag` and `numoutboundcmds`.
+3. Removing the undefined and redundant columns from the DataFrame, `lastflag` and `numoutboundcmds`.
 
 ### Unique attributes and number of unique attributes in each column
 Information regarding the number of unique attributes and the unique attributes in each column can be found here: [unique_attributes.txt](artifacts/unique_attributes.txt).
