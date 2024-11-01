@@ -1,21 +1,27 @@
 # Problem Statement and Approach
-Given data with information regarding different features associated with network, the task is to recognize whether a connection is normal connection, or a type of attack on the network.
+
+### Problem statement
+Given dataset contains information regarding different features associated with network, the task is build a Machine Learning model that classifies the network connection into the type of attack it possibly is.
 
 ### Why is there a need to develop a robust adaptive approach to detect anomalies in the network?
-The traditional methods that are commonly deployed to detect anomalies in network rely on predefined set of rules based on known attack patterns. The problem with these is that they fail at recognizing threats that previously have not been encountered. 
+The traditional methods that are commonly deployed to detect anomalies in network rely on predefined set of rules based on known attack patterns. The problem with these is that they fail at recognizing threats that previously have not been encountered.
 
-Cyber threats are evolving continuously, as in attackers find new ways to find bypass traditional security measures. Also, the network is forever growing, as in, new devices get added to the environment every now and then. Hence maintaining and monitoring theses devices becomes crucial as the network grows in size.
+Cyber threats are evolving continuously, as in, attackers find new ways to find bypass traditional security measures. Also, the network is forever growing, meaning, new devices get added to the environment every now and then. Hence maintaining and monitoring theses devices becomes crucial as the network grows in size.
 
-These are the fundamental reasons why there is a need for a system that is both adaptive and robust in detecting such threats in the network. Adaptive, because it has to continuously evolve by learning from the new data, and recognize new threats. Robust, because it has to cater to the need of threat detection in a network that is growing continuously.
+These are the fundamental reasons why there is a need for a system that is both adaptive and robust in detecting such threats in the network.
+- Adaptive, because it has to continuously evolve by learning from the new data, and recognize new threats. 
+- Robust, because it has to cater to the need of threat detection in a network that is growing continuously.
 
 ### Approach
-The suggestion is to take a Machine Learning based approach towards addressing the problem by building an ML model that can be fed with relevant features, and it classifies the connection as either normal or attack. This type of task in ML is called as classification task, more specifically, a binary classification task.
+The suggestion is to take a Machine Learning based approach towards addressing the problem by building an ML model that is fed with relevant features, and the model in turn classifies the connection into either normal or one of the attack types. 
+
+This type of classification problem in machine learning is called as a multi-class classification problem.
 
 ### Additional project info and dataset
 Google Docs Link: [link](https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7MrfVBTWWmnZ4L9zgYsULVCdOo5g/edit).
 
 
-# Data Dictionary
+# Column Profile
 ### Basic connection features
 - `duration`: Represents the length of time a specific network connection was active for.
 - `protocoltype`: Represents the specific commumication protocol used in each connection.
@@ -871,15 +877,15 @@ Therefore, considering all of the above, GBDT classifier is the best out of all 
 # Model Deployment using Flask
 
 ### Virtual environment setup
-1. ```cd <project_folder_path>```.
-2. ```pip install virtualenv```
-3. ```python<version> -m venv <virtual_environment_name>``` or ```python3 -m venv .venv```.
+1. `cd <project_folder_path>`.
+2. `pip install virtualenv`.
+3. `python<version> -m venv <virtual_environment_name>` or `python3 -m venv .venv`.
 4. A folder named ".venv" will appear in your project.
 5. Activate the virtual environment using one of the commands listed below depending on the Operating System,
-    - MacOS and Linux, ```source .venv/bin/activate```.
-    - Windows command prompt, ```.venv/Scripts/activate.bat```.
-6. Once the virtual environment is active, the environment name (in this case "```.venv```") will be visible in the parantheses before the prompt, like so "```(.venv)```".
-7. To confirm if the virtual environment has successfully been create, run ```pip list```. The following should be the output,
+    - MacOS and Linux, `source .venv/bin/activate`.
+    - Windows command prompt, `.venv/Scripts/activate.bat`.
+6. Once the virtual environment is active, the environment name (in this case "`.venv`") will be visible in the parantheses before the prompt, like so "`(.venv)`".
+7. To confirm if the virtual environment has successfully been create, run `pip list`. The following should be the output,
 ```text
 (.venv) vidish@Vidishs-MacBook-Air network_anomaly_detection % pip list
 Package    Version
@@ -888,11 +894,11 @@ pip        xx.x.x
 setuptools xx.x.x
 ``` 
 8. To deactivate the virtual environment, strictly run the following 2 commands in the same order,
-    - ```deactivate```.
-    - ```rm -r .venv```.
+    - `deactivate`.
+    - `rm -r .venv`.
 
 ### Installing dependencies
-1. Once the virtual environment is created, create a ```.txt``` file named, ```requirement.txt```.
+1. Once the virtual environment is created, create a `.txt` file named, `requirement.txt`.
 2. Add the dependent (required) packages (libraries) that are required by the app to be functioning. The below is the list of packages that are required,
 ```text
 numpy
@@ -904,27 +910,30 @@ statsmodels
 scikit-learn
 flask
 ```
-3. Once the ```requirement.txt``` file is created with all the dependencies included as a part of the file, save the file and run ```pip install -r requirements.txt``` from the terminal.
-4. ```pip list``` can be run to check if the installation of all the packages has been successful.
+3. Once the `requirement.txt` file is created with all the dependencies included as a part of the file, save the file and run `pip install -r requirements.txt` from the terminal.
+4. `pip list` can be run to check if the installation of all the packages has been successful.
 
 ### Network anomaly classification model
-Gradient boosting decision tree was found to be the best model. Therefore, the same is chosen to build the classification app. The model is trained and the trained model is serialized using "```pickle```".
+Gradient boosting decision tree was found to be the best model. Therefore, the same is chosen to build the classification app. The model is trained and the trained model is serialized using "`pickle`".
 
-```pickle``` is a Python package that is a powerful tool for serializing and deserializing the Python objects.
+`pickle` is a Python package that is a powerful tool for serializing and deserializing the Python objects.
 
 Refer the following notebook where all of the above has been executed, 
 - Notebook: [gbdt_classifier.ipynb](notebooks/gbdt_classifier.ipynb).
 
 ### Network anomaly classifier app
-1. Create a python file named, ```network_attack_classifier.py```.
+1. Create a python file named, `network_attack_classifier.py`.
 2. The contents of the file can be viewed here: [network_attack_classifier.py](src/network_attack_classifier.py).
 3. To run the application,
-    - ```cd src```.
-    - ```FLASK_APP=network_attack_classifier_app.py flask run```.
+    - `cd src`.
+    - `FLASK_APP=network_attack_classifier_app.py flask run`.
 4. To view the welcome page, goto, http://127.0.0.1:5000.
 5. To classify the anomaly type or the attack type, send a POST request to, http://127.0.0.1:5000/classify_attack_type.
-6. The POST request can be sent by running the following command in the terminal: ```curl -X POST -H 'Content-Type: application/json' -d '{"duration": 38044, "srcbytes": 1, "dstbytes": 0, "land": 0, "wrongfragment": 0, "urgent": 0, "hot": 0, "numfailedlogins": 0, "loggedin": 0, "numcompromised": 0, "rootshell": 0, "suattempted": 0, "numfilecreations": 0, "numshells": 0, "numaccessfiles": 0, "ishostlogin": 0, "count": 2, "srvcount": 2, "serrorrate": 0.0, "rerrorrate": 1.0, "samesrvrate": 1.0, "diffsrvrate": 0.0, "srvdiffhostrate": 0.0, "dsthostcount": 255, "dsthostsrvcount": 2, "dsthostdiffsrvrate": 0.5, "dsthostsamesrcportrate": 1.0, "dsthostsrvdiffhostrate": 0.0, "protocol": "tcp", "service": "Z39_50", "flag": "RSTR"}' http://127.0.0.1:5000/classify_attack_type```.
-7. Response: ```{"Attack Type": "Probe"}```.
+6. The POST request can be sent by running the following command in the terminal: 
+```
+curl -X POST -H 'Content-Type: application/json' -d '{"duration": 38044, "srcbytes": 1, "dstbytes": 0, "land": 0, "wrongfragment": 0, "urgent": 0, "hot": 0, "numfailedlogins": 0, "loggedin": 0, "numcompromised": 0, "rootshell": 0, "suattempted": 0, "numfilecreations": 0, "numshells": 0, "numaccessfiles": 0, "ishostlogin": 0, "count": 2, "srvcount": 2, "serrorrate": 0.0, "rerrorrate": 1.0, "samesrvrate": 1.0, "diffsrvrate": 0.0, "srvdiffhostrate": 0.0, "dsthostcount": 255, "dsthostsrvcount": 2, "dsthostdiffsrvrate": 0.5, "dsthostsamesrcportrate": 1.0, "dsthostsrvdiffhostrate": 0.0, "protocol": "tcp", "service": "Z39_50", "flag": "RSTR"}' http://127.0.0.1:5000/classify_attack_type
+```
+7. Response: `{"Attack Type": "Probe"}`.
 
 # API Specification
 
@@ -939,37 +948,37 @@ http://127.0.0.1:5000/
 Content-Type: application/json
 
 The request body should be a JSON object containing the following features of a network connection,
-- ```duration``` (int): Length of time a specific network connection was active for.
-- ```srcbytes``` (int): Number of data bytes transferred from the source to the destination in a single connection.
-- ```dstbytes``` (int): Number of data bytes transferred from the destination to source in a single connection.
-- ```land``` (int): Indicates whether the source and destination IP addresses and port numbers are equal (1 if equal, 0 otherwise).
-- ```worngfragment``` (int): Total number of worng fragments received in a connection.
-- ```urgent``` (int): Number of urgent packets in this connection. Urgent packets are packets with the urgent bit activated.
-- ```hot``` (int): Number of "hot" indicators, meaning the number of factors that are indicative of an anomaly or an attack.
-- ```numfailedlogins``` (int): Count of failed login attempts.
-- ```loggedin``` (int): Indicates whether a successful login occurred in a connection (1 if successfully logged in, 0 otherwise).
-- ```numcompromised``` (int): Number of compromised conditions in a connection.
-- ```rootshell``` (int): Indicates whether root shell access was obtained in a connection (1 if yes, 0 otherwise).
-- ```suattempted``` (int): Indicates whether the ```su root``` command was attempted or used in a connection (1 if yes, 0 otherwise).
-- ```numfilecreations``` (int): Count of file creation operations in a connection.
-- ```numshells``` (int): Count of shell prompts in a connection.
-- ```numaccessfiles``` (int): Count of operations on access control files in a connection.
-- ```ishostlogin``` (int): Indicates whether a login belongs to the host list i.e., root or admin (1 if yes, 0 otherwise).
-- ```count``` (int): Number of connections to the same destination host as the current connection in the past 2 seconds.
-- ```srvcount``` (int): Number of connections to the same service as the current connection in the past 2 seconds.
-- ```serrorrate``` (float): Percentage of connections that have activated the flag s0, s1, s2, or s3, among the connections aggregated in ```count```.
-- ```rerrorrate``` (float): Percentage of connections that have activated the flag REJ, among the connections aggregated in ```count```.
-- ```samesrvrate``` (float): Percentage of connections that were to the same service, among the connections aggregated in ```count```.
-- ```diffsrvrate``` (float): Percentage of connections that were to different services, among the connections aggregated in ```count```.
-- ```srvdiffhostrate``` (float): Percentage of connections that were to different destination machines, among the connections aggregated in ```srvcount```.
-- ```dsthostcount``` (int): Number of connections having the same destination host IP address.
-- ```dsthostsrvcount``` (int): Number of connections having the same destination port number.
-- ```dsthostdiffsrvrate``` (float): Percentage of connections that were to different services, among the connections aggregated in ```dsthostcount```.
-- ```dsthostsamesrcportrate``` (float): Percentage connections that were to the same source port, among the connections aggregated in ```dsthostsrvcount```.
-- ```dsthostsrvdiffhostrate``` (float): Percentage connections that were to different destination machines, among the connections aggregated in ```dsthostsrvcount```.
-- ```protocol``` (string): Type of communication protocol used in each connection.
-- ```service``` (string): Type of DNS used in a connection.
-- ```flag``` (string): Status of a connection.
+- `duration` (int): Length of time a specific network connection was active for.
+- `srcbytes` (int): Number of data bytes transferred from the source to the destination in a single connection.
+- `dstbytes` (int): Number of data bytes transferred from the destination to source in a single connection.
+- `land` (int): Indicates whether the source and destination IP addresses and port numbers are equal (1 if equal, 0 otherwise).
+- `worngfragment` (int): Total number of worng fragments received in a connection.
+- `urgent` (int): Number of urgent packets in this connection. Urgent packets are packets with the urgent bit activated.
+- `hot` (int): Number of "hot" indicators, meaning the number of factors that are indicative of an anomaly or an attack.
+- `numfailedlogins` (int): Count of failed login attempts.
+- `loggedin` (int): Indicates whether a successful login occurred in a connection (1 if successfully logged in, 0 otherwise).
+- `numcompromised` (int): Number of compromised conditions in a connection.
+- `rootshell` (int): Indicates whether root shell access was obtained in a connection (1 if yes, 0 otherwise).
+- `suattempted` (int): Indicates whether the `su root` command was attempted or used in a connection (1 if yes, 0 otherwise).
+- `numfilecreations` (int): Count of file creation operations in a connection.
+- `numshells` (int): Count of shell prompts in a connection.
+- `numaccessfiles` (int): Count of operations on access control files in a connection.
+- `ishostlogin` (int): Indicates whether a login belongs to the host list i.e., root or admin (1 if yes, 0 otherwise).
+- `count` (int): Number of connections to the same destination host as the current connection in the past 2 seconds.
+- `srvcount` (int): Number of connections to the same service as the current connection in the past 2 seconds.
+- `serrorrate` (float): Percentage of connections that have activated the flag s0, s1, s2, or s3, among the connections aggregated in `count`.
+- `rerrorrate` (float): Percentage of connections that have activated the flag REJ, among the connections aggregated in `count`.
+- `samesrvrate` (float): Percentage of connections that were to the same service, among the connections aggregated in `count`.
+- `diffsrvrate` (float): Percentage of connections that were to different services, among the connections aggregated in `count`.
+- `srvdiffhostrate` (float): Percentage of connections that were to different destination machines, among the connections aggregated in `srvcount`.
+- `dsthostcount` (int): Number of connections having the same destination host IP address.
+- `dsthostsrvcount` (int): Number of connections having the same destination port number.
+- `dsthostdiffsrvrate` (float): Percentage of connections that were to different services, among the connections aggregated in `dsthostcount`.
+- `dsthostsamesrcportrate` (float): Percentage connections that were to the same source port, among the connections aggregated in `dsthostsrvcount`.
+- `dsthostsrvdiffhostrate` (float): Percentage connections that were to different destination machines, among the connections aggregated in `dsthostsrvcount`.
+- `protocol` (string): Type of communication protocol used in each connection.
+- `service` (string): Type of DNS used in a connection.
+- `flag` (string): Status of a connection.
 
 ### Response format for POST /classify_attack_type
 The response will be a JSON object with the following key,
