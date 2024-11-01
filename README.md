@@ -100,7 +100,7 @@ Attacks are majorly classified as follows,
 
 A high level classification of these attack types can be created, and elements in the `attack` column can be assigned to one of the high level classes.
 
-Considering all of the above, a new column, namely `attack_hlc`, has been created. Wherein each of the element in the `attack` column has been assigned to its respective high level class.
+Considering all of the above, a new column, namely `attackhlc`, has been created. Wherein, each element in the `attack` column has been assigned to its respective high level class.
 
 ```
 attackhlc = {
@@ -131,12 +131,12 @@ attackhlc = {
 ```
 
 ### Cleaning the `suattempted` column
-The column `suattempted`, according to the data dictionary (https://github.com/vidishsirdesai/network_anomaly_detection?tab=readme-ov-file#data-dictionary), is supposed to have only 2 values, i.e., 0 and 1. But, as seen in the output of cell number `14` in the jupyter notebook ([link](notebooks/data_cleaning.ipynb)), it has 3 values, i.e., 0, 1, and 2.
+The column `suattempted`, according to the column profile (https://github.com/vidishsirdesai/network_anomaly_detection?tab=readme-ov-file#column-profile), is supposed to have only 2 values, i.e., 0 and 1. But, as seen in the output of cell number `14` in the jupyter notebook ([data_cleaning.ipynb](notebooks/data_cleaning.ipynb)), it has 3 values, 0, 1, and 2.
 
-Assuming that the presence of 2 in the column is a typo, all the rows in the column `suattempted` where there was a 2 present is changed to 1.
+Assuming that the presence of the value "2" in the column is a typo, all the rows in the column `suattempted`, where there was a "2" present is changed to "1".
 
 ### Removing the undefined and redundant columns
-There is no description available for the feature `lastflag` in the data dictionary. Hence it has been dropped from the list of columns.
+There is no description available for the feature `lastflag` in the column profile. Hence it has been dropped from the list of columns.
 
 Also, the column `numoutboundcmds` has all zeros. This column can also be dropped from the list of columns.
 
@@ -181,7 +181,7 @@ Index(['duration', 'protocoltype', 'service', 'flag', 'srcbytes', 'dstbytes',
 (125973, 43)
 ```
 
-### Data types of each column in the data and the structure of the data
+### Summary of the DataFrame
 ```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 125973 entries, 0 to 125972
@@ -237,17 +237,17 @@ memory usage: 41.3+ MB
 
 ### Cleaning the data
 The steps to clean the data in the data cleaning step (above) are applied again,
-1. Creating a new column `attack_hlc`.
+1. Creating a new column `attackhlc`.
 2. Cleaning the `suattempted` column.
 3. Removing the undefined and redundant columns, `lastflag` and `numoutboundcmds`.
 
 ### Unique attributes and number of unique attributes in each column
-Information regarding the number of unique attributes and the unique attributes in each column can be found here: [link](artifacts/unique_attributes.txt).
+Information regarding the number of unique attributes and the unique attributes in each column can be found here: [unique_attributes.txt](artifacts/unique_attributes.txt).
 
 ### Value counts and frequency of occurrence of each unique element in each column
-Information regarding the value counts of each of the unique attributes can be found here: [link](artifacts/value_counts.txt).
+Information regarding the value counts of each of the unique attributes can be found here: [value_counts.txt](artifacts/value_counts.txt).
 
-Additionally, the frequency of occurrence of each unique values in each column expressed as a proportion of the total count can found here: [link](artifacts/value_counts_normalized.txt).
+Additionally, the frequency of occurrence of each unique values in each column expressed as a proportion of the total count can found here: [value_counts_normalized.txt](artifacts/value_counts_normalized.txt).
 
 ### Statistical summary of numerical columns
 ```
