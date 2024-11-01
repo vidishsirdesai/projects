@@ -1,7 +1,7 @@
 # Problem Statement and Approach
 
 ### Problem statement
-Given dataset contains information regarding different features associated with network, the task is build a Machine Learning model that classifies the network connection into the type of attack it possibly is.
+In cybersecurity, detecting the anomalies in the network is a crucial task that involves identifying unusual patterns in the network traffic. The challenge lies in accurately detecting these anomalies in real-time, where the network traffic is immense, and often noisy and heterogenous.
 
 ### Why is there a need to develop a robust adaptive approach to detect anomalies in the network?
 The traditional methods that are commonly deployed to detect anomalies in network rely on predefined set of rules based on known attack patterns. The problem with these is that they fail at recognizing threats that previously have not been encountered.
@@ -13,7 +13,7 @@ These are the fundamental reasons why there is a need for a system that is both 
 - Robust, because it has to cater to the need of threat detection in a network that is growing continuously.
 
 ### Approach
-The suggestion is to take a Machine Learning based approach towards addressing the problem by building an ML model that is fed with relevant features, and the model in turn classifies the connection into either normal or one of the attack types. 
+The suggestion is to take a Machine Learning based approach towards addressing the problem by building an ML model that can be fed with relevant features, and the model in turn classifies the connection into either normal or one of the attack types.
 
 This type of classification problem in machine learning is called as a multi-class classification problem.
 
@@ -24,22 +24,22 @@ Google Docs Link: [link](https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7Mrf
 # Column Profile
 ### Basic connection features
 - `duration`: Represents the length of time a specific network connection was active for.
-- `protocoltype`: Represents the specific commumication protocol used in each connection.
-- `service`: Represents the destination network service used in a connection.
+- `protocoltype`: Represents the type of commumication protocol used in each connection.
+- `service`: Represents the type of destination network service (DNS) used in a connection.
 - `flag`: Represents the status of a connection as either "Normal" or "Error".
 - `srcbytes`: Represents the number of data bytes transferred from the source to the destination in a single connection.
 - `dstbytes`: Represents the number of data bytes transferred from the destination to the source in a single connection.
 - `land`: Indicates whether the source and destination IP addresses and port numbers are equal (1 if equal, 0 otherwise).
-- `wrongfragment`: Represents the total number of wrong fragments received in a connection.
-- `urgent`: Represents the number of urgent packets in this connection. Urgent packets are packets with the urgent bit activated.
+- `wrongfragment`: Represents the total number of wrong fragments received in a connection. Wrong fragments in occur due to issues with packet transmission and reception.
+- `urgent`: Represents the number of urgent packets in a connection. Urgent packets are packets with the urgent bit activated.
 
 ### Content related features
-- `hot`: Represents the number of "hot" indicators in the content, such as entering a system directory, creating programs, and executing programs.
+- `hot`: Represents the number of "hot" indicators in the content, such as entering a system directory, creating programs, and executing programs. The number indicates the number of features that are indicative of an anomaly or an attack.
 - `numfailedlogins`: Represents the count of failed login attempts.
 - `loggedin`: Indicates whether a successful login occurred in a connection (1 if successfully logged in, 0 otherwise).
 - `numcompromised`: Represents the number of "compromised" conditions in a connection.
 - `rootshell`: Indicates whether root shell access was obtained in a connection (1 if yes, 0 otherwise).
-- `suattempted`: Indicates whether the "su root" command was attempted or used in a connection (1 if yes, 0 otherwise).
+- `suattempted`: Indicates whether the "`su root`" command was attempted or used in a connection (1 if yes, 0 otherwise).
 - `numroot`: Represents the count of root operations performed in a connection.
 - `numfilecreations`: Represents the count of file creation operations in a connection.
 - `numshell`: Represents the count of shell prompts in a connection.
