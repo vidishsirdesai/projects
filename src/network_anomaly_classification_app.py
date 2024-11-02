@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def welcome_note():
-    return "<h1>Network Anomaly Classifier App</h1>"
+    return "<h1>Network Anomaly Classification App</h1>"
 
 # reading the trained model's pickle file
 gbdt_classifier_pickle = open("../artifacts/gbdt_classifier.pkl", "rb")
