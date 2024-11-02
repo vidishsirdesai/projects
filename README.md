@@ -6,9 +6,7 @@ In cybersecurity, detecting anomalies or intrusions or attacks in the network is
 ### Why is there a need to develop a robust and adaptive system to detect anomalies in the network?
 The traditional methods that are commonly deployed to detect anomalies in the network, rely on predefined set of rules based on known attack patterns. The problem with these is that they fail at recognizing threats that previously have not been encountered.
 
-Cyber threats are evolving continuously, as in, attackers find new ways to bypass traditional security measures. Also, the network is forever growing, meaning, new devices get added to the environment every now and then. This makes the maintaining and monitoring of devices in a network crucial as the network grows in size.
-
-These are the fundamental reasons why there is a need for a system, that is both robust and adaptive, for detecting such threats in the network.
+Cyber threats are evolving continuously, as in, attackers find new ways to bypass traditional security measures. Also, the network is forever growing, meaning, new devices get added to the environment every now and then. This makes the maintaining and monitoring of devices in a network crucial as the network grows in size. Hence, there is a need for a system, that is both robust and adaptive, for detecting such threats in the network.
 - Robust, because it has to cater to the need of threat detection in a network that is growing continuously.
 - Adaptive, because it has to continuously evolve by learning from the new data, and recognize new threats.
 
