@@ -241,13 +241,13 @@ The steps to clean the data in the data cleaning step (above) are applied again,
 2. Cleaning the `suattempted` column.
 3. Removing the undefined and redundant columns from the DataFrame, `lastflag` and `numoutboundcmds`.
 
-### Unique attributes and number of unique attributes in each column
-Information regarding the number of unique attributes and the unique attributes in each column can be found here: [unique_attributes.txt](artifacts/unique_attributes.txt).
+### Unique elements and number of unique elements in each column
+Information regarding the number of unique elements and the unique elements in each column can be found here: [unique_attributes.txt](artifacts/unique_attributes.txt).
 
 ### Value counts and frequency of occurrence of each unique element in each column
-Information regarding the value counts of each of the unique attributes can be found here: [value_counts.txt](artifacts/value_counts.txt).
+Information regarding the value counts of each of the unique elements can be found here: [value_counts.txt](artifacts/value_counts.txt).
 
-Additionally, the frequency of occurrence of each unique values in each column expressed as a proportion of the total count can found here: [value_counts_normalized.txt](artifacts/value_counts_normalized.txt).
+Additionally, the frequency of occurrence of each unique elements in each column expressed as a proportion of the total count can found here: [value_counts_normalized.txt](artifacts/value_counts_normalized.txt).
 
 ### Statistical summary of numerical columns
 ```
