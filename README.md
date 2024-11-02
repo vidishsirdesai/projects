@@ -884,10 +884,10 @@ Therefore, considering all of the above, GBDT classifier is the best out of all 
 # Model Deployment using Flask
 
 ### Virtual environment setup
-1. `cd <project_folder_path>`.
+1. `cd <project_directory_path>`.
 2. `pip install virtualenv`.
 3. `python<version> -m venv <virtual_environment_name>` or `python3 -m venv .venv`.
-4. A folder named ".venv" will appear in your project.
+4. A folder named ".venv" will appear in the project directory.
 5. Activate the virtual environment using one of the commands listed below depending on the Operating System,
     - MacOS and Linux, `source .venv/bin/activate`.
     - Windows command prompt, `.venv/Scripts/activate.bat`.
@@ -906,7 +906,7 @@ setuptools xx.x.x
 
 ### Installing dependencies
 1. Once the virtual environment is created, create a `.txt` file named, `requirement.txt`.
-2. Add the dependent (required) packages (libraries) that are required by the app to be functioning. The below is the list of packages that are required,
+2. Add the names of the dependent (required) packages (libraries) that are required by the app to be functioning. The below is the list of packages that are required,
 ```text
 flask
 pickle
@@ -919,20 +919,20 @@ scikit-learn
 ### Network anomaly classification model
 Gradient boosting decision tree was found to be the best model. Therefore, the same is chosen to build the classification app. The model is trained and the trained model is serialized using "`pickle`".
 
-`pickle` is a Python package that is a powerful tool for serializing and deserializing a Python objects.
+`pickle` is a Python package that is a powerful tool for serializing and deserializing Python objects.
 
 Refer the following notebook where all of the above has been executed, 
 - Notebook: [gbdt_classifier.ipynb](notebooks/gbdt_classifier.ipynb).
 
 ### Network anomaly classifier app
-1. Create a python file named, `network_attack_classifier.py`.
+1. Create a python file named, `network_anomaly_classifier_app.py`.
 2. The contents of the file can be viewed here: [network_attack_classifier.py](src/network_attack_classifier.py).
 3. To run the application,
     - `cd src`.
-    - `FLASK_APP=network_attack_classifier_app.py flask run`.
+    - `FLASK_APP=network_anomaly_classifier_app.py flask run`.
 4. To view the welcome page, goto, http://127.0.0.1:5000.
 5. To classify the anomaly type or the attack type, send a POST request to, http://127.0.0.1:5000/classify_attack_type.
-6. The POST request can be sent by running the following command in the terminal: 
+6. The POST request can be sent by running the following command in a terminal window: 
 ```
 curl -X POST -H 'Content-Type: application/json' -d '{"duration": 38044, "srcbytes": 1, "dstbytes": 0, "land": 0, "wrongfragment": 0, "urgent": 0, "hot": 0, "numfailedlogins": 0, "loggedin": 0, "numcompromised": 0, "rootshell": 0, "suattempted": 0, "numfilecreations": 0, "numshells": 0, "numaccessfiles": 0, "ishostlogin": 0, "count": 2, "srvcount": 2, "serrorrate": 0.0, "rerrorrate": 1.0, "samesrvrate": 1.0, "diffsrvrate": 0.0, "srvdiffhostrate": 0.0, "dsthostcount": 255, "dsthostsrvcount": 2, "dsthostdiffsrvrate": 0.5, "dsthostsamesrcportrate": 1.0, "dsthostsrvdiffhostrate": 0.0, "protocol": "tcp", "service": "Z39_50", "flag": "RSTR"}' http://127.0.0.1:5000/classify_attack_type
 ```
