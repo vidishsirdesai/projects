@@ -10,10 +10,8 @@ Cyber threats are evolving continuously, as in, attackers find new ways to bypas
 - Robust, because it has to cater to the need of threat detection in a network that is growing continuously.
 - Adaptive, because it has to continuously evolve by learning from the new data, and recognize new threats.
 
-### Solution
-One of the solutions toward addressing this problem, is to take a Machine Learning based approach. Where an ML model is built that can be fed with the data of relevant features, and the model in turn classifies the connection into either a normal or one of the attack types.
-
-This type of classification problem in machine learning is called as a multi-class classification problem.
+### Multi-class ML model for network anomaly detection system
+To address this issue, an ML model is built that can be fed with the data of relevant features, and the model in turn classifies the connection into either a normal or one of the attack types. This type of classification problem in machine learning is called as a multi-class classification problem.
 
 ### Additional project info and dataset
 Google Docs Link: [link](https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7MrfVBTWWmnZ4L9zgYsULVCdOo5g/edit).
