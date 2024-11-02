@@ -132,9 +132,9 @@ The column `suattempted`, according to the column profile (https://github.com/vi
 Assuming that the presence of the value "2" in the column `suattempted` is a typo, all the rows in the column `suattempted` whereever there was a "2" present is changed to "1".
 
 ### Undefined and redundant columns
-There is no description available for the feature `lastflag` in the column profile. Hence it has been dropped from the list of columns.
+There is no description available for the feature `lastflag` in the column profile. Hence it is dropped from the DataFrame.
 
-Also, the column `numoutboundcmds` has all zeros. This column can also be dropped from the list of columns.
+Also, the column `numoutboundcmds` has all zeros. This column can also be dropped from the DataFrame.
 
 ### Final shape of the data after all the above changes
 ```
@@ -304,8 +304,7 @@ The above numerical columns have discrete values of 0 and 1, hence it is appropr
 
 ### Numerical columns
 ```
-Numerical columns:
-['duration', 'srcbytes', 'dstbytes', 'wrongfragment', 'urgent', 'hot', 'numfailedlogins', 'numcompromised', 'numroot', 'numfilecreations', 'numshells', 'numaccessfiles', 'count', 'srvcount', 'serrorrate', 'srvserrorrate', 'rerrorrate', 'srvrerrorrate', 'samesrvrate', 'diffsrvrate', 'srvdiffhostrate', 'dsthostcount', 'dsthostsrvcount', 'dsthostsamesrvrate', 'dsthostdiffsrvrate', 'dsthostsamesrcportrate', 'dsthostsrvdiffhostrate', 'dsthostserrorrate', 'dsthostsrvserrorrate', 'dsthostrerrorrate', 'dsthostsrvrerrorrate']
+Numerical columns: ['duration', 'srcbytes', 'dstbytes', 'wrongfragment', 'urgent', 'hot', 'numfailedlogins', 'numcompromised', 'numroot', 'numfilecreations', 'numshells', 'numaccessfiles', 'count', 'srvcount', 'serrorrate', 'srvserrorrate', 'rerrorrate', 'srvrerrorrate', 'samesrvrate', 'diffsrvrate', 'srvdiffhostrate', 'dsthostcount', 'dsthostsrvcount', 'dsthostsamesrvrate', 'dsthostdiffsrvrate', 'dsthostsamesrcportrate', 'dsthostsrvdiffhostrate', 'dsthostserrorrate', 'dsthostsrvserrorrate', 'dsthostrerrorrate', 'dsthostsrvrerrorrate']
 Number of numerical columns = 31
 ```
 
@@ -631,7 +630,7 @@ The following are the categorical columns and the type of encoding applied,
 - `service`: Target encoding.
 - `flag`: Target encoding.
 
-### Removing the highly correlated columns
+### Removing the highly correlated columns after encoding
 The following is the heatmap showing the correlation of columns after the encoding is done,
 ![alt text](artifacts/heatmap_post_encoding.png)
 
@@ -682,10 +681,8 @@ The independent variables are stored in a variable named, `x`, and the dependent
 ### Splitting the dataset into training set, validation set and testing set
 The `x` and `y` are split into,
 - `x_train`
-- `x_val`
 - `x_test`
 - `y_train`
-- `y_val`
 - `y_test`
 
 Shape of the training (x_train and y_train) set,
