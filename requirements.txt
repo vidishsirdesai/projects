@@ -2,4 +2,3 @@ flask
 pickle
 pandas
 scikit-learn
-pytest
