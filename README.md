@@ -80,7 +80,7 @@ Google Docs Link: [link](https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7Mrf
 - Dataset used: [network_anomaly_dataset.csv](datasets/network_anomaly_dataset.csv)
 - Notebook used: [data_cleaning.ipynb](notebooks/data_cleaning.ipynb)
 
-### Creating a new column `attack_hlc`
+### Creating a new column `attackhlc`
 The following are the unique elements in the `attack` column:
 ```
 array(['normal', 'neptune', 'warezclient', 'ipsweep', 'portsweep',
