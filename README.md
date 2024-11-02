@@ -675,7 +675,7 @@ Based on the above observations, the columns that can be removed from the DataFr
 - `dsthostsrvrerrorrate`.
 - `dsthostsamesrvrate`.
 
-The following is the heatmap after the highly correlated columns are removed,
+The following is the heatmap after the highly correlated columns have been removed,
 ![alt text](artifacts/heatmap_correlated_columns_dropped.png)
 
 ### Independent and dependent variables (columns)
