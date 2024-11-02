@@ -42,7 +42,7 @@ Refer the following notebook where all of the above has been executed,
 
 ### Network anomaly classifier app
 1. Create a python file named, `network_anomaly_classification_app.py`.
-2. The contents of the file can be viewed here: [network_attack_classification.py](src/network_attack_classification_app.py).
+2. The contents of the file can be viewed here: [network_anomaly_classification_app.py](src/network_anomaly_classification_app.py).
 3. To run the application,
     - `cd src`.
     - `FLASK_APP=network_anomaly_classification_app.py flask run`.
