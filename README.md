@@ -329,7 +329,7 @@ Number of numerical columns = 11
 ### Heatmap of numerical columns
 ![alt text](artifacts/heatmap_of_numerical_attributes.png)
 
-Columns that are highly correlated to each other:
+The following columns are the highly correlated as observed in the above heatmap,
 - `numcompromised` and `numroot`.
 - `numroot` and `numcompromised`.
 - `serrorrate` and `srvserrorrate`.
@@ -353,7 +353,7 @@ Columns that are highly correlated to each other:
 - `dsthostsrvserrorrate` and `srvserrorrate`.
 - `dsthostsrvserrorrate` and `dsthostserrorrate`.
 
-Based on the above observations, the attributes that can be removed are,
+Based on the above observations, the columns that can be removed from the DataFrame are,
 - `numroot`.
 - `srvserrorrate`.
 - `dsthostserrorrate`.
@@ -380,8 +380,8 @@ For testing the hypotheses it would be appropriate if the target column had 2 va
 This newly created column `normal_or_attack` will be the target column or variable for the specific case of testing the different hypotheses.
 
 ### Cleaning the data
-The steps to clean the data in the data cleaning step (above) are applied again,
-1. Creating a new column `attack_hlc`.
+The steps to clean the data as seen in the data cleaning step (https://github.com/vidishsirdesai/network_anomaly_detection#data-cleaning) are applied again,
+1. Creating a new column `attackhlc`.
 2. Cleaning the `suattempted` column.
 3. Removing the undefined and redundant columns, `lastflag` and `numoutboundcmds`.
 
@@ -390,28 +390,28 @@ This hypothesis can further be simplified into 2 scenarios,
 1.  Network connections with unusually high or low traffic volumes from source to destination are more likely to be anomalous.
 2.  Network connections with unusually high or low traffic volumes from destination to source are more likely to be anomalous.
 
-####  Network connections with unusually high or low traffic volumes from source to destination are more likely to be anomalous.
-- Null hypothesis (H0): There is no significant difference in the network traffic volume from source to destination of normal connection and attack connection.
-- Alternate hypothesis (H1): There is a significant difference in the network traffic volume from source to destination of normal connection and attack connection.
+#### Scenario 1: Network connections with unusually high or low traffic volumes from source to destination are more likely to be anomalous.
+- Null hypothesis (H0): There is no significant difference in the network traffic volume from source to destination of normal connection and attack an connection.
+- Alternate hypothesis (H1): There is a significant difference in the network traffic volume from source to destination of normal connection and an attack connection.
 - Test used: Independent Samples T-Test
 - Significance level ($\alpha$) = 0.05
 - Test result:
 ```
 Ttest_indResult(statistic=-2.101656020563486, pvalue=0.03558539933331456)
 ```
-- Observation: The p-value is lesser than $\alpha$. There is a significant difference in the network traffic volume from source to destination of normal connection and attack connection. 
+- Observation: The p-value is lesser than $\alpha$. There is a significant difference in the network traffic volume from source to destination of normal connection and an attack connection. 
 - Conclusion: Alternate hypothesis (H1) is true.
 
-####  Network connections with unusually high or low traffic volumes from destination to source are more likely to be anomalous.
-- Null hypothesis (H0): There is no significant difference in the network traffic volume from destination to source of normal connection and attack connection.
-- Alternate hypothesis (H1): There is a significant difference in the network traffic volume from destination to source of normal connection and attack connection.
+#### Scenario 2: Network connections with unusually high or low traffic volumes from destination to source are more likely to be anomalous.
+- Null hypothesis (H0): There is no significant difference in the network traffic volume from destination to source of normal connection and an attack connection.
+- Alternate hypothesis (H1): There is a significant difference in the network traffic volume from destination to source of normal connection and an attack connection.
 - Test used: Independent Samples T-Test
 - Significance level ($\alpha$) = 0.05
 - Test result:
 ```
 Ttest_indResult(statistic=-1.4614241258205836, pvalue=0.14390157812640425)
 ```
-- Observation: The p-value is greater than $\alpha$. This suggests that there is no significant difference in the likelihood of network anomalies among network connections with different traffic volumes from destination to source.
+- Observation: The p-value is greater than $\alpha$. There is no significant difference in the network traffic volume from destination to source of normal connection and an attack connection.
 - Conclusion: Null hypothesis (H0) is true.
 
 ### Hypothesis 2: Certain protocols are more frequently associated with network anomalies.
@@ -430,7 +430,7 @@ Chi2ContingencyResult(statistic=10029.24862778463, pvalue=0.0, dof=2, expected_f
 
 ### Hypothesis 3: Specific services are targets of network anomalies more often than others.
 - Null hypothesis (H0): There is no significant difference in the likelihood of network anomalies among different services.
-- Alternate hypothesis (H1): There is no significant difference in the likelihood of network anomalies among different services.
+- Alternate hypothesis (H1): There is a significant difference in the likelihood of network anomalies among different services.
 - Test used: Chi-Square Test for Independence
 - Significance level ($\alpha$) = 0.05
 - Test result:
@@ -506,7 +506,7 @@ Chi2ContingencyResult(statistic=93240.03213516614, pvalue=0.0, dof=69, expected_
        [3.29837592e+02, 2.87162408e+02],
        [3.70465886e+02, 3.22534114e+02]]))
 ```
-- Observation: The p-value is less than $\alpha$. There is a significant difference in the likelihood of network anomalies among different protocol types.
+- Observation: The p-value is less than $\alpha$. There is a significant difference in the likelihood of network anomalies among different services.
 - Conclusion: Alternate hypothesis (H1) is true.
 
 ### Hypothesis 4: Error flags in the Flag feature are significantly associated with anomalies.
@@ -557,9 +557,9 @@ x26            4.3007      0.144     29.876      0.000       4.019       4.583
 ==============================================================================
 ```
 - Observation:
-       - The "flag" attribute is represented by "x26" in the above table.
+       - The `flag` attribute is represented by "x26" in the above table.
        - The coefficient of this attribute is positive, and is also statistically significant (p-value < 0.05).
-       - This indicates that the "flag" attribute is positively is associated with the anomalies.
+       - This indicates that the `flag` attribute is positively is associated with the anomalies.
 - Conclusion: Alternate hypothesis (H1) is true.
 
 
@@ -611,7 +611,7 @@ x26            4.3007      0.144     29.876      0.000       4.019       4.583
 ==============================================================================
 ```
 - Observation:
-       - The "urgent" attribute is represented by "x6" in the above table.
+       - The `urgent` attribute is represented by "x6" in the above table.
        - Although the coefficient of this attribute is positive, is is not statistically significant (p-value > 0.05).
        - This suggests that while there might be a slight positive association between urgent packets and anomalies, but the evidence is not strong enough to conclude a significant relationship.
 - Conclusion: Null hypothesis (H0) is true.
@@ -639,7 +639,8 @@ The following are the categorical columns and the type of encoding applied,
 The following is the heatmap showing the correlation of columns after the encoding is done,
 ![alt text](artifacts/heatmap_post_encoding.png)
 
-The following are the highly correlated columns,
+The following columns are the highly correlated as observed in the above heatmap,
+- `hot` and `isguestlogin`.
 - `numcompromised` and `numroot`.
 - `numroot` and `numcompromised`.
 - `serrorrate` and `srvserrorrate`.
@@ -663,7 +664,7 @@ The following are the highly correlated columns,
 - `dsthostsrvserrorrate` and `srvserrorrate`.
 - `dsthostsrvserrorrate` and `dsthostserrorrate`.
 
-Based on the above observations, the columns that can be removed are,
+Based on the above observations, the columns that can be removed from the DataFrame are,
 - `isguestlogin`.
 - `numroot`.
 - `srvserrorrate`.
@@ -677,12 +678,12 @@ Based on the above observations, the columns that can be removed are,
 The following is the heatmap after the highly correlated columns are removed,
 ![alt text](artifacts/heatmap_correlated_columns_dropped.png)
 
-### Separate the independent and dependent variables (columns)
-The `attackhlc` (which is label encoded), is the target or the dependent variable for the ML model that are built.
+### Independent and dependent variables (columns)
+The `attackhlc` (which is label encoded), is the target or the dependent variable for the ML models that will be built.
 
 The independent variables are stored in a variable named, `x`, and the dependent variable is stored in a variable named, `y`. Refer cell number `34` in the jupyter notebook (link above).
 
-### Splitting the data into training set, validation set and testing set
+### Splitting the dataset into training set, validation set and testing set
 The `x` and `y` are split into,
 - `x_train`
 - `x_val`
@@ -693,7 +694,7 @@ The `x` and `y` are split into,
 
 Shape of the training (x_train and y_train) set,
 ```
-((75578, 31), (75578,))
+((88174, 31), (88174,))
 ```
 
 Shape of testing (x_test and y_test) set,
@@ -720,7 +721,13 @@ The split data is stored in the following .csv files,
     - `y_test`: [y_test.csv](datasets/y_test.csv)
 - Notebook used: [ml_model_building.ipynb](notebooks/ml_model_building.ipynb)
 - Problem type: Multi-class classification.
-- Models: Logistic Regression OvR, kNN Classifier, Decision Tree Classifier, Random Forest Classifier, Gradient Boosting Decision Tree (GBDT) Classifier, Support Vector Classifier
+- Models built: 
+       - Logistic Regression OvR
+       - kNN Classifier
+       - Decision Tree Classifier
+       - Random Forest Classifier
+       - Gradient Boosting Decision Tree (GBDT) Classifier
+       - Support Vector Classifier
 
 ### Scaling the data
 The `x_train` and `x_test` data have been scaled using `StandardScaler()`,
@@ -768,14 +775,14 @@ Support Vector Classifier,
 ![alt text](artifacts/cm_sv_classifier.png)
 
 ### Comparison of classification reports of the various models
-Logistic Regression OvR,
+Logistic Regression OvR ([classification_report_log_reg_ovr.txt](artifacts/classification_report_log_reg_ovr.txt)),
 ```
               precision    recall  f1-score   support
 
            0       0.95      0.97      0.96     20259
            1       0.98      0.96      0.97     13724
-           2       0.55      0.29      0.38       302
-           3       0.89      0.86      0.87      3491
+           2       0.54      0.29      0.38       302
+           3       0.89      0.85      0.87      3491
            4       0.57      0.29      0.38        14
 
     accuracy                           0.95     37790
@@ -783,7 +790,7 @@ Logistic Regression OvR,
 weighted avg       0.95      0.95      0.95     37790
 ```
 
-kNN Classifier,
+kNN Classifier ([classification_report_knn_classifier.txt](artifacts/classification_report_knn_classifier.txt)),
 ```
               precision    recall  f1-score   support
 
@@ -798,7 +805,7 @@ kNN Classifier,
 weighted avg       1.00      1.00      1.00     37790
 ```
 
-Decision Tree Classifier,
+Decision Tree Classifier ([classification_report_dt_classifier.txt](artifacts/classification_report_dt_classifier.txt)),
 ```
               precision    recall  f1-score   support
 
@@ -813,7 +820,7 @@ Decision Tree Classifier,
 weighted avg       0.98      0.99      0.99     37790
 ```
 
-Random Forest Classifier,
+Random Forest Classifier ([classification_report_rf_classifier.txt](artifacts/classification_report_rf_classifier.txt)),
 ```
               precision    recall  f1-score   support
 
@@ -828,22 +835,22 @@ Random Forest Classifier,
 weighted avg       0.98      0.98      0.98     37790
 ```
 
-Gradient Boosting Decision Tree (GBDT) Classifier,
+Gradient Boosting Decision Tree (GBDT) Classifier ([classification_report_gbdt_classifier.txt](artifacts/classification_report_gbdt_classifier.txt)),
 ```
               precision    recall  f1-score   support
 
            0       1.00      1.00      1.00     20259
            1       1.00      1.00      1.00     13724
-           2       0.97      0.92      0.94       302
-           3       0.99      0.99      0.99      3491
+           2       1.00      0.93      0.96       302
+           3       1.00      0.99      0.99      3491
            4       0.24      0.50      0.33        14
 
     accuracy                           1.00     37790
-   macro avg       0.84      0.88      0.85     37790
+   macro avg       0.85      0.88      0.86     37790
 weighted avg       1.00      1.00      1.00     37790
 ```
 
-Support Vector Classifier,
+Support Vector Classifier ([classification_report_sv_classifier.txt](artifacts/classification_report_sv_classifier.txt)),
 ```
               precision    recall  f1-score   support
 
@@ -901,14 +908,10 @@ setuptools xx.x.x
 1. Once the virtual environment is created, create a `.txt` file named, `requirement.txt`.
 2. Add the dependent (required) packages (libraries) that are required by the app to be functioning. The below is the list of packages that are required,
 ```text
-numpy
-pandas
-matplotlib
-seaborn
-scipy
-statsmodels
-scikit-learn
 flask
+pickle
+pandas
+scikit-learn
 ```
 3. Once the `requirement.txt` file is created with all the dependencies included as a part of the file, save the file and run `pip install -r requirements.txt` from the terminal.
 4. `pip list` can be run to check if the installation of all the packages has been successful.
@@ -933,7 +936,7 @@ Refer the following notebook where all of the above has been executed,
 ```
 curl -X POST -H 'Content-Type: application/json' -d '{"duration": 38044, "srcbytes": 1, "dstbytes": 0, "land": 0, "wrongfragment": 0, "urgent": 0, "hot": 0, "numfailedlogins": 0, "loggedin": 0, "numcompromised": 0, "rootshell": 0, "suattempted": 0, "numfilecreations": 0, "numshells": 0, "numaccessfiles": 0, "ishostlogin": 0, "count": 2, "srvcount": 2, "serrorrate": 0.0, "rerrorrate": 1.0, "samesrvrate": 1.0, "diffsrvrate": 0.0, "srvdiffhostrate": 0.0, "dsthostcount": 255, "dsthostsrvcount": 2, "dsthostdiffsrvrate": 0.5, "dsthostsamesrcportrate": 1.0, "dsthostsrvdiffhostrate": 0.0, "protocol": "tcp", "service": "Z39_50", "flag": "RSTR"}' http://127.0.0.1:5000/classify_attack_type
 ```
-7. Response: `{"Attack Type": "Probe"}`.
+7. Expected response: `{"Attack Type":"Probe"}`.
 
 # API Specification
 
