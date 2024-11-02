@@ -304,7 +304,7 @@ The data type of the following numerical columns are converted to categorical,
 to_categorical = ["land", "loggedin", "rootshell", "suattempted", "ishostlogin", "isguestlogin"]
 ```
 
-The above numerical columns have discrete values of 0 and 1, hence it is appropriate to visualize the frequency of the values in these columns after converting them to categorical data type.
+The above numerical columns have discrete values of 0 and 1, hence it is appropriate to visualize the frequency of the elements in these columns after converting them to categorical data type.
 
 ### Numerical columns
 ```
