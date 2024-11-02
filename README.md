@@ -20,7 +20,7 @@ Google Docs Link: [link](https://docs.google.com/document/d/1LCHFUQ0cULGp1zC7Mrf
 # Column Profile
 ### Basic connection features
 - `duration`: Represents the length of time a specific network connection was active for.
-- `protocoltype`: Represents the type of commumication protocol used in each connection.
+- `protocoltype`: Represents the type of communication protocol used in each connection.
 - `service`: Represents the type of destination network service (DNS) used in a connection.
 - `flag`: Represents the status of a connection as either "Normal" or "Error".
 - `srcbytes`: Represents the number of data bytes transferred from the source to the destination in a single connection.
