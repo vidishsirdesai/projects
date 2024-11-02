@@ -3,7 +3,7 @@
 ### Problem statement
 In cybersecurity, detecting the anomalies in the network is a crucial task that involves identifying unusual patterns in the network traffic. The challenge lies in accurately detecting these anomalies in real-time, where the network traffic is immense, and often noisy and heterogenous.
 
-### Why is there a need to develop a robust adaptive approach to detect anomalies in the network?
+### Why is there a need to develop a robust and adaptive system to detect anomalies in the network?
 The traditional methods that are commonly deployed to detect anomalies in network rely on predefined set of rules based on known attack patterns. The problem with these is that they fail at recognizing threats that previously have not been encountered.
 
 Cyber threats are evolving continuously, as in, attackers find new ways to find bypass traditional security measures. Also, the network is forever growing, meaning, new devices get added to the environment every now and then. Hence maintaining and monitoring theses devices becomes crucial as the network grows in size.
