@@ -85,7 +85,7 @@ array(['normal', 'neptune', 'warezclient', 'ipsweep', 'portsweep',
        'buffer_overflow', 'imap', 'warezmaster', 'phf', 'land',
        'loadmodule', 'spy', 'perl'], dtype=object)
 ```
-The `attack` column represents the type of attack at a much granular level.
+The `attack` column represents the type of attacks at a much granular level.
 
 Attacks are majorly classified as follows,
 1. Normal ("normal"): These connections are considered benign and do not pose a threat.
