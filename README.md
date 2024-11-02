@@ -133,7 +133,7 @@ attackhlc = {
 ### Cleaning the `suattempted` column
 The column `suattempted`, according to the column profile (https://github.com/vidishsirdesai/network_anomaly_detection?tab=readme-ov-file#column-profile), is supposed to have only 2 values, i.e., 0 and 1. But, as seen in the output of cell number `14` in the jupyter notebook ([data_cleaning.ipynb](notebooks/data_cleaning.ipynb)), it has 3 values, 0, 1, and 2.
 
-Assuming that the presence of the value "2" in the column is a typo, all the rows in the column `suattempted`, where there was a "2" present is changed to "1".
+Assuming that the presence of the value "2" in the column `suattempted` is a typo, all the rows in the column `suattempted` whereever there was a "2" present is changed to "1".
 
 ### Removing the undefined and redundant columns
 There is no description available for the feature `lastflag` in the column profile. Hence it has been dropped from the list of columns.
