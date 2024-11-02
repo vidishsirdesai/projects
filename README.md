@@ -377,7 +377,7 @@ For the specific case of hypothesis testing, the `attack` column is used to crea
 
 For testing the hypotheses it would be appropriate if the target column had 2 values. 0 representing normal connections, and 1 representing an attack.
 
-This newly created column `normal_or_attack` will be the target column or variable for the specific case of testing the different hypotheses.
+This newly created column `normal_or_attack` will be the target column for the specific case of testing the different hypotheses.
 
 ### Cleaning the data
 The steps to clean the data as seen in the data cleaning step (https://github.com/vidishsirdesai/network_anomaly_detection#data-cleaning) are applied again,
