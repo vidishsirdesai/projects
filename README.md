@@ -135,7 +135,7 @@ The column `suattempted`, according to the column profile (https://github.com/vi
 
 Assuming that the presence of the value "2" in the column `suattempted` is a typo, all the rows in the column `suattempted` whereever there was a "2" present is changed to "1".
 
-### Removing the undefined and redundant columns
+### Undefined and redundant columns
 There is no description available for the feature `lastflag` in the column profile. Hence it has been dropped from the list of columns.
 
 Also, the column `numoutboundcmds` has all zeros. This column can also be dropped from the list of columns.
