@@ -98,9 +98,9 @@ Attacks are majorly classified as follows,
 4. Remote to Local ("r2l"): These attacks attempt to gain unauthorized access to a system from a remote location. Examples include, "warezclient", "guess_passwd", "ftp_write", "multihop", "imap", "warezmaster", "phf", and "spy".
 5. Probe ("probe"): Probing attacks, which aim to gather information about a network or system. This category includes attacks like, "ipsweep", "portsweep", "nmap", and "satan" that scan networks for vulnerabilities and gather information.
 
-A high level classification of these attack types can be created, and elements in the `attack` column can be assigned to one of the high level classes.
+A high level classification of these attack types can be created, and elements in the `attack` column can be assigned to one of the above high level classes.
 
-Considering all of the above, a new column, namely `attackhlc`, has been created. Wherein, each element in the `attack` column has been assigned to its respective high level class.
+Considering all of the above, a new column, namely `attackhlc`, is created. Wherein, each element in the `attack` column has been assigned to its respective high level class.
 
 ```
 attackhlc = {
