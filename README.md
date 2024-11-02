@@ -93,10 +93,10 @@ The `attack` column represents the type of attack at a much granular level.
 
 Attacks are majorly classified as follows,
 1. Normal ("normal"): These connections are considered benign and do not pose a threat.
-2. Denial of Services ("dos"): These attacks aim to disrupt the normal operation of a network or system by overwhelming it with excessive traffic or malicious requests. Examples include, "back", "land", "neptune", "pod", "smurf", and "teardrop".
-3. User to Root ("u2r"): These attacks exploit vulnerabilities in a system to gain unauthorized root-level access. Examples include, "buffer_overflow", "loadmodule", "perl", and "rootkit".
-4. Remote to Local ("r2l"): These attacks attempt to gain unauthorized access to a system from a remote location. Examples include, "ftp_write", "guess_passwd", "imap", "multihop", "phf", "spy", "warezclient", and "warezmaster".
-5. Probe ("probe"): Probing attacks, which aim to gather information about a network or system. This category includes attacks like, "ipsweep", "nmap", and "satan" that scan networks for vulnerabilities and gather information.
+2. Denial of Services ("dos"): These attacks aim to disrupt the normal operation of a network or system by overwhelming it with excessive traffic or malicious requests. Examples include, "neptune", "teardrop", "smurf", "pod", "back", and "land"
+3. User to Root ("u2r"): These attacks exploit vulnerabilities in a system to gain unauthorized root-level access. Examples include, "rootkit", "buffer_overflow", "loadmodule", and "perl".
+4. Remote to Local ("r2l"): These attacks attempt to gain unauthorized access to a system from a remote location. Examples include, "warezclient", "guess_passwd", "ftp_write", "multihop", "imap", "warezmaster", "phf", and "spy".
+5. Probe ("probe"): Probing attacks, which aim to gather information about a network or system. This category includes attacks like, "ipsweep", "portsweep", "nmap", and "satan" that scan networks for vulnerabilities and gather information.
 
 A high level classification of these attack types can be created, and elements in the `attack` column can be assigned to one of the high level classes.
 
