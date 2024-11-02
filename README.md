@@ -1,4 +1,4 @@
-# Problem Statement and Approach
+# Introduction
 
 ### Problem statement
 In cybersecurity, detecting anomalies or intrusions or attacks in the network is a crucial task that involves identifying unusual patterns in the network traffic. The challenge lies in accurately detecting these anomalies in real-time, where the network traffic is immense, and often noisy and heterogenous.
