@@ -140,7 +140,7 @@ There is no description available for the feature `lastflag` in the column profi
 
 Also, the column `numoutboundcmds` has all zeros. This column can also be dropped from the list of columns.
 
-### Final shape of the data after all the above changes made
+### Final shape of the data after all the above changes
 ```
 (125973, 42)
 ```
