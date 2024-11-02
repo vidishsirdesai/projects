@@ -9,7 +9,7 @@
     - Windows command prompt, `.venv/Scripts/activate.bat`.
 6. Once the virtual environment is active, the environment name (in this case "`.venv`") will be visible in the parantheses before the prompt, like so "`(.venv)`".
 7. To confirm if the virtual environment has successfully been create, run `pip list`. The following should be the output,
-```text
+```
 (.venv) vidish@Vidishs-MacBook-Air network_anomaly_detection % pip list
 Package    Version
 ---------- -------
@@ -23,7 +23,7 @@ setuptools xx.x.x
 ### Installing dependencies
 1. Once the virtual environment is created, create a `.txt` file named, `requirement.txt`.
 2. Add the names of the dependent (required) packages (libraries) that are required by the app to be functioning. The below is the list of packages that are required,
-```text
+```
 flask
 pickle
 pandas
