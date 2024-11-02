@@ -1,5 +1,4 @@
 # Network Anomaly Detection App
-
 ### Virtual environment setup
 1. `cd <project_directory_path>`.
 2. `pip install virtualenv`.
