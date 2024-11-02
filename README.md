@@ -4,13 +4,13 @@
 In cybersecurity, detecting the anomalies in the network is a crucial task that involves identifying unusual patterns in the network traffic. The challenge lies in accurately detecting these anomalies in real-time, where the network traffic is immense, and often noisy and heterogenous.
 
 ### Why is there a need to develop a robust and adaptive system to detect anomalies in the network?
-The traditional methods that are commonly deployed to detect anomalies in network rely on predefined set of rules based on known attack patterns. The problem with these is that they fail at recognizing threats that previously have not been encountered.
+The traditional methods that are commonly deployed to detect anomalies in the network, rely on predefined set of rules based on known attack patterns. The problem with these is that they fail at recognizing threats that previously have not been encountered.
 
-Cyber threats are evolving continuously, as in, attackers find new ways to find bypass traditional security measures. Also, the network is forever growing, meaning, new devices get added to the environment every now and then. Hence maintaining and monitoring theses devices becomes crucial as the network grows in size.
+Cyber threats are evolving continuously, as in, attackers find new ways to bypass traditional security measures. Also, the network is forever growing, meaning, new devices get added to the environment every now and then. This makes the maintaining and monitoring of devices in the network crucial as the network grows in size.
 
-These are the fundamental reasons why there is a need for a system that is both adaptive and robust in detecting such threats in the network.
-- Adaptive, because it has to continuously evolve by learning from the new data, and recognize new threats. 
+These are the fundamental reasons why there is a need for a system that is both robust and adaptive in detecting such threats in the network.
 - Robust, because it has to cater to the need of threat detection in a network that is growing continuously.
+- Adaptive, because it has to continuously evolve by learning from the new data, and recognize new threats.
 
 ### Approach
 The suggestion is to take a Machine Learning based approach towards addressing the problem by building an ML model that can be fed with relevant features, and the model in turn classifies the connection into either normal or one of the attack types.
