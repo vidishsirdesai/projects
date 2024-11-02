@@ -391,7 +391,7 @@ This hypothesis can further be simplified into 2 scenarios,
 2.  Network connections with unusually high or low traffic volumes from destination to source are more likely to be anomalous.
 
 #### Scenario 1: Network connections with unusually high or low traffic volumes from source to destination are more likely to be anomalous.
-- Null hypothesis (H0): There is no significant difference in the network traffic volume from source to destination of normal connection and attack an connection.
+- Null hypothesis (H0): There is no significant difference in the network traffic volume from source to destination of normal connection and an attack connection.
 - Alternate hypothesis (H1): There is a significant difference in the network traffic volume from source to destination of normal connection and an attack connection.
 - Test used: Independent Samples T-Test
 - Significance level ($\alpha$) = 0.05
