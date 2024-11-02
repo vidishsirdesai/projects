@@ -919,7 +919,7 @@ scikit-learn
 ### Network anomaly classification model
 Gradient boosting decision tree was found to be the best model. Therefore, the same is chosen to build the classification app. The model is trained and the trained model is serialized using "`pickle`".
 
-`pickle` is a Python package that is a powerful tool for serializing and deserializing the Python objects.
+`pickle` is a Python package that is a powerful tool for serializing and deserializing a Python objects.
 
 Refer the following notebook where all of the above has been executed, 
 - Notebook: [gbdt_classifier.ipynb](notebooks/gbdt_classifier.ipynb).
