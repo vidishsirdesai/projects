@@ -17,7 +17,7 @@ gbdt_classifier_pickle = open("../artifacts/gbdt_classifier.pkl", "rb")
 # loading the classifier model
 classifier = pickle.load(gbdt_classifier_pickle)
 
-@app.route("/classify_attack_type", methods = ["POST"])
+@app.route("/classify_network_anomaly", methods = ["POST"])
 def predict():
     predict_request = request.get_json()
 
