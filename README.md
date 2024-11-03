@@ -1,9 +1,10 @@
-# Network Anomaly Classification App Deployment
+# Deployment Steps
+
 ### Virtual environment setup
 1. `cd <project_directory_path>`.
 2. `pip install virtualenv`.
 3. `python<version> -m venv <virtual_environment_name>` or `python3 -m venv .venv`.
-4. A folder named ".venv" will appear in the project directory.
+4. A folder named "`.venv`" will appear in the project directory.
 5. Activate the virtual environment using one of the commands listed below depending on the Operating System,
     - MacOS and Linux, `source .venv/bin/activate`.
     - Windows command prompt, `.venv/Scripts/activate.bat`.
