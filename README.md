@@ -55,7 +55,6 @@ curl -X POST -H 'Content-Type: application/json' -d '{"duration": 38044, "srcbyt
 7. Expected response: `{"Attack Type":"Probe"}`.
 
 # API Specification
-
 ### Base URL
 http://127.0.0.1:5000/
 
