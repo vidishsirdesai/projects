@@ -146,6 +146,38 @@ In this example, `person` is a mapping (dictionary) with key-value pairs represe
 7. Once the framework is installed run the command, `pytest test_square.py`.
 8. Now, if in the future if some developer changes the file `square.py`. To check if the changes have worked or not, `pytest test_square.py` has to be run. The result of this will indicate if the changes have worked or have broken the code.
 
+### Contents of `square.py`
+```Python
+# defining a method to get the square of a number
+def get_square(x):
+    return x ** 2
+```
+
+### Contents of `test_square.py`
+```Python
+# importing the get_square() method from square
+from square import get_square
+
+def test_positive_number():
+    assert get_square(2) == 4
+
+def test_negative_number():
+    assert get_square(-3) == 9
+
+def test_zero():
+    assert get_square(0) == 0
+
+# assert keyword is used when debugging code, 
+# it helps to test if a condition in the code returns True or False
+
+# test_positive_number()
+# test_negative_number()
+# test_zero()
+
+# one way to test is by calling all the functions in the file,
+# and running `python3 test_square.py` in the cli
+```
+
 
 # Excercise To Test The Functionality Of `predict.py` (CI)
 1. Create a file names, `test_predict.py`.
@@ -184,6 +216,49 @@ jobs:
 ```
 6. Once the jobs have created, save the changes and push the file to the remote repo.
 7. Open the repository on GitHub, and goto Actions. All the workflows should be visible now.
+
+### Contents of `test_predict.py`
+```Python
+# the predict.py contains methods that called by some API calls
+# since GitHub is incapable of running and pinging the server,
+# the the API call has to be mocked
+# mocking is where a thing is mimicked or simulated. In this case, the API call.
+
+from predict import app
+# this app variable helps in mocking the API calls made when the server is running
+
+import pytest
+
+
+# defining a method to simulate the server
+@pytest.fixture
+def client():
+    return app.test_client()
+
+# the decorator @pytest.fixture is used when mocking some function/ API calls
+
+
+# defining a method to call the function which is mocking the API call,
+# and check if the response is as per the requirement
+def test_pinger(client):
+    resp = client.get("/ping")
+    assert resp.status_code == 200
+    assert resp.json == {"MESSAGE": "Hi! Pinging ..."}
+
+# defining a method to test the prediction
+def test_prediction(client):
+    test_data = {
+        "gre_score": 300, 
+        "toefl_score": 100, 
+        "university_rating": 4, 
+        "sop": 3, 
+        "lor": 4, 
+        "cgpa": 8.90, 
+        "research": "Yes"
+    }
+    resp = client.post("/predict", json = test_data)
+    assert resp.status_code == 200
+```
 
 
 # What Is Continuous Delivery?
@@ -308,3 +383,97 @@ jobs:
 27. Add `:5000/` to the URL (http://<IP>:5000/).
 28. The changes, i.e., `Hi there!` should reflect.
 29. With this the deployment process has been automated. Congratulations!
+
+### Contents of `task-definition.json`
+```JSON
+{
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:628837189499:task-definition/admission_prediction_task:3",
+    "containerDefinitions": [
+        {
+            "name": "admission_prediction_container",
+            "image": "628837189499.dkr.ecr.us-east-1.amazonaws.com/admission_prediction:latest",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "admission_prediction_container-80-tcp",
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/admission_prediction_task",
+                    "mode": "non-blocking",
+                    "awslogs-create-group": "true",
+                    "max-buffer-size": "25m",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            },
+            "systemControls": []
+        }
+    ],
+    "family": "admission_prediction_task",
+    "executionRoleArn": "arn:aws:iam::628837189499:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 3,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "registeredAt": "2024-09-21T16:04:48.750Z",
+    "registeredBy": "arn:aws:sts::628837189499:federated-user/12batchsclaeraws28",
+    "tags": []
+}
+```
