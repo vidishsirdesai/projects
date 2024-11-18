@@ -12,14 +12,18 @@ Benefits of DevOps are,
 4. Quality and reliability.
 5. Security.
 
+
 # What Is MLOps?
 MLOps is very much similar to DevOps. MLOps stands for Machine Learning Operations. MLOps is a core function of Machine Learning engineering, focused on streamlining the process of taking Machine Learning models to production, and then maintaining and monitoring them. MLOps is a collaborative function, often comprising of Data Scientists, DevOps Engineers, and IT.
+
 
 ### What is the difference between MLOps and DevOps?
 MLOps is a set of engineering practives specific to Machine Learning projects that borrow from the more widely adopted DevOps principles in software engineering. While DevOps brings a rapid, continuously iterative approach to shipping software applications, MLOps borrows the same principles to take Machine Learning models to production. In both cases, the outcome is higher software quality, faster patching and releases, and higher customer satisfaction.
 
+
 ### Why is MLOps needed?
 Productionizing Machine Learning is difficult. The Machine Learning lifecycle consists of many complex components such as data ingest, data prep, model training, model tuning, mdel deployment, model monitoring, explainability and much more. It also requires collaboration and hand-offs across teams, from Data Engineering to Data Science to ML Engineering. Naturally, it requires stringent operational rigor to keep all these processes synchronous and working in tandem. MLOps encompases the experimentation, iteration, and continuous improvement of Machine Learning lifecycle.
+
 
 ### What are the components of MLOps?
 The span of MLOps in Machine Learning projects can as focused or expansive as the project demands. In certain cases, MLOps can encompass everything from the data pipeline to model production, while other projects may require MLOps implementation of only the model deployment process. A majority of enterprises deploy MLOps principles across the following,
@@ -31,6 +35,7 @@ The span of MLOps in Machine Learning projects can as focused or expansive as th
 - Model monitoring: Automate permissions and cluster creation to productionize registered models. Enable REST API model endpoints.
 - Automated model retraining: Create alerts and automation to take corrective action In case of model drift due to differences in training and inference data.
 
+
 # What Is Git?
 Git is a Version Control System (VCS). Git helps in tracking code over the time. Meaning, it helps in managing different versions of the code.
 
@@ -39,6 +44,7 @@ This is crucial, because in cases a crash is encountered in current version, an 
 Another important aspect of Git is that, it is a distributed Version Control System. Meaning, a lot of users will have the same or different version of the same code base, and the original or the master branch of the code base is unaffected. The advantages of distributed system are,
 1. There will be no single point of failure.
 2. The location of the latest stable version of the code is always known, because it is kept in a centralized place (the master branch).
+
 
 # What Is GitHub?
 GitHub is a system that is built on top of Git. Meaning, GitHub is an online service which contains the folder to which the local files are pushed to. This online folder is called as a repository or a repo.
@@ -51,12 +57,14 @@ There are multiple other such services similar to GitHub, like BitBucket, GitLab
 
 The difference between Git and GitHub is that, Git is local, and GitHub is remote.
 
+
 # Initial Setup
 1. Install Git (`brew install git`).
 2. Check the version of the Git, `git --version`.
 3. Configure Git,
     - `git config --global user.name "<user name>"`
     - `git config --global user.email "user_email@xyz.com"`
+
 
 # Repository
 A repository is like a folder that contains all the files, packages, dependencies, that are required for, or are a part of the project.
@@ -75,6 +83,7 @@ To create a repository on a local machine, using command line,
 
 If GitHub Desktop is being used, then open the app and select "*Create a New Repository on your Local Drive...*". Check the box "*Initialize this repository with a README*".
 
+
 # What Is `.gitignore`?
 `.gitignore` file is used in a git repository to ignore the files and directoried which are unnecessary to the project. These will be ignored by Git once the changes have been comitted to the remote repository.
 
@@ -89,6 +98,7 @@ If GitHub Desktop is being used, then open the app and select "*Create a New Rep
 8. `git push -u origin master`.
 
 Any file with a `.` at the beginning of the name will be created as a hidden file.
+
 
 # States In Git
 Git has 3 main states that the project file can reside in, modified, staged and committed.
@@ -105,17 +115,20 @@ The following statement describes the process very well,
 
 "*If a particular version of a file is in the Git directory, it’s considered committed. If it has been modified and was added to the staging area, it is staged. And if it was changed since it was checked out but has not been staged, it is modified*".
 
+
 # Adding Files To The Staging Area
 This is a step that should be taken before committing the changes. The steps to add are,
 1. `git status`.
 2. `git add --all` or `git add -A` or `git add <file_name>`.
 3. `git status`.
 
+
 # Removing/ Unstaging Files From The Staging Area
 The steps to unstage are,
 1. `git status`.
 2. `git reset` or `git reset <file_name>`.
 3. `git status`.
+
 
 # Committing Changes
 Committing is like taking a snapshot of the code at a particular time. Each commit is like a version of the code. Consider the following,
@@ -134,6 +147,7 @@ Steps to commit,
 4. `git commit -a --allow-empty-message -m ""`.
 5. `git status`.
 
+
 # Pushing Changes From Local To Remote
 `git push` is done in order to propagate all the commits made in the local to the remote repo.
 
@@ -146,6 +160,7 @@ Steps to push changes to the remote are,
 6. `git push -u origin main` or `git push -u origin master` or `git push -u origin <branch_name>`.
 7. `git log`.
 
+
 # Pulling Changes From Remote To Local
 `git pull` is done to propagate the changes done in the remote repo to the local. This is done if a contributor wants to update his/ her local repo with all the changes made in the remote repo since his/ her last pull. In simple words, this helps in bringing the local up to date with the remote.
 
@@ -156,6 +171,7 @@ To pull changes from remote to local,
 2. `git pull` or `git pull <remote> <branch>`.
 3. `git status`.
 
+
 # Cloning A Remote Repo On The Local
 `git clone` creates a local copy of a Git repository from a remote server. It initializes a new Git repo on the local machine and populates it with the contents of the remote app.
 
@@ -163,6 +179,7 @@ The way to perform this action is,
 - `git clone <url> <local_path>`.
 
 Any public repo on GitHub can be cloned in this way.
+
 
 # Branching
 Branching is a fundamental concept in Git that helps in creating parallel lines of development within a project. Each branch represents an independent line of work that enables to experiment with new features, fix bugs, or explore different approaches without affecting the main codebase. Branches help to track different version of the project and easily revert to a previous state if necessary.
@@ -195,6 +212,7 @@ Best practices for branching,
 - Consider using a branching strategy like Gitflow or GitHub Flow to standardize the branching workflow.
 
 NOTE: Two contributors working on the same file in different branches will create conflicts.
+
 
 # Forking And Contributing To Projects
 Forking in Git is the process of creating a complete copy of a remote repository, to create a new, independent project. This is particularly useful when a developer wants to contribute to an open-source project without directly modifying the original repository.
