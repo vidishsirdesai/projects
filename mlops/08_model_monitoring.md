@@ -40,7 +40,7 @@ Data drift occurs when the distribution of data changes significantly over time.
 Concept drift occurs when the underlying relationships between input features and target variables in an ML model change over time. This means that the patterns learned by the model during training are no longer representative of the new data it is encountering in the present.
 
 ##### Types of concept drift
-![alt text](artifacts/types_of_concept_drift.png)
+![alt text](../artifacts/types_of_concept_drift.png)
 
 ### Why is model monitoring important?
 - Maintain model effectiveness: Model monitoring ensures that the model continues to perform well in a changing environment.
