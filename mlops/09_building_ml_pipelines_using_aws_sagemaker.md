@@ -1,4 +1,4 @@
-# What is AWS SageMaker?
+# What Is AWS SageMaker?
 AWS SageMaker is a cloud-based machine learning platform that allows developers to build, train, and deploy ML models at scale. It provides a comprehensive set of tools and services that simplify the process of developing and deploying ML models, making it accessible to a wider range of users.
 
 ### Key features
@@ -46,11 +46,11 @@ Both are used for building and deploying ML models. The following is a compariso
 - Cost-effectiveness: SageMaker Notebook might be more cost-effective for basic use cases.
 
 
-# What is S3?
+# What Is S3?
 
 
 
-# What is `boto3`?
+# What Is `boto3`?
 `boto3` is an AWS SDK for Python. It provides an interface to interact with AWS services like S2, EC2, DynamoDB, Lambda, etc,. Using `boto3`, Python code to manage and control AWS resources can be programmatically written.
 
 
