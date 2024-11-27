@@ -7,6 +7,6 @@
 - [Linear Algebra and Optimization](https://github.com/vidishsirdesai/dsml_end_to_end_reference/tree/main/linear_algebra_and_optimization)
 - [Supervised Learning Algorithms](https://github.com/vidishsirdesai/dsml_end_to_end_reference/tree/main/supervised_learning)
 - [Unsupervised Learning Algorithms](https://github.com/vidishsirdesai/dsml_end_to_end_reference/tree/main/unsupervised_learning)
-- [Time Series](https://github.com/vidishsirdesai/dsml_end_to_end_reference/tree/main/tsa)
+- [Time Series Analysis](https://github.com/vidishsirdesai/dsml_end_to_end_reference/tree/main/tsa)
 - [Recommendation Systems](https://github.com/vidishsirdesai/dsml_end_to_end_reference/tree/main/rec_sys)
 - [MLOps](https://github.com/vidishsirdesai/dsml_end_to_end_reference/tree/main/mlops)
