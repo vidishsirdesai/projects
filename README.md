@@ -1,4 +1,4 @@
-# Content
+# Contents
 - [Basic Math](https://github.com/vidishsirdesai/dsml_end_to_end_reference/tree/main/basic_math)
 - [Probability](https://github.com/vidishsirdesai/dsml_end_to_end_reference/tree/main/probability)
 - [Statistics](https://github.com/vidishsirdesai/dsml_end_to_end_reference/tree/main/stats)
