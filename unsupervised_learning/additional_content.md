@@ -58,6 +58,7 @@ If this data is to be fed to a neural network, standardization cannot be used in
 
 Hence in image data, to ensure numerical stability, MinMax scaler is used. This also done to ensure the code to be safe in production.
 
+
 # Notes
 - Read about SLRM (Simple Linear Regression Model) and MLRM (Multiple Linear Regression Model).
 Poly/ Ridge/ Lasso are heavily used in place of Linear Regression, because they give a little bit of flexibility.
