@@ -1,5 +1,4 @@
 # Manifolds
-
 ### What are manifolds?
 Manifolds are formally defined as an intrinsically low dimensional structures in a high dimensional area.
 
