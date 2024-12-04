@@ -1,5 +1,4 @@
 # An Example
-
 As a loan approval manager at bank, I have gained valuable experience in approving, and rejecting loans for customers over the past 5 years. Through this experience, I have observed a pattern:
 
 - Customers with a monthly income above 50k, and an age between 18 to 30 years, consistently have their loans approved.
@@ -31,8 +30,8 @@ And this led to the origins of ML. Computer scientists initially started using t
 
 But there were many problems with this approach. One for instance is that, this is unable to capture all the cases that could be encountered in real life. (only 3 cases are captured in the code: income, age and credit score).
 
-# Motivation Behind Rule Based Modeling
 
+# Motivation Behind Rule Based Modeling
 Consider the following dataset,
 
 | **Humidity** | **Play Golf** |
@@ -107,8 +106,8 @@ Therefore, problems with rule based logic:
 1. It is a complex, tedious process to formulate the rule as the data gets more, and more bigger in size (row-wise and column-wise).
 2. Even if by slightest chance, a rule is formulated, there is a very high chance that it might fail if a new feature is introduced, or if the rule is not provided with inputs which are not coded in the logic.
 
-# ML vs Classical Programming
 
+# ML V. Classical Programming
 Consider,
 
 | **Input1** | **Input2** | **Output** |
@@ -152,8 +151,7 @@ But, what if the dataset were more complex and the relationship between the inpu
 | 500 rows |  |  |  |
 
 Salary is related to age, sex and years_of_experience as,
-
-$\text{Salary} = f\text{(age, sex, years-of-experience)}$
+- $\text{Salary} = f\text{(age, sex, years-of-experience)}$
 
 A mathematical algorithm is needed to find this above relation, that will help in finding this relationship.
 
