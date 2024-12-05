@@ -12,3 +12,4 @@
 11. [Time Series Analysis](https://github.com/vidishsirdesai/dsml_end_to_end_reference/tree/main/tsa)
 12. [Recommendation Systems](https://github.com/vidishsirdesai/dsml_end_to_end_reference/tree/main/rec_sys)
 13. [MLOps](https://github.com/vidishsirdesai/dsml_end_to_end_reference/tree/main/mlops)
+14. [Neural Networks](https://github.com/vidishsirdesai/dsml_end_to_end_reference/tree/main/neural_networks)
