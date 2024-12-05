@@ -1,6 +1,6 @@
 # Contents
-1. [Python]()
-2. [SQL]()
+1. [Python](https://github.com/vidishsirdesai/dsml_end_to_end_reference/tree/main/python_reference)
+2. [SQL](https://github.com/vidishsirdesai/dsml_end_to_end_reference/tree/main/sql_reference)
 3. [Basic Math](https://github.com/vidishsirdesai/dsml_end_to_end_reference/tree/main/basic_math)
 4. [Probability](https://github.com/vidishsirdesai/dsml_end_to_end_reference/tree/main/probability)
 5. [Statistics](https://github.com/vidishsirdesai/dsml_end_to_end_reference/tree/main/stats)
