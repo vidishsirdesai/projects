@@ -1,3 +1,20 @@
+# Introduction
+Detecting anomalies (threats or attacks) in a network is a crucial task in cybersecurity. It involves identifying unusual patterns in the network traffic. The traditional methods that are commonly deployed to detect anomalies in the network, rely on predefined set of rules based on known attack patterns. The problem with these is that they fail at recognizing threats that previously have not been encountered.
+
+The challenge lies in accurately detecting these anomalies in real-time, where the network traffic is immense, and often noisy and heterogenous
+
+With attackers finding new ways to bypass traditional security measures, cyber threats are evolving continuously. Also, new devices get added to the network time and again, this implies that a network is forever growing in size. Monitoring the various parameters associated with a network to find potential threats becomes increasingly difficult as a result. Hence, it is imperative to have a system in place that is both robust and adaptive in recognizing threats and threat patterns.
+- Robust, because it has to cater to the need of threat detection in a network that is growing continuously.
+- Adaptive, because it has to continuously evolve by learning from new incoming data and recognize threats.
+
+To address these issue, multiple ML models have been built as a part of an experiment to find the best model that identifies threat patterns and classifies a network connection into either a normal or one of the attack types. This type of classification problem in machine learning (ML) is called as a multi-class classification problem.
+
+# Blog
+Medium: https://medium.com/@sirdesaividish/multi-class-classification-ml-model-for-network-anomaly-detection-f0368ac00dc5
+
+# Visualization
+Tableau Public: https://public.tableau.com/app/profile/vidish.sirdesai/viz/network_anomaly_detection/final_story
+
 # Deployment Steps
 ### Virtual environment setup
 1. `cd <project_directory_path>`.
