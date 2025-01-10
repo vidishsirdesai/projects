@@ -10,10 +10,10 @@ With attackers finding new ways to bypass traditional security measures, cyber t
 To address these issue, multiple ML models have been built as a part of an experiment to find the best model that identifies threat patterns and classifies a network connection into either a normal or one of the attack types. This type of classification problem in machine learning (ML) is called as a multi-class classification problem.
 
 # Blog
-Medium: https://medium.com/@sirdesaividish/multi-class-classification-ml-model-for-network-anomaly-detection-f0368ac00dc5
+Medium: [Multi-Class Classification ML Model for Network Anomaly Detection](https://medium.com/@sirdesaividish/multi-class-classification-ml-model-for-network-anomaly-detection-f0368ac00dc5)
 
 # Visualization
-Tableau Public: https://public.tableau.com/app/profile/vidish.sirdesai/viz/network_anomaly_detection/final_story
+Tableau Public: [Analysis Of Factors Associated With Anomalies In A Network](https://public.tableau.com/app/profile/vidish.sirdesai/viz/network_anomaly_detection/final_story)
 
 # Deployment Steps
 ### Virtual environment setup
