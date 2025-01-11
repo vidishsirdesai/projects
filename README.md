@@ -77,9 +77,9 @@ http://127.0.0.1:5000/
 
 ### Endpoints
 - GET /: Returns a welcome message indicating the applications's purpose.
-- POST /classify_network_anomaly: Classifies a network connection based on its features and predicts the type of attack (if any).
+- POST /classify: Classifies a network connection based on its features and predicts the type of attack (if any).
 
-### Request format for POST /classify_network_anomaly
+### Request format for POST /classify
 Content-Type: application/json
 
 The request body should be a JSON object containing the following features of a network connection,
