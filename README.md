@@ -1,9 +1,13 @@
-# Requirement
-Given Bangalore as the potential market where the Onion produce will be sold to the vendors in, forceast the minimum and maximum purchase price. Consider historical data of atleast 10 years to forecast for the next 1 year.
+# Introduction
+One of the major problems that a farmer has is getting a good selling price for his/ her produce from the vendors in various market places. The purchase prices for different kinds of produce fluctuate throughout the year. Consider that a produce was harvested at a specific time of the year, and was sold to a vendor in the nearest market place around the same time. Now consider that, during this time of the year, the purchase price for that produce was the lowest. This obviously makes it difficult for a farmer to get a good price for the produce, and sometimes they may have to sell the produce at a price which does not even help them to recover the investment that was put it to grow the produce.
 
+The ground reality is that, the farmers have zero to no clue about the fluctuating trends of the purchase prices of a produce throughout the year.
+
+Now consider, if a farmer has the information about the current and future trends of a specific kind of produce that he/ she plans to grow, it will help them make an informed decision about the time at which they should start to sow the produce so that the time of harvesting is synced with the time at which the purchase price of the produce is the highest in a year.
+
+To address this concern, a variety of onion (local) is chosen as the target produce and the city of Bangalore is chosen as the target market place where it will be sold in and data was collected for the same for the last 10 years. There after, multiple Time Series forecasting models were build as a part of the experiment to find the best model that predicts the optimum minimum purchase of the onion variety for the next 1 year in Bangalore market place.
 
 # Data Source and Data Dictionary
-
 ### Data Source
 https://agmarknet.gov.in
 
@@ -19,12 +23,7 @@ https://agmarknet.gov.in
 - Modal Price (Rs./Quintal): Mode of the purchase price per quintal (1 Quintal = 100 Kilograms).
 - Reported Date: Date on which the remaining data points were reported on.
 
-
-# Approach
-
-
-# Bangalore (Market) - Local (Variety) - Minimum Price
-
+# Insights
 ### Time Series
 ![alt text](artifacts/bangalore_local_time_series.png)
 
@@ -46,36 +45,60 @@ This suggests that the seasonality = 11. Meaning, the seasonality repeats after 
 
 This confirms the seasonality value found using ACF.
 
-### Model - Triple Exponential Smoothing
+# Deployment Steps
+### Virtual environment setup
+### Virtual environment setup
+1. `cd <project_directory_path>`.
+2. `pip install virtualenv`.
+3. `python<version> -m venv <virtual_environment_name>` or `python3 -m venv .venv`.
+4. A folder named "`.venv`" will appear in the project directory.
+5. Activate the virtual environment using one of the commands listed below depending on the Operating System,
+    - MacOS and Linux, `source .venv/bin/activate`.
+    - Windows command prompt, `.venv/Scripts/activate.bat`.
+6. Once the virtual environment is active, the environment name (in this case "`.venv`") will be visible in the parantheses before the prompt, like so "`(.venv)`".
+7. To confirm if the virtual environment has successfully been create, run `pip list`. The following should be the output,
+```
+(.venv) vidish@Vidishs-MacBook-Air network_anomaly_detection % pip list
+Package    Version
+---------- -------
+pip        xx.x.x
+setuptools xx.x.x
+``` 
+8. To deactivate the virtual environment, strictly run the following 2 commands in the same order,
+    - `deactivate`.
+    - `rm -r .venv`.
 
-#### Hyperparameters
+### Installing dependencies
+1. Once the virtual environment is created, create a `.txt` file named, `requirement.txt`.
+2. Add the names of the dependent (required) packages (libraries) that are required by the app to be functioning. The below is the list of packages that are required,
+```
+flask
+pickle
+pandas
+scikit-learn
+```
+3. Once the `requirement.txt` file is created with all the dependencies included as a part of the file, save the file and run `pip install -r requirements.txt` from the terminal.
+4. `pip list` can be run to check if the installation of all the packages has been successful.
+
+### Onion price predictor model
+Triple Exponential Smooting was found to be the best model with the following combination of hyperparametes,
 - `smoothing_level = (1/ 22)`
 - `smoothing_trend = 0.07`
 - `smoothing_seasonal = 0.90`
 
-#### Actual v. learnt trend
+The plot of actual v. learnt trends from the model is as follows,
+
 ![alt text](artifacts/bangalore_local_model_training.png)
 
-#### Forecast for the next 12 months
-![alt text](artifacts/bangalore_local_model_forecast.png)
-
-#### Metrics
+The following is the performance of the model on various metrics,
 - MAE (Mean Absolute Error): 187.874
 - RMSE (Root Mean Square Error): 331.316
 - MAPE (Mean Absolute Percentage Error): 0.145
 
-### Predictions
-| date | predicted_purchase_price |
-| :-: | :-: |
-| 2024-08-01 | 2891.016702 |
-| 2024-09-01 | 1823.976515 |
-| 2024-10-01 | 1884.983288 |
-| 2024-11-01 | 2114.721268 |
-| 2024-12-01 | 2304.703993 |
-| 2025-01-01 | 1136.547997 |
-| 2025-02-01 | 1067.285830 |
-| 2025-03-01 | 1148.121995 |
-| 2025-04-01 | 1451.718951 |
-| 2025-05-01 | 1560.129996 |
-| 2025-06-01 | 1906.907879 |
-| 2025-07-01 | 1995.992050 |
+# API Specification
+### Base URL
+http://127.0.0.1:5000/
+
+### Endpoints
+- GET /: Returns a welcome message indicating the application's purpose and a button that redirects to `http://127.0.0.1:5000/forecast`.
+- GET /forecast: 
