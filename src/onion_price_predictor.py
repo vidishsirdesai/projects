@@ -1,12 +1,14 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
-def welcome_note():
-    return "<h1>Onion Price Predictor App</h1>"
+def index():
+    return render_template("templates/index.html")
 
 # @app.route("/future_forecast", methods = ["GET"])
+# def future_forecast():
+#     pass
 
 
 if __name__ == "__main__":
