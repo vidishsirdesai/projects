@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/forecast", methods = ["GET"])
+@app.route("/forecast")
 def forecast():
     return render_template("forecast.html")
 
