@@ -47,7 +47,6 @@ This confirms the seasonality value found using ACF.
 
 # Deployment Steps
 ### Virtual environment setup
-### Virtual environment setup
 1. `cd <project_directory_path>`.
 2. `pip install virtualenv`.
 3. `python<version> -m venv <virtual_environment_name>` or `python3 -m venv .venv`.
