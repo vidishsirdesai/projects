@@ -3,9 +3,7 @@ One of the serious problems faced by a farmer is securing a decent selling price
 
 The ground reality is that, the farmers have no clue about the fluctuating trends of the purchase prices of a cetain produce throughout the year which are governed by factors like demand v. supply.
 
-Now consider, if a farmer has the information about the ongoing and future trends of a specific kind of produce that he/ she plans to grow, it will help them make an informed decision about the time at which they should start to sow the produce so that the time of harvesting is synced with the time at which the purchase price of the produce is the highest in a year.
-
-Now consider, if a farmer has the information about the ongoing and future trends of a specific kind of produce that he/ she plans to grow, it will help them make an informed decision about the time at which they should plan to sell their produce.
+Now consider, if a farmer has the information about the ongoing and statistically predicted future trends of a specific kind of produce that he/ she plans to grow, it will help them make an informed decision about the time at which they should plan to sell their produce.
 
 To address this concern, a variety of onion (local) is chosen as the target produce and the city of Bangalore is chosen as the target market place where it will be sold in and data was collected for the same for the last 10 years. There after, multiple Time Series forecasting models were build as a part of the experiment to find the best model that predicts the optimum minimum purchase of the onion variety for the next 1 year in Bangalore market place.
 
