@@ -107,4 +107,4 @@ http://127.0.0.1:5000/
 
 ### Endpoints
 - GET /: Returns a welcome message indicating the application's purpose and a button that redirects to `http://127.0.0.1:5000/forecast`.
-- GET /forecast: 
+- GET /forecast: Returns a forecast for the next 12 months.
