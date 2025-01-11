@@ -94,6 +94,13 @@ The following is the performance of the model on various metrics,
 - RMSE (Root Mean Square Error): 331.316
 - MAPE (Mean Absolute Percentage Error): 0.145
 
+### Onion price predictor app
+1. To run the application,
+    - `cd src`.
+    - `FLASK_APP=onion_price_predictor.py flask run`.
+2. To view the welcome page, goto, http://127.0.0.1:5000/.
+3. To view the forecast for the next 12 months, goto, http://127.0.0.1:5000/forecast.
+
 # API Specification
 ### Base URL
 http://127.0.0.1:5000/
