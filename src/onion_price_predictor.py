@@ -4,11 +4,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("templates/index.html")
+    return render_template("index.html")
 
-# @app.route("/future_forecast", methods = ["GET"])
-# def future_forecast():
-#     pass
+@app.route("/forecast", methods = ["GET"])
+def forecast():
+    return render_template("forecast.html")
 
 
 if __name__ == "__main__":
