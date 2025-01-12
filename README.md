@@ -101,25 +101,25 @@ http://127.0.0.1:5000
 Content-Type: application/json
 
 The request body should be a JSON object containing the following features of a network connection,
-- `loan_amnt` (float):
-- `term` (int): 
-- `int_rate` (float): 
-- `annual_inc` (float): 
-- `dti` (float):
-- `open_acc` (float):
-- `pub_rec` (int): 
-- `revol_bal` (float): 
-- `revol_util` (float):
-- `total_acc` (float):
-- `intial_list_status` (int):
-- `mort_acc` (int):
-- `pub_rec_bankrupticies` (int): 
-- `grade` (str):
-- `home_ownership` (str):
-- `verification_status` (str):
-- `purpose` (str):
-- `application_type` (str):
-- `zip_code` (str): 
+- `loan_amnt` (float): The listed amount of the loan applied for by the borrower. If at some point in time, the credit department reduces the loan amount, then it will be reflected in this value.
+- `term` (int): The number of payments on the loan. Values are in months and can be either 36 or 60.
+- `int_rate` (float): Interest Rate on the loan.
+- `annual_inc` (float): The self-reported annual income provided by the borrower during registration.
+- `dti` (float): A ratio calculated using the borrower’s total monthly debt payments on the total debt obligations, excluding mortgage and the requested loan, divided by the borrower’s self-reported monthly income.
+- `open_acc` (float): The number of open credit lines in the borrower's credit file.
+- `pub_rec` (int): Number of derogatory public records.
+- `revol_bal` (float): Total credit revolving balance.
+- `revol_util` (float): Revolving line utilization rate, or the amount of credit the borrower is using relative to all available revolving credit.
+- `total_acc` (float): The total number of credit lines currently in the borrower's credit file.
+- `intial_list_status` (int): The initial listing status of the loan.
+- `mort_acc` (int): Number of mortgage accounts.
+- `pub_rec_bankrupticies` (int): Number of public record bankruptcies
+- `grade` (str): Assigned loan grade.
+- `home_ownership` (str): he home ownership status provided by the borrower during registration or obtained from the credit report.
+- `verification_status` (str): Indicates if income was verified, not verified, or if the income source was verified.
+- `purpose` (str): A category provided by the borrower for the loan request.
+- `application_type` (str): Indicates whether the loan is an individual application or a joint application with two co-borrowers
+- `zip_code` (str): The area zip-code of the applicant.
 
 ### Response format for POST /classify
 The response will be a JSON object with the following key,
