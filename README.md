@@ -74,8 +74,8 @@ curl -X POST -H 'Content-Type: application/json' -d '{"duration": 38044, "srcbyt
 http://127.0.0.1:5000/
 
 ### Endpoints
-- GET /: Returns a welcome message indicating the applications's purpose.
-- POST /classify: Classifies a network connection based on its features and predicts the type of attack (if any).
+- GET `/`: Returns a welcome message indicating the applications's purpose.
+- POST `/classify`: Classifies a network connection based on its features and predicts the type of attack (if any).
 
 ### Request format for POST /classify
 Content-Type: application/json
