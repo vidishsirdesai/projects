@@ -91,9 +91,38 @@ curl -X POST -H 'Content-Type: application/json' -d '{"loan_amnt": 19050.0, "ter
 
 # API Specification
 ### Base URL
+http://127.0.0.1:5000
 
 ### Endpoints
+- GET `/`: Returns a text indicating the application's purpose.
+- POST `/classify`: Returns an output indicating whether a loan application is "Approved" or "Not Approved".
 
 ### Request format for POST /classify
+Content-Type: application/json
+
+The request body should be a JSON object containing the following features of a network connection,
+- `loan_amnt` (float):
+- `term` (int): 
+- `int_rate` (float): 
+- `annual_inc` (float): 
+- `dti` (float):
+- `open_acc` (float):
+- `pub_rec` (int): 
+- `revol_bal` (float): 
+- `revol_util` (float):
+- `total_acc` (float):
+- `intial_list_status` (int):
+- `mort_acc` (int):
+- `pub_rec_bankrupticies` (int): 
+- `grade` (str):
+- `home_ownership` (str):
+- `verification_status` (str):
+- `purpose` (str):
+- `application_type` (str):
+- `zip_code` (str): 
 
 ### Response format for POST /classify
+The response will be a JSON object with the following key,
+- Loan Status: A string indicating one of the predicted statuses,
+    - "Approved": If the loan application is accepted.
+    - "Not Approved": If the loan application is rejected.
