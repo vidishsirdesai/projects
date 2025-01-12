@@ -113,7 +113,7 @@ The request body should be a JSON object containing the following features of a 
 - `service` (string): Type of DNS used in a connection.
 - `flag` (string): Status of a connection.
 
-### Response format for POST /classify_network_anomaly
+### Response format for POST /classify
 The response will be a JSON object with the following key,
 - Attack Type: A string indicating one of the predicted type of attack,
     - "Normal".
