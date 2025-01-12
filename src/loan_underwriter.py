@@ -177,9 +177,12 @@ def classify():
     model_inputs = scaler.transform(model_inputs)
 
     # predict
-    result = str(classifier.predict(model_inputs))
+    result = str(classifier.predict(model_inputs)[0])
 
-    return result
+    if result == "0":
+        return {"Loan Status": "Not Approved"}
+    else:
+        return {"Loan Status": "Approved"}
 
 if __name__ == "__main__":
     app.run(debug = True)
