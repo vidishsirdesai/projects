@@ -4,10 +4,18 @@ A loan underwriter is a financial professional who evaluates loan applications t
 To automate the task of a loan underwriter, a Logistic Regression model is trained using a dataset containing 27 relevant feature. The for a new data point, the model outputs if a credit line should be approved or not approved to an applicant.
 
 # Insights
+### Distribution plots
 The distribution plots of all the numerical columns is as follows,
 
 ![alt text](artifacts/distribution_of_numerical_columns.png)
 
+Comments
+- Most of the data is left skewed.
+- The most popular loan amount is 10000.
+- The most popular interest rate is 15%.
+- The most popular number of installments are between 200 and 400.
+
+### Count plots
 The count plots of all the categorical columns is as follows,
 
 ![alt text](artifacts/count_of_categorical_columns.png)
@@ -16,13 +24,27 @@ The count plots of all the categorical columns with target column ("loan_status"
 
 ![alt text](artifacts/count_of_categorical_columns_with_loan_status_in_hue.png)
 
+Comments,
+- The highest number of repayment term chosen is 36 months.
+- The grade of majority of individuals who have repaid the loan is "B".
+- Individuals with an employment rate of 10+ years have taken a loan.
+- The highest number of individuals who have taken a loan have mortgaged their home.
+- Most of the loan taken (almost 80%) has been fully paid.
+- The most popular reason for taking loan is debt consolidation.
+- The highest number of loan application type is individual.
+
+### Box plots
 The box plots of all the numerical columns is as follows,
 
 ![alt text](artifacts/box_plots_of_numerical_columns.png)
 
+### Heatmaps
 The heatmap of all the numerical columns is as follows,
 
 ![alt text](artifacts/heatmap_of_numerical_columns.png)
+
+Comments,
+- `loan_amnt` and `installment` have very high correlation, one of the columns can be dropped.
 
 The hearmap of all the columns post feature engineering is as follows,
 
