@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from sklearn.neighbors import NearestNeighbors
 import numpy as np
 import pandas as pd
@@ -17,7 +17,11 @@ model = open("../artifacts/recommender_system_cosine_similarity.pkl", "rb")
 # loading the model
 model = pickle.load(model)
 
-pivot_table = pd.read_csv("../artifacts/pivot_table.csv")
+df = pd.read_csv("../artifacts/df.csv")
+# creating a pivot table of movie titles and user id and imputing the NaN values
+pivot_table = pd.pivot_table(df, index = "user_id", columns = "title", values = "rating", aggfunc = "mean")
+# imputing the NaN with 0
+pivot_table.fillna(0, inplace = True)
 
 @app.route("/recommedations", methods = ["POST"])
 def recommendations():
@@ -33,4 +37,7 @@ def recommendations():
         new_row = pd.DataFrame({"rank": [i], "movie": [pivot_table.columns[indices.flatten()[i]]], "distance": [distances.flatten()[i]]})
         recommendations = pd.concat([recommendations, new_row], ignore_index = True)
 
+    recommendations = dict(recommendations["movie"])
+
+    # recommendations = jsonify(recommendations.to_dict(orient = "records"))
     return recommendations
