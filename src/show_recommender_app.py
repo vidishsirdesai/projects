@@ -17,11 +17,12 @@ model = open("../artifacts/recommender_system_cosine_similarity.pkl", "rb")
 # loading the model
 model = pickle.load(model)
 
-df = pd.read_csv("../artifacts/df.csv")
-# creating a pivot table of movie titles and user id and imputing the NaN values
-pivot_table = pd.pivot_table(df, index = "user_id", columns = "title", values = "rating", aggfunc = "mean")
-# imputing the NaN with 0
-pivot_table.fillna(0, inplace = True)
+pivot_table = pd.read_csv("../artifacts/pivot_table.csv")
+# df = pd.read_csv("../artifacts/df.csv")
+# # creating a pivot table of movie titles and user id and imputing the NaN values
+# pivot_table = pd.pivot_table(df, index = "user_id", columns = "title", values = "rating", aggfunc = "mean")
+# # imputing the NaN with 0
+# pivot_table.fillna(0, inplace = True)
 
 @app.route("/recommedations", methods = ["POST"])
 def recommendations():
