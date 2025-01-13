@@ -1,5 +1,39 @@
 # Introduction
+Recomender systems are a type of information filtering system that predict the ratings or preference a user would give to an item. They'are designed to suggest items that are most pertinent to a particular user.
 
+Types of recommender systems,
+- Collaborative filtering: Recommends items based on the preferences of similar users.
+- Content-based filtering: Recommends items based on the user's past interactions with similar items.
+- Hybrid systems: Collabrative and and content-based filtering are combined for more accurate recommendation.
+
+Common use cases include,
+- Product recommendations: E-commerce platforms like Amazon and Netflix use them to suggest products or movies to users.
+- Music and media: Spotify, YouTube and Pandora use them to recommend songs, videos and podcasts.
+- News and content: News aggregators and social media platforms use them to personalize news feeds and content recommendations.
+- Job recommnedations: Job boards use them to match job seekers with suitable job openings.
+
+Given are a 3 dataset containing information about users, ratings and movies for a streaming platform. Using nearest neighbors algorithm and cosine similarity, an item-based collaborative filtering recommender system application is built as a part of this project.
+
+# Insights From The Dataset
+The following shows the count plot of movies by release decade,
+
+![alt text](artifacts/count_of_movies_by_release_decade.png)
+
+The following shows the count plot of movies by ratings,
+
+![alt text](artifacts/count_plot_of_movies_by_ratings.png)
+
+The following shows the distribution plot of users on the platforms by age,
+
+![alt text](artifacts/distribution_of_users_by_age.png)
+
+The following shows the distribution plot of users on the platform by occupation,
+
+![alt text](artifacts/distribution_of_users_by_occupation.png)
+
+The following shows the percentage share of users on the platform by gender,
+
+![alt text](artifacts/percentage_share_of_users_by_gender.png)
 
 # Deployment Steps
 ### Virtual environment setup
