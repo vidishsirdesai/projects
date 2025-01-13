@@ -85,18 +85,18 @@ The following plot shows the model's coefficients,
 
 The following are the results from tests conducted to confirm the assumptions of Linear Regression model,
 1. Multi-collinearity check using VIF score,
-    
-    | column_name | vif_score |
-    | :-: | :-: |
-    | GRE_score | 4.34 |
-    | TOEFL_score | 3.65 |
-    | University_rating | 2.70 |
-    | SOP | 2.93 |
-    | LOR | 2.11 |
-    | CGPA | 4.98 |
-    | Research | 1.51 |
-
     - The check for multi-collinearity is PASS. All the VIF Scores are below 5, which is the defined limit.
+        
+        | column_name | vif_score |
+        | :-: | :-: |
+        | GRE_score | 4.34 |
+        | TOEFL_score | 3.65 |
+        | University_rating | 2.70 |
+        | SOP | 2.93 |
+        | LOR | 2.11 |
+        | CGPA | 4.98 |
+        | Research | 1.51 |
+
 2. The mean of residuals is nearly zero,
     - Mean of Residuals = 5.033756786713556e-18
     - The check for mean of residuals is PASS. The mean of residuals in nearly zero.
