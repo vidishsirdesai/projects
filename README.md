@@ -143,7 +143,7 @@ http://127.0.0.1:5000
 - GET `/`: Returns a text indicating the application's purpose.
 - POST `/predict`: Returns an output indicating the chance of admission.
 
-### Request format for POST /classify
+### Request format for POST /predict
 Content-Type: application/json
 
 The request body should be a JSON object containing the following features of a network connection,
@@ -155,6 +155,6 @@ The request body should be a JSON object containing the following features of a 
 - `cgpa`: CGPA from the previous degree (out of 10).
 - `research`: Research experience ("Yes" or "No").
 
-### Response format for POST /classify
+### Response format for POST /predict
 The response will be a JSON object with the following key,
 - Chance of Admit: A floating-point representing the chance of admission.
