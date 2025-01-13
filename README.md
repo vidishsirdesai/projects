@@ -71,9 +71,9 @@ pickle
 4. `pip list` can be run to check if the installation of all the packages has been successful.
 
 ### Show recommender app
-1. 1. To run the application,
+1. To run the application,
     - `cd src`.
-    - `FLASK_APP=loan_underwriter_app.py flask run`.
+    - `FLASK_APP=show_recommender_app.py flask run`.
 2. To view the welcome page, goto, http://127.0.0.1:5000.
 3. To classify the anomaly type or the attack type, send a POST request to, http://127.0.0.1:5000/recommendations.
 4. The POST request can be sent by running the following command in a terminal window:
