@@ -85,7 +85,8 @@ The following plot shows the model's coefficients,
 
 The following are the results from tests conducted to confirm the assumptions of Linear Regression model,
 1. Multi-collinearity check using VIF score,
-    - | column_name | vif_score |
+    
+    | column_name | vif_score |
     | :-: | :-: |
     | GRE_score | 4.34 |
     | TOEFL_score | 3.65 |
