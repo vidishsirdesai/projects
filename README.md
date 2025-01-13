@@ -126,9 +126,9 @@ It is observed that both Linear Regression and Ridge Regression have a similar a
 ### University admission predictor app
 1. To run the application,
     - `cd src`.
-    - `FLASK_APP=loan_underwriter_app.py flask run`.
+    - `FLASK_APP=university_admission_predictor_app.py flask run`.
 2. To view the welcome page, goto, http://127.0.0.1:5000.
-3. To classify the anomaly type or the attack type, send a POST request to, http://127.0.0.1:5000/predict.
+3. To get a prediction of chance of admission, send a POST request to, http://127.0.0.1:5000/predict.
 4. The POST request can be sent by running the following command in a terminal window:
 ```
 curl -X POST -H 'Content-Type: application/json' -d '{"gre_score": 300, "toefl_score": 100, "university_rating": 4, "sop": 3, "lor": 4, "cgpa": 8.90, "research": "Yes"}' http://127.0.0.1:5000/predict
