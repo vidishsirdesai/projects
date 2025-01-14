@@ -61,7 +61,7 @@ setuptools xx.x.x
     - `rm -r .venv`.
 
 ### Installing dependencies
-1. Once the virtual environment is created, create a `.txt` file named, `requirement.txt`.
+1. Once the virtual environment is created, create a `.txt` file named, `requirements.txt`.
 2. Add the names of the dependent (required) packages (libraries) that are required by the app to be functioning. The below is the list of packages that are required,
 ```
 flask
@@ -69,7 +69,7 @@ pickle
 pandas
 scikit-learn
 ```
-3. Once the `requirement.txt` file is created with all the dependencies included as a part of the file, save the file and run `pip install -r requirements.txt` from the terminal.
+3. Once the `requirements.txt` file is created with all the dependencies included as a part of the file, save the file and run `pip install -r requirements.txt` from the terminal.
 4. `pip list` can be run to check if the installation of all the packages has been successful.
 
 ### University admission predictor model
