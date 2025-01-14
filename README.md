@@ -23,6 +23,9 @@ https://agmarknet.gov.in
 - Modal Price (Rs./Quintal): Mode of the purchase price per quintal (1 Quintal = 100 Kilograms).
 - Reported Date: Date on which the remaining data points were reported on.
 
+# Jupyter Notebook
+[EDA and model building](bangalore/bangalore.ipynb)
+
 # Insights
 ### Time Series
 ![alt text](artifacts/bangalore_local_time_series.png)
@@ -57,7 +60,7 @@ This confirms the seasonality value found using ACF.
 6. Once the virtual environment is active, the environment name (in this case "`.venv`") will be visible in the parantheses before the prompt, like so "`(.venv)`".
 7. To confirm if the virtual environment has successfully been create, run `pip list`. The following should be the output,
 ```
-(.venv) vidish@Vidishs-MacBook-Air network_anomaly_detection % pip list
+(.venv) vidish@Vidishs-MacBook-Air onion_price_predictor % pip list
 Package    Version
 ---------- -------
 pip        xx.x.x
@@ -68,15 +71,12 @@ setuptools xx.x.x
     - `rm -r .venv`.
 
 ### Installing dependencies
-1. Once the virtual environment is created, create a `.txt` file named, `requirement.txt`.
+1. Once the virtual environment is created, create a `.txt` file named, `requirements.txt`.
 2. Add the names of the dependent (required) packages (libraries) that are required by the app to be functioning. The below is the list of packages that are required,
 ```
 flask
-pickle
-pandas
-scikit-learn
 ```
-3. Once the `requirement.txt` file is created with all the dependencies included as a part of the file, save the file and run `pip install -r requirements.txt` from the terminal.
+3. Once the `requirements.txt` file is created with all the dependencies included as a part of the file, save the file and run `pip install -r requirements.txt` from the terminal.
 4. `pip list` can be run to check if the installation of all the packages has been successful.
 
 ### Onion price predictor model
