@@ -1,7 +1,7 @@
 # Introduction
-Each year millions of students apply for admissions into universities across the world. Education consultants like Jamboree, Edwise, LeepScholar, etc, assess different features surrounding the application of a student like, GRE score, ILETS score, TOEFL score, etc and calculate the chance of admission of a student into a university.
+Each year millions of students apply for admissions into universities across the world. Education consultants like Jamboree, Edwise, LeepScholar, etc, assess different features surrounding the application of a student like, GRE score, ILETS score, TOEFL score, University Rating, etc, and calculate the chance of admission of a student into a university.
 
-To automate this task, a Linear Regression model is trained using a dataset containing 9 relevant features. The model then, for a new data point, predicts the chance of admission of a student into a university.
+To automate this task of calculating the chance of admission, a Linear Regression model is trained using a dataset containing 9 relevant features. The model then, for a new data point, predicts the chance of admission of a student into a university.
 
 # Insights
 The distribution plots of all the numerical columns is as follows,
