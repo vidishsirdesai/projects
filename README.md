@@ -3,6 +3,9 @@ Each year millions of students apply for admissions into universities across the
 
 To automate this task of calculating the chance of admission, a Linear Regression model is trained using a dataset containing 9 relevant features. The model then, for a new data point, predicts the chance of admission of a student into a university.
 
+# Jupyter Notebook
+[EDA and model building](notebooks/eda_and_model_building.ipynb)
+
 # Insights
 The distribution plots of all the numerical columns is as follows,
 
@@ -27,7 +30,7 @@ The pair plots of all the columns is as follows,
 ![alt text](artifacts/pair_plots_of_all_columns.png)
 
 Comments,
-- The correlation shows that there is strong correlation between Chance of Admit with GRE Score, TOEFL Score and CGPA.
+- The heatmap showing the correlation shows that there is strong correlation between Chance of Admit with GRE Score, TOEFL Score and CGPA.
 - There is a strong correlation between University Rating and SOP.
 - GRE Score and TOEFL Score have a high correlation. Meaning, students/ learners who have performed well in one, have also performed well in the other.
 - The CGPA has a strong correlation with GRE Score and TOEFL Score. This means that students/ learners who have done well in the GRE and TOEFL exams have also done well during their education.
@@ -47,7 +50,7 @@ Comments,
 6. Once the virtual environment is active, the environment name (in this case "`.venv`") will be visible in the parantheses before the prompt, like so "`(.venv)`".
 7. To confirm if the virtual environment has successfully been create, run `pip list`. The following should be the output,
 ```
-(.venv) vidish@Vidishs-MacBook-Air network_anomaly_detection % pip list
+(.venv) vidish@Vidishs-MacBook-Air university_admission_predictor % pip list
 Package    Version
 ---------- -------
 pip        xx.x.x
@@ -124,16 +127,17 @@ The following plots show the comparison of Linear Regression model with Ridge an
 It is observed that both Linear Regression and Ridge Regression have a similar accuracy, while the Lasso Regression has oversimplified the model.
 
 ### University admission predictor app
-1. To run the application,
+1. This app has been built and has been tested on Python version: `3.11.9`.
+2. To run the application,
     - `cd src`.
     - `FLASK_APP=university_admission_predictor_app.py flask run`.
-2. To view the welcome page, goto, http://127.0.0.1:5000.
-3. To get a prediction of chance of admission, send a POST request to, http://127.0.0.1:5000/predict.
-4. The POST request can be sent by running the following command in a terminal window:
+3. To view the welcome page, goto, http://127.0.0.1:5000.
+4. To get a prediction of chance of admission, send a POST request to, http://127.0.0.1:5000/predict.
+5. The POST request can be sent by running the following command in a terminal window:
 ```
 curl -X POST -H 'Content-Type: application/json' -d '{"gre_score": 300, "toefl_score": 100, "university_rating": 4, "sop": 3, "lor": 4, "cgpa": 8.90, "research": "Yes"}' http://127.0.0.1:5000/predict
 ```
-5. Expected response: `{"chance_of_admit":0.7240366948427613}`.
+6. Expected response: `{"chance_of_admit":0.7240366948427613}`.
 
 # API Specification
 ### Base URL
@@ -157,4 +161,4 @@ The request body should be a JSON object containing the following features of a 
 
 ### Response format for POST /predict
 The response will be a JSON object with the following key,
-- Chance of Admit: A floating-point representing the chance of admission.
+- `chance_of_admit`: The value attached to this key is a floating-point representing the chance of admission.
