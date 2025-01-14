@@ -3,6 +3,9 @@ A loan underwriter is a financial professional who evaluates loan applications t
 
 To automate the task of a loan underwriter, a Logistic Regression model is trained using a dataset containing 27 relevant feature. The for a new data point, the model outputs if a credit line should be approved or not approved to an applicant.
 
+# Jupyter Notebook
+[EDA and model building](notebooks/eda_and_model_building.ipynb)
+
 # Insights
 ### Distribution plots
 The distribution plots of all the numerical columns is as follows,
@@ -25,7 +28,7 @@ The count plots of all the categorical columns with target column ("loan_status"
 ![alt text](artifacts/count_of_categorical_columns_with_loan_status_in_hue.png)
 
 Comments,
-- The highest number of repayment term chosen is 36 months.
+- The most popular repayment term chosen is 36 months.
 - The grade of majority of individuals who have repaid the loan is "B".
 - Individuals with an employment rate of 10+ years have taken a loan.
 - The highest number of individuals who have taken a loan have mortgaged their home.
@@ -62,7 +65,7 @@ The hearmap of all the columns post feature engineering is as follows,
 6. Once the virtual environment is active, the environment name (in this case "`.venv`") will be visible in the parantheses before the prompt, like so "`(.venv)`".
 7. To confirm if the virtual environment has successfully been create, run `pip list`. The following should be the output,
 ```
-(.venv) vidish@Vidishs-MacBook-Air network_anomaly_detection % pip list
+(.venv) vidish@Vidishs-MacBook-Air loan_underwriter % pip list
 Package    Version
 ---------- -------
 pip        xx.x.x
@@ -73,7 +76,7 @@ setuptools xx.x.x
     - `rm -r .venv`.
 
 ### Installing dependencies
-1. Once the virtual environment is created, create a `.txt` file named, `requirement.txt`.
+1. Once the virtual environment is created, create a `.txt` file named, `requirements.txt`.
 2. Add the names of the dependent (required) packages (libraries) that are required by the app to be functioning. The below is the list of packages that are required,
 ```
 flask
@@ -81,7 +84,7 @@ pickle
 pandas
 scikit-learn
 ```
-3. Once the `requirement.txt` file is created with all the dependencies included as a part of the file, save the file and run `pip install -r requirements.txt` from the terminal.
+3. Once the `requirements.txt` file is created with all the dependencies included as a part of the file, save the file and run `pip install -r requirements.txt` from the terminal.
 4. `pip list` can be run to check if the installation of all the packages has been successful.
 
 ### Loan underwriter classification model
@@ -100,16 +103,17 @@ The PR curve looks as follows,
 ![alt text](artifacts/pr_curve.png)
 
 ### Loan underwriter app
-1. To run the application,
+1. This app has been built and has been tested on Python version: `3.11.9`.
+2. To run the application,
     - `cd src`.
     - `FLASK_APP=loan_underwriter_app.py flask run`.
-2. To view the welcome page, goto, http://127.0.0.1:5000.
-3. To classify the anomaly type or the attack type, send a POST request to, http://127.0.0.1:5000/classify.
-4. The POST request can be sent by running the following command in a terminal window:
+3. To view the welcome page, goto, http://127.0.0.1:5000.
+4. To classify the anomaly type or the attack type, send a POST request to, http://127.0.0.1:5000/classify.
+5. The POST request can be sent by running the following command in a terminal window:
 ```
 curl -X POST -H 'Content-Type: application/json' -d '{"loan_amnt": 19050.0, "term": 0, "int_rate": 13.33, "annual_inc": 90000.0, "dti": 26.08, "open_acc": 12.0, "pub_rec": 0, "revol_bal": 19908.0, "revol_util": 80.0, "total_acc": 24.0, "initial_list_status": 1, "mort_acc": 1, "pub_rec_bankrupticies": 0, "grade": "C", "home_ownership": "MORTGAGE", "verification_status": "Verified", "purpose": "debt_consolidation", "application_type": "INDIVIDUAL", "zip_code": "05113"}' http://127.0.0.1:5000/classify
 ```
-5. Expected response: `{"Loan Status": "Not Approved"}`.
+6. Expected response: `{"Loan Status":"Not Approved"}`.
 
 # API Specification
 ### Base URL
@@ -145,6 +149,6 @@ The request body should be a JSON object containing the following features of a 
 
 ### Response format for POST /classify
 The response will be a JSON object with the following key,
-- Loan Status: A string indicating one of the predicted statuses,
+- `Loan Status`: The value attached to this key is a string indicating one of the predicted statuses,
     - "Approved": If the loan application is accepted.
     - "Not Approved": If the loan application is rejected.
