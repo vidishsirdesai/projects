@@ -1,9 +1,8 @@
 from flask import Flask, request
-
-import pickle
-
-import pandas as pd
 from sklearn.preprocessing import StandardScaler
+import numpy as np
+import pandas as pd
+import pickle
 
 app = Flask(__name__)
 
