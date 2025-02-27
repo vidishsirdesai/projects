@@ -3,9 +3,9 @@
 
 # Firmware
 
-### Schematic
+### Schematic diagram
 
-![alt text](artifacts/motion_detection_schematic.png)
+![alt text](artifacts/motion_detection_schematic_diagram.png)
 
 ### Bread board layout
 
