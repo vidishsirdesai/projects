@@ -5,11 +5,11 @@
 
 ### Schematic diagram
 
-![alt text](artifacts/motion_detection_schematic_diagram.png)
+![motion_detection_schematic_diagram](artifacts/motion_detection_schematic_diagram.png)
 
 ### Bread board layout
 
-![alt text](artifacts/motion_detection_bb_layout.png)
+![motion_detection_bb_layout](artifacts/motion_detection_bb_layout.png)
 
 ### Terminal commands to capture the sensor readings
 - `sudo lsof | grep <device_file_path>`
