@@ -92,9 +92,3 @@ void readXYZ(float &x, float &y, float &z) {
     z = (float)z_raw / 256.0;
   }
 }
-
-
-// to capture the output
-// sudo lsof | grep /dev/cu.usbmodem11201
-// sudo kill -9 <PID>
-// arduino-cli monitor --port /dev/cu.usbmodem11201 --config baudrate=9600 > motion_tracker_log.csv
