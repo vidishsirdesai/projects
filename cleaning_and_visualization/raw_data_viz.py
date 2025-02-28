@@ -104,7 +104,7 @@ def create_visualization(subject):
     plt.text(0.05, 0.85, f'z: max = {df_yaw_right["z"].max()}, min = {df_yaw_right["z"].min()}', transform = plt.gca().transAxes, verticalalignment = "top")
     plt.legend()
 
-    plt.savefig("artifacts/raw_sensor_data_subject_1.png")
+    plt.savefig(f"artifacts/raw_sensor_data_subject_{subject}.png")
 
 if __name__ == "__main__":
     subject = None
