@@ -10,19 +10,13 @@ warnings.filterwarnings("ignore")
 
 def create_visualization(subject):
 
-    # lift
+    # read data
     df_lift = pd.read_csv(f"data/subject_{subject}/lift.csv")
-    # roll_left
     df_roll_left = pd.read_csv(f"data/subject_{subject}/roll_left.csv")
-    # roll_right
     df_roll_right = pd.read_csv(f"data/subject_{subject}/roll_right.csv")
-    # tilt_up
     df_tilt_up = pd.read_csv(f"data/subject_{subject}/tilt_up.csv")
-    # tilt_down
     df_tilt_down = pd.read_csv(f"data/subject_{subject}/tilt_down.csv")
-    # yaw_left
     df_yaw_left = pd.read_csv(f"data/subject_{subject}/yaw_left.csv")
-    # yaw_right
     df_yaw_right = pd.read_csv(f"data/subject_{subject}/yaw_right.csv")
 
     # plot
@@ -98,6 +92,7 @@ def create_visualization(subject):
     plt.text(0.05, 0.85, f'z: max = {df_yaw_right["z"].max()}, min = {df_yaw_right["z"].min()}', transform = plt.gca().transAxes, verticalalignment = "top")
     plt.legend()
 
+    # save plot
     plt.savefig(f"artifacts/raw_sensor_data_subject_{subject}.png")
 
 if __name__ == "__main__":
