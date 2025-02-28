@@ -47,10 +47,10 @@ def create_visualization(subject):
     df_roll_right["x"].plot()
     df_roll_right["y"].plot()
     df_roll_right["z"].plot()
-    plt.legend()
     plt.text(0.05, 0.95, f'x: max = {df_roll_right["x"].max()}, min = {df_roll_right["x"].min()}', transform = plt.gca().transAxes, verticalalignment = "top")
     plt.text(0.05, 0.90, f'y: max = {df_roll_right["y"].max()}, min = {df_roll_right["y"].min()}', transform = plt.gca().transAxes, verticalalignment = "top")
     plt.text(0.05, 0.85, f'z: max = {df_roll_right["z"].max()}, min = {df_roll_right["z"].min()}', transform = plt.gca().transAxes, verticalalignment = "top")
+    plt.legend()
 
     plt.subplot(7, 1, 4)
     plt.title("Action: Tilt Up")
