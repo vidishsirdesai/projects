@@ -94,7 +94,7 @@ def create_visualization(subject):
     plt.legend()
 
     # save plot
-    plt.savefig(f"artifacts/raw_sensor_data_subject_{subject}.png")
+    plt.savefig(f"artifacts/raw_sensor_data_subject_{subject}.png", bbox_inches = "tight")
 
 def create_visualization_3d(subject):
 
