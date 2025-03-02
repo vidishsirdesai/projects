@@ -9,7 +9,7 @@
 
 ### Firmware code
 
-Link: dynamic_motion_classifier/firmware/firmware.ino
+Link: https://github.com/vidishsirdesai/dynamic_motion_classifier/blob/main/firmware/firmware.ino
 
 ### Terminal commands to capture the sensor readings
 - `cd <project_directory_path>`.
