@@ -16,4 +16,18 @@ Link: dynamic_motion_classifier/firmware/firmware.ino
 - `sudo lsof | grep <device_file_path>`.
 - `sudo kill -9 <PID>`.
 - `arduino-cli monitor --port <device_file_path> --config baudrate=9600 > <log_file_name>.csv`.
-- 
+
+# Data Visualization
+Sensor reading for 7 different actions (mentioned below) has been collected from 5 volunteers.
+- Lift,
+- Roll left,
+- Roll right,
+- Tilt up,
+- Tilt down,
+- Yaw left,
+- Yaw right.
+
+The line plot looks as follows,
+
+![alt text](artifacts/raw_sensor_data_subject_all.png)
+
