@@ -1,17 +1,19 @@
 # Introduction
 
 
-# Firmware
+# Data collection Using Arduino UNO R3 and ADXL345
 
 ### Schematic diagram
 
 ![motion_detection_schematic_diagram](artifacts/motion_detection_schematic_diagram.png)
 
-### Bread board layout
+### Firmware code
 
-![motion_detection_bb_layout](artifacts/motion_detection_bb_layout.png)
+Link: dynamic_motion_classifier/firmware/firmware.ino
 
 ### Terminal commands to capture the sensor readings
-- `sudo lsof | grep <device_file_path>`
-- `sudo kill -9 <PID>`
-- `arduino-cli monitor --port <device_file_path> --config baudrate=9600 > motion_tracker_log.csv`
+- `cd <project_directory_path>`.
+- `sudo lsof | grep <device_file_path>`.
+- `sudo kill -9 <PID>`.
+- `arduino-cli monitor --port <device_file_path> --config baudrate=9600 > <log_file_name>.csv`.
+- 
