@@ -1,0 +1,718 @@
+--------------------
+Column Name: duration
+duration
+0        115955
+1          1989
+2           843
+3           557
+4           351
+          ...  
+4946          1
+5284          1
+20771         1
+3294          1
+679           1
+Name: count, Length: 2981, dtype: int64
+--------------------
+
+--------------------
+Column Name: protocoltype
+protocoltype
+tcp     102689
+udp      14993
+icmp      8291
+Name: count, dtype: int64
+--------------------
+
+--------------------
+Column Name: service
+service
+http         40338
+private      21853
+domain_u      9043
+smtp          7313
+ftp_data      6860
+             ...  
+tftp_u           3
+http_8001        2
+aol              2
+harvest          2
+http_2784        1
+Name: count, Length: 70, dtype: int64
+--------------------
+
+--------------------
+Column Name: flag
+flag
+SF        74945
+S0        34851
+REJ       11233
+RSTR       2421
+RSTO       1562
+S1          365
+SH          271
+S2          127
+RSTOS0      103
+S3           49
+OTH          46
+Name: count, dtype: int64
+--------------------
+
+--------------------
+Column Name: srcbytes
+srcbytes
+0        49392
+8         3691
+1         2432
+44        2334
+45        2089
+         ...  
+1940         1
+12973        1
+1899         1
+1661         1
+2358         1
+Name: count, Length: 3341, dtype: int64
+--------------------
+
+--------------------
+Column Name: dstbytes
+dstbytes
+0        67967
+105       1497
+8314       888
+330        528
+331        512
+         ...  
+30114        1
+3885         1
+33116        1
+4056         1
+52866        1
+Name: count, Length: 9326, dtype: int64
+--------------------
+
+--------------------
+Column Name: land
+land
+0    125948
+1        25
+Name: count, dtype: int64
+--------------------
+
+--------------------
+Column Name: wrongfragment
+wrongfragment
+0    124883
+3       884
+1       206
+Name: count, dtype: int64
+--------------------
+
+--------------------
+Column Name: urgent
+urgent
+0    125964
+1         5
+2         3
+3         1
+Name: count, dtype: int64
+--------------------
+
+--------------------
+Column Name: hot
+hot
+0     123302
+2       1037
+1        369
+28       277
+30       256
+4        173
+6        140
+5         76
+24        68
+19        57
+22        55
+3         54
+18        45
+14        30
+20         9
+7          5
+15         4
+11         3
+25         2
+9          2
+44         2
+77         1
+17         1
+12         1
+10         1
+8          1
+21         1
+33         1
+Name: count, dtype: int64
+--------------------
+
+--------------------
+Column Name: numfailedlogins
+numfailedlogins
+0    125851
+1       104
+2         9
+3         5
+4         3
+5         1
+Name: count, dtype: int64
+--------------------
+
+--------------------
+Column Name: loggedin
+loggedin
+0    76121
+1    49852
+Name: count, dtype: int64
+--------------------
+
+--------------------
+Column Name: numcompromised
+numcompromised
+0       124687
+1          976
+2           98
+4           40
+3           38
+         ...  
+7479         1
+307          1
+40           1
+405          1
+11           1
+Name: count, Length: 88, dtype: int64
+--------------------
+
+--------------------
+Column Name: rootshell
+rootshell
+0    125804
+1       169
+Name: count, dtype: int64
+--------------------
+
+--------------------
+Column Name: suattempted
+suattempted
+0    125893
+1        80
+Name: count, dtype: int64
+--------------------
+
+--------------------
+Column Name: numroot
+numroot
+0      125324
+1         273
+9         121
+6          99
+2          33
+        ...  
+684         1
+47          1
+278         1
+12          1
+425         1
+Name: count, Length: 82, dtype: int64
+--------------------
+
+--------------------
+Column Name: numfilecreations
+numfilecreations
+0     125686
+1        151
+2         41
+4         13
+3          5
+8          5
+15         5
+10         5
+5          5
+17         5
+7          4
+12         4
+18         4
+11         4
+26         3
+25         3
+20         3
+40         3
+14         3
+6          3
+13         2
+23         2
+9          2
+36         1
+43         1
+22         1
+33         1
+28         1
+29         1
+21         1
+16         1
+19         1
+27         1
+38         1
+34         1
+Name: count, dtype: int64
+--------------------
+
+--------------------
+Column Name: numshells
+numshells
+0    125926
+1        42
+2         5
+Name: count, dtype: int64
+--------------------
+
+--------------------
+Column Name: numaccessfiles
+numaccessfiles
+0    125602
+1       313
+2        29
+3         8
+5         6
+4         5
+6         4
+8         3
+7         2
+9         1
+Name: count, dtype: int64
+--------------------
+
+--------------------
+Column Name: ishostlogin
+ishostlogin
+0    125972
+1         1
+Name: count, dtype: int64
+--------------------
+
+--------------------
+Column Name: isguestlogin
+isguestlogin
+0    124786
+1      1187
+Name: count, dtype: int64
+--------------------
+
+--------------------
+Column Name: count
+count
+1      27763
+2       9474
+3       3962
+4       3550
+5       2980
+       ...  
+413        4
+498        4
+504        3
+506        3
+505        2
+Name: count, Length: 512, dtype: int64
+--------------------
+
+--------------------
+Column Name: srvcount
+srvcount
+1      25398
+2      12820
+3       6336
+4       5526
+5       4636
+       ...  
+407        2
+413        1
+503        1
+501        1
+498        1
+Name: count, Length: 509, dtype: int64
+--------------------
+
+--------------------
+Column Name: serrorrate
+serrorrate
+0.00    86829
+1.00    34439
+0.50      493
+0.33      321
+0.07      305
+        ...  
+0.37        1
+0.30        1
+0.35        1
+0.87        1
+0.36        1
+Name: count, Length: 89, dtype: int64
+--------------------
+
+--------------------
+Column Name: srvserrorrate
+srvserrorrate
+0.00    88754
+1.00    34874
+0.50      432
+0.33      273
+0.25      233
+        ...  
+0.57        1
+0.74        1
+0.65        1
+0.46        1
+0.28        1
+Name: count, Length: 86, dtype: int64
+--------------------
+
+--------------------
+Column Name: rerrorrate
+rerrorrate
+0.00    109783
+1.00     12874
+0.90       269
+0.92       216
+0.93       210
+         ...  
+0.65         1
+0.63         1
+0.18         1
+0.55         1
+0.58         1
+Name: count, Length: 82, dtype: int64
+--------------------
+
+--------------------
+Column Name: srvrerrorrate
+srvrerrorrate
+0.00    109767
+1.00     14827
+0.50       244
+0.33       160
+0.25       114
+         ...  
+0.90         1
+0.55         1
+0.18         1
+0.15         1
+0.30         1
+Name: count, Length: 62, dtype: int64
+--------------------
+
+--------------------
+Column Name: samesrvrate
+samesrvrate
+1.00    76812
+0.01     4027
+0.02     3616
+0.03     3503
+0.07     3438
+        ...  
+0.82        6
+0.68        6
+0.81        4
+0.76        4
+0.63        4
+Name: count, Length: 101, dtype: int64
+--------------------
+
+--------------------
+Column Name: diffsrvrate
+diffsrvrate
+0.00    76217
+0.06    18998
+0.07     9515
+0.05     6887
+1.00     3438
+        ...  
+0.91        1
+0.89        1
+0.68        1
+0.81        1
+0.48        1
+Name: count, Length: 95, dtype: int64
+--------------------
+
+--------------------
+Column Name: srvdiffhostrate
+srvdiffhostrate
+0.00    97574
+1.00     8143
+0.01     2865
+0.50      982
+0.67      975
+0.12      904
+0.33      790
+0.02      771
+0.11      732
+0.25      724
+0.10      721
+0.14      673
+0.08      653
+0.15      623
+0.40      620
+0.09      618
+0.17      617
+0.29      587
+0.20      584
+0.18      581
+0.22      524
+0.06      520
+0.07      519
+0.13      461
+0.05      325
+0.19      246
+0.75      235
+0.27      221
+0.21      218
+0.03      218
+0.16      193
+0.04      187
+0.60      178
+0.43      178
+0.30      170
+0.38      166
+0.23      165
+0.24       85
+0.31       75
+0.36       71
+0.80       60
+0.44       53
+0.57       33
+0.28       28
+0.26       17
+0.45       14
+0.56       12
+0.42       11
+0.71        9
+0.32        8
+0.35        8
+0.83        7
+0.62        7
+0.47        3
+0.37        3
+0.46        2
+0.54        2
+0.55        2
+0.88        1
+0.41        1
+Name: count, dtype: int64
+--------------------
+
+--------------------
+Column Name: dsthostcount
+dsthostcount
+255    74099
+1       3119
+2       2733
+3       1280
+4       1198
+       ...  
+252       77
+243       76
+226       76
+254       70
+0          3
+Name: count, Length: 256, dtype: int64
+--------------------
+
+--------------------
+Column Name: dsthostsrvcount
+dsthostsrvcount
+255    35993
+1       8449
+2       5161
+3       2768
+4       2488
+       ...  
+222       71
+188       70
+221       70
+210       55
+0          3
+Name: count, Length: 256, dtype: int64
+--------------------
+
+--------------------
+Column Name: dsthostsamesrvrate
+dsthostsamesrvrate
+1.00    49059
+0.01     7780
+0.00     6927
+0.02     6593
+0.07     5672
+        ...  
+0.48      176
+0.72      170
+0.41      169
+0.66      164
+0.37      156
+Name: count, Length: 101, dtype: int64
+--------------------
+
+--------------------
+Column Name: dsthostdiffsrvrate
+dsthostdiffsrvrate
+0.00    46989
+0.07    16570
+0.06     9787
+0.01     9295
+0.05     7321
+        ...  
+0.34       42
+0.92       40
+0.88       39
+0.98       35
+0.99       31
+Name: count, Length: 101, dtype: int64
+--------------------
+
+--------------------
+Column Name: dsthostsamesrcportrate
+dsthostsamesrcportrate
+0.00    63023
+0.01    17657
+1.00    10307
+0.02     5743
+0.03     3278
+        ...  
+0.74       69
+0.63       65
+0.77       63
+0.66       57
+0.72       55
+Name: count, Length: 101, dtype: int64
+--------------------
+
+--------------------
+Column Name: dsthostsrvdiffhostrate
+dsthostsrvdiffhostrate
+0.00    86904
+0.02     7952
+0.01     7146
+0.03     4723
+0.04     4518
+        ...  
+0.93        1
+0.71        1
+0.88        1
+0.70        1
+0.78        1
+Name: count, Length: 75, dtype: int64
+--------------------
+
+--------------------
+Column Name: dsthostserrorrate
+dsthostserrorrate
+0.00    81386
+1.00    33562
+0.01     3345
+0.02     1158
+0.03      711
+        ...  
+0.28       11
+0.34       11
+0.30       11
+0.59       11
+0.32       10
+Name: count, Length: 101, dtype: int64
+--------------------
+
+--------------------
+Column Name: dsthostsrvserrorrate
+dsthostsrvserrorrate
+0.00    85360
+1.00    34256
+0.01     3762
+0.02      640
+0.03      160
+        ...  
+0.35        4
+0.44        4
+0.53        4
+0.46        3
+0.59        3
+Name: count, Length: 100, dtype: int64
+--------------------
+
+--------------------
+Column Name: dsthostrerrorrate
+dsthostrerrorrate
+0.00    103178
+1.00     10298
+0.01      1800
+0.02      1222
+0.03       497
+         ...  
+0.54        51
+0.70        48
+0.66        44
+0.72        43
+0.68        38
+Name: count, Length: 101, dtype: int64
+--------------------
+
+--------------------
+Column Name: dsthostsrvrerrorrate
+dsthostsrvrerrorrate
+0.00    106616
+1.00     13231
+0.01      1390
+0.02       580
+0.03       352
+         ...  
+0.30         6
+0.21         5
+0.28         5
+0.43         3
+0.26         3
+Name: count, Length: 101, dtype: int64
+--------------------
+
+--------------------
+Column Name: attack
+attack
+normal             67343
+neptune            41214
+satan               3633
+ipsweep             3599
+portsweep           2931
+smurf               2646
+nmap                1493
+back                 956
+teardrop             892
+warezclient          890
+pod                  201
+guess_passwd          53
+buffer_overflow       30
+warezmaster           20
+land                  18
+imap                  11
+rootkit               10
+loadmodule             9
+ftp_write              8
+multihop               7
+phf                    4
+perl                   3
+spy                    2
+Name: count, dtype: int64
+--------------------
+
+--------------------
+Column Name: attackhlc
+attackhlc
+normal    67343
+dos       45927
+probe     11656
+r2l         995
+u2r          52
+Name: count, dtype: int64
+--------------------
