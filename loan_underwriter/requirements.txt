@@ -1,4 +1,0 @@
-flask
-pickle
-pandas
-scikit-learn
