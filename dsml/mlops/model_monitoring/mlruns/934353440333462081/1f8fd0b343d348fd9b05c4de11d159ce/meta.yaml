@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/vidishsirdesai/Desktop/dev/dsml_end_to_end_reference/mlops/model_monitoring/mlruns/934353440333462081/1f8fd0b343d348fd9b05c4de11d159ce/artifacts
+end_time: 1731982594581
+entry_point_name: ''
+experiment_id: '934353440333462081'
+lifecycle_stage: active
+run_id: 1f8fd0b343d348fd9b05c4de11d159ce
+run_name: 'experiment_2011-02-17 00:00:00 : 2011-02-25 23:00:00'
+run_uuid: 1f8fd0b343d348fd9b05c4de11d159ce
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731982594568
+status: 3
+tags: []
+user_id: vidishsirdesai
